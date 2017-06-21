@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<units:TmpContainer
+    xmi:version="2.0"
+    xmlns:xmi="http://www.omg.org/XMI"
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns:units="http://www.modelexecution.org/units"
+    xsi:schemaLocation="http://www.modelexecution.org/units ../model/units.ecore">
+  <quantities
+      xsi:type="units:Angle">
+    <unit xsi:type="units:Radian"/>
+  </quantities>
+  <quantities
+      xsi:type="units:Angle">
+    <unit xsi:type="units:Centimeter"/>
+  </quantities>
+</units:TmpContainer>
