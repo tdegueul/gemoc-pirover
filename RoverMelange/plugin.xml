@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<?eclipse version="3.4"?><plugin>
+  <extension point="org.eclipse.emf.ecore.generated_package">
+    <!-- @generated RCLMT -->
+    <package class="rover.rclmt.rcl.RclPackage" genModel="model-gen/RCLMT.genmodel" uri="http://rover.rclmt/rcl/"/>
+  </extension>
+  
+<extension point="fr.inria.diverse.melange.modeltype">
+    <modeltype id="rover.RCLMT" uri="http://rover.rclmt/"/>
+  </extension>
+  <extension point="fr.inria.diverse.melange.language">
+    <language aspects="VarRef:rover.rcl.aspects.VarRefAspect;Action:rover.rcl.aspects.ActionAspect;ObstacleQuery:rover.rcl.aspects.ObstacleQueryAspect;RoverProgram:rover.rcl.aspects.RoverProgramAspect;Conditional:rover.rcl.aspects.ConditionalAspect;RoverExpression:rover.rcl.aspects.RoverExpressionAspect;Assignment:rover.rcl.aspects.AssignmentAspect;BooleanExpression:rover.rcl.aspects.BooleanExpressionASpect;LogAction:rover.rcl.aspects.LogActionAspect;TurnAction:rover.rcl.aspects.TurnActionAspect;NumberValue:rover.rcl.aspects.NumberValueAspect;BooleanValue:rover.rcl.aspects.BooleanValueAspect;StringValue:rover.rcl.aspects.StringValueAspect;Loop:rover.rcl.aspects.LoopAspect;BackwardAction:rover.rcl.aspects.BackwardActionAspect;Statement:rover.rcl.aspects.StatementAspect;NumericExpression:rover.rcl.aspects.NumericExpressionASpect;BackwardMinAction:rover.rcl.aspects.BackwardMinActionAspect;SendAction:rover.rcl.aspects.SendActionAspect;HumidityQuery:rover.rcl.aspects.HumidityQueryAspect;TurnDegAction:rover.rcl.aspects.TurnDegActionAspect;ForwardAction:rover.rcl.aspects.ForwardActionAspect;StringExpression:rover.rcl.aspects.StringExpressionASpect;ForwardMinAction:rover.rcl.aspects.ForwardMinActionAspect;Block:rover.rcl.aspects.BlockAspect;StopAction:rover.rcl.aspects.StopActionAspect;TemperatureQuery:rover.rcl.aspects.TemperatureQueryAspect;MessageQuery:rover.rcl.aspects.MessageQueryAspect" entryPoints="rover.rcl.aspects.RoverProgramAspect.run(rover.rcl.rcl.RoverProgram)" exactType="rover.RCLMT" id="rover.RCL" uri="http://rover.rcl/rcl/">
+      <adapter class="rover.rcl.adapters.rclmt.RCLAdapter" modeltypeId="rover.RCLMT"/>
+    </language>
+  </extension>
+</plugin>

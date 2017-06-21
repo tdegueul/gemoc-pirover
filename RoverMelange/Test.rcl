@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rcl:RoverProgram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rcl="http://rover.rcl/rcl/">
+  <params name="distance_to_obstacle"/>
+  <block>
+    <stmts xsi:type="rcl:Assignment" name="threshold">
+      <value xsi:type="rcl:NumberValue" nValue="3"/>
+    </stmts>
+    <stmts xsi:type="rcl:Conditional">
+      <expr xsi:type="rcl:NumericExpression" op="LEQ">
+        <lhs xsi:type="rcl:VarRef" name="distance_to_obstacle"/>
+        <rhs xsi:type="rcl:VarRef" name="threshold"/>
+      </expr>
+      <condTrue>
+        <stmts xsi:type="rcl:ForwardAction"/>
+        <stmts xsi:type="rcl:LogAction" message="found obstacle"/>
+      </condTrue>
+      <condFalse>
+        <stmts xsi:type="rcl:Conditional">
+          <expr xsi:type="rcl:StringExpression" op="NEQ">
+            <lhs xsi:type="rcl:MessageQuery"/>
+            <rhs sValue="danger"/>
+          </expr>
+          <condTrue>
+            <stmts xsi:type="rcl:StopAction"/>
+          </condTrue>
+          <condFalse>
+            <stmts xsi:type="rcl:BackwardMinAction" duration="10"/>
+          </condFalse>
+        </stmts>
+      </condFalse>
+    </stmts>
+  </block>
+</rcl:RoverProgram>

@@ -1,0 +1,23 @@
+package rover
+
+import rover.rclmt.rcl.RoverProgram
+
+language RCL {
+	syntax "platform:/resource/org.gemoc.rover.rcl/model/RCL.ecore"
+	with org.gemoc.rover.rcl.semantics.*
+}
+
+//language ArduinoML {
+//	syntax "platform:/resource/org.gemoc.arduino.sequential.model/model/arduino.ecore"
+//	with org.gemoc.arduino.sequential.k3dsa.*
+//}
+
+transformation runRCL(RoverProgram p) {
+	p.run
+}
+
+@Main
+transformation main() {
+	val m = RCL.load("Test.rcl")
+	runRCL.call(m.contents.head as RoverProgram)
+}
