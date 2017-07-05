@@ -184,8 +184,6 @@ public class UnitsValidator extends EObjectValidator {
 				return validateQuantityHomogenousOperation((QuantityHomogenousOperation)value, diagnostics, context);
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION:
 				return validateQuantityScalarOperation((QuantityScalarOperation)value, diagnostics, context);
-			case UnitsPackage.TMP_CONTAINER:
-				return validateTmpContainer((TmpContainer)value, diagnostics, context);
 			default:
 				return true;
 		}
@@ -684,15 +682,6 @@ public class UnitsValidator extends EObjectValidator {
 	 */
 	public boolean validateQuantityScalarOperation(QuantityScalarOperation quantityScalarOperation, DiagnosticChain diagnostics, Map<Object, Object> context) {
 		return validate_EveryDefaultConstraint(quantityScalarOperation, diagnostics, context);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateTmpContainer(TmpContainer tmpContainer, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(tmpContainer, diagnostics, context);
 	}
 
 	/**

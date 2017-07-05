@@ -250,10 +250,6 @@ public class UnitsAdapterFactory extends AdapterFactoryImpl {
 				return createQuantityScalarOperationAdapter();
 			}
 			@Override
-			public Adapter caseTmpContainer(TmpContainer object) {
-				return createTmpContainerAdapter();
-			}
-			@Override
 			public Adapter defaultCase(EObject object) {
 				return createEObjectAdapter();
 			}
@@ -858,20 +854,6 @@ public class UnitsAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createQuantityScalarOperationAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link org.modelexecution.units.TmpContainer <em>Tmp Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see org.modelexecution.units.TmpContainer
-	 * @generated
-	 */
-	public Adapter createTmpContainerAdapter() {
 		return null;
 	}
 

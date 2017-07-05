@@ -418,12 +418,6 @@ public class UnitsSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case UnitsPackage.TMP_CONTAINER: {
-				TmpContainer tmpContainer = (TmpContainer)theEObject;
-				T result = caseTmpContainer(tmpContainer);
-				if (result == null) result = defaultCase(theEObject);
-				return result;
-			}
 			default: return defaultCase(theEObject);
 		}
 	}
@@ -1055,21 +1049,6 @@ public class UnitsSwitch<T> extends Switch<T> {
 	 * @generated
 	 */
 	public T caseQuantityScalarOperation(QuantityScalarOperation object) {
-		return null;
-	}
-
-	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Tmp Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * This implementation returns null;
-	 * returning a non-null result will terminate the switch.
-	 * <!-- end-user-doc -->
-	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Tmp Container</em>'.
-	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
-	 * @generated
-	 */
-	public T caseTmpContainer(TmpContainer object) {
 		return null;
 	}
 

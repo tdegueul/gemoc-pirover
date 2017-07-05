@@ -288,15 +288,6 @@ public interface UnitsFactory extends EFactory {
 	AngleGreater createAngleGreater();
 
 	/**
-	 * Returns a new object of class '<em>Tmp Container</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Tmp Container</em>'.
-	 * @generated
-	 */
-	TmpContainer createTmpContainer();
-
-	/**
 	 * Returns the package supported by this factory.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

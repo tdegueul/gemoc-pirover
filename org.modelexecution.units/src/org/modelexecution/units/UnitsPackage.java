@@ -1624,61 +1624,6 @@ public interface UnitsPackage extends EPackage {
 	 */
 	int QUANTITY_SCALAR_OPERATION_OPERATION_COUNT = QUANTITY_OPERATION_OPERATION_COUNT + 0;
 
-	/**
-	 * The meta object id for the '{@link org.modelexecution.units.impl.TmpContainerImpl <em>Tmp Container</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see org.modelexecution.units.impl.TmpContainerImpl
-	 * @see org.modelexecution.units.impl.UnitsPackageImpl#getTmpContainer()
-	 * @generated
-	 */
-	int TMP_CONTAINER = 42;
-
-	/**
-	 * The feature id for the '<em><b>Quantities</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMP_CONTAINER__QUANTITIES = 0;
-
-	/**
-	 * The feature id for the '<em><b>Numeric Values</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMP_CONTAINER__NUMERIC_VALUES = 1;
-
-	/**
-	 * The feature id for the '<em><b>Operations</b></em>' containment reference list.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMP_CONTAINER__OPERATIONS = 2;
-
-	/**
-	 * The number of structural features of the '<em>Tmp Container</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMP_CONTAINER_FEATURE_COUNT = 3;
-
-	/**
-	 * The number of operations of the '<em>Tmp Container</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int TMP_CONTAINER_OPERATION_COUNT = 0;
-
 
 	/**
 	 * Returns the meta object for class '{@link org.modelexecution.units.Unit <em>Unit</em>}'.
@@ -2165,49 +2110,6 @@ public interface UnitsPackage extends EPackage {
 	 * @generated
 	 */
 	EReference getQuantityScalarOperation_Rhs();
-
-	/**
-	 * Returns the meta object for class '{@link org.modelexecution.units.TmpContainer <em>Tmp Container</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Tmp Container</em>'.
-	 * @see org.modelexecution.units.TmpContainer
-	 * @generated
-	 */
-	EClass getTmpContainer();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.modelexecution.units.TmpContainer#getQuantities <em>Quantities</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Quantities</em>'.
-	 * @see org.modelexecution.units.TmpContainer#getQuantities()
-	 * @see #getTmpContainer()
-	 * @generated
-	 */
-	EReference getTmpContainer_Quantities();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.modelexecution.units.TmpContainer#getNumericValues <em>Numeric Values</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Numeric Values</em>'.
-	 * @see org.modelexecution.units.TmpContainer#getNumericValues()
-	 * @see #getTmpContainer()
-	 * @generated
-	 */
-	EReference getTmpContainer_NumericValues();
-
-	/**
-	 * Returns the meta object for the containment reference list '{@link org.modelexecution.units.TmpContainer#getOperations <em>Operations</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference list '<em>Operations</em>'.
-	 * @see org.modelexecution.units.TmpContainer#getOperations()
-	 * @see #getTmpContainer()
-	 * @generated
-	 */
-	EReference getTmpContainer_Operations();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -2699,40 +2601,6 @@ public interface UnitsPackage extends EPackage {
 		 * @generated
 		 */
 		EReference QUANTITY_SCALAR_OPERATION__RHS = eINSTANCE.getQuantityScalarOperation_Rhs();
-
-		/**
-		 * The meta object literal for the '{@link org.modelexecution.units.impl.TmpContainerImpl <em>Tmp Container</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see org.modelexecution.units.impl.TmpContainerImpl
-		 * @see org.modelexecution.units.impl.UnitsPackageImpl#getTmpContainer()
-		 * @generated
-		 */
-		EClass TMP_CONTAINER = eINSTANCE.getTmpContainer();
-
-		/**
-		 * The meta object literal for the '<em><b>Quantities</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMP_CONTAINER__QUANTITIES = eINSTANCE.getTmpContainer_Quantities();
-
-		/**
-		 * The meta object literal for the '<em><b>Numeric Values</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMP_CONTAINER__NUMERIC_VALUES = eINSTANCE.getTmpContainer_NumericValues();
-
-		/**
-		 * The meta object literal for the '<em><b>Operations</b></em>' containment reference list feature.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @generated
-		 */
-		EReference TMP_CONTAINER__OPERATIONS = eINSTANCE.getTmpContainer_Operations();
 
 	}
 

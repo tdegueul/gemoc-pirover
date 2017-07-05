@@ -10,10 +10,10 @@ public class NumberValueAspect {
   public static int getIntValue(final NumberValue _self) {
     final org.gemoc.rover.rcl.semantics.NumberValueAspectNumberValueAspectProperties _self_ = org.gemoc.rover.rcl.semantics.NumberValueAspectNumberValueAspectContext.getSelf(_self);
     Object result = null;
-     if (_self instanceof rcl.HumidityQuery){
-    					result = org.gemoc.rover.rcl.semantics.HumidityQueryAspect.getIntValue((rcl.HumidityQuery)_self);
-    } else  if (_self instanceof rcl.VarRef){
+     if (_self instanceof rcl.VarRef){
     					result = org.gemoc.rover.rcl.semantics.VarRefAspect.getIntValue((rcl.VarRef)_self);
+    } else  if (_self instanceof rcl.HumidityQuery){
+    					result = org.gemoc.rover.rcl.semantics.HumidityQueryAspect.getIntValue((rcl.HumidityQuery)_self);
     } else  if (_self instanceof rcl.TemperatureQuery){
     					result = org.gemoc.rover.rcl.semantics.TemperatureQueryAspect.getIntValue((rcl.TemperatureQuery)_self);
     } else  if (_self instanceof rcl.NumberValue){

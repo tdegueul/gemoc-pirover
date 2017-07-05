@@ -55,7 +55,6 @@ import org.modelexecution.units.QuantityHomogenousOperation;
 import org.modelexecution.units.QuantityOperation;
 import org.modelexecution.units.QuantityScalarOperation;
 import org.modelexecution.units.Radian;
-import org.modelexecution.units.TmpContainer;
 import org.modelexecution.units.Turn;
 import org.modelexecution.units.Unit;
 import org.modelexecution.units.UnitsFactory;
@@ -371,13 +370,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * @generated
 	 */
 	private EClass quantityScalarOperationEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass tmpContainerEClass = null;
 
 	/**
 	 * Creates an instance of the model <b>Package</b>, registered with
@@ -886,42 +878,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getTmpContainer() {
-		return tmpContainerEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTmpContainer_Quantities() {
-		return (EReference)tmpContainerEClass.getEStructuralFeatures().get(0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTmpContainer_NumericValues() {
-		return (EReference)tmpContainerEClass.getEStructuralFeatures().get(1);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EReference getTmpContainer_Operations() {
-		return (EReference)tmpContainerEClass.getEStructuralFeatures().get(2);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public UnitsFactory getUnitsFactory() {
 		return (UnitsFactory)getEFactoryInstance();
 	}
@@ -1034,11 +990,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		quantityScalarOperationEClass = createEClass(QUANTITY_SCALAR_OPERATION);
 		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__LHS);
 		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__RHS);
-
-		tmpContainerEClass = createEClass(TMP_CONTAINER);
-		createEReference(tmpContainerEClass, TMP_CONTAINER__QUANTITIES);
-		createEReference(tmpContainerEClass, TMP_CONTAINER__NUMERIC_VALUES);
-		createEReference(tmpContainerEClass, TMP_CONTAINER__OPERATIONS);
 	}
 
 	/**
@@ -1220,11 +1171,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		initEClass(quantityScalarOperationEClass, QuantityScalarOperation.class, "QuantityScalarOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuantityScalarOperation_Lhs(), this.getQuantity(), null, "lhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getQuantityScalarOperation_Rhs(), this.getNumericValue(), null, "rhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-
-		initEClass(tmpContainerEClass, TmpContainer.class, "TmpContainer", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getTmpContainer_Quantities(), this.getQuantity(), null, "quantities", null, 0, -1, TmpContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTmpContainer_NumericValues(), this.getNumericValue(), null, "numericValues", null, 0, -1, TmpContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getTmpContainer_Operations(), this.getQuantityOperation(), null, "operations", null, 0, -1, TmpContainer.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

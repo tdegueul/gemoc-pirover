@@ -1,69 +1,151 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017 TU Wien.&#xD;&#xA;All rights reserved. This program and the accompanying materials are made &#xD;&#xA;available under the terms of the Eclipse Public License v1.0 which accompanies &#xD;&#xA;this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;Tanja Mayerhofer - initial API and implementation"
-    modelDirectory="/org.modelexecution.units/src" editDirectory="/org.modelexecution.units.edit/src"
-    editorDirectory="/org.modelexecution.units.editor/src" modelPluginID="org.modelexecution.units"
-    modelName="Units" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" editPluginID="org.modelexecution.units.edit"
-    editorPluginID="org.modelexecution.units.editor" operationReflection="true" importOrganizing="true">
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" copyrightText="Copyright (c) 2017 TU Wien.&#xD;&#xA;All rights reserved. This program and the accompanying materials are made &#xD;&#xA;available under the terms of the Eclipse Public License v1.0 which accompanies &#xD;&#xA;this distribution, and is available at http://www.eclipse.org/legal/epl-v10.html&#xD;&#xA;&#xD;&#xA;Contributors:&#xD;&#xA;Tanja Mayerhofer - initial API and implementation" modelDirectory="/org.modelexecution.units/src" editDirectory="/org.modelexecution.units.edit/src" editorDirectory="/org.modelexecution.units.editor/src" modelPluginID="org.modelexecution.units" modelName="Units" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" editPluginID="org.modelexecution.units.edit" editorPluginID="org.modelexecution.units.editor" operationReflection="true" importOrganizing="true">
   <foreignModel>units.ecore</foreignModel>
-  <genPackages prefix="Units" basePackage="org.modelexecution" disposableProviderFactory="true"
-      ecorePackage="units.ecore#/">
-    <genClasses ecoreClass="units.ecore#//Unit"/>
-    <genClasses ecoreClass="units.ecore#//LengthUnit"/>
-    <genClasses ecoreClass="units.ecore#//Centimeter"/>
-    <genClasses ecoreClass="units.ecore#//Millimeter"/>
-    <genClasses ecoreClass="units.ecore#//Meter"/>
-    <genClasses ecoreClass="units.ecore#//Foot"/>
-    <genClasses ecoreClass="units.ecore#//Inch"/>
-    <genClasses ecoreClass="units.ecore#//Yard"/>
-    <genClasses ecoreClass="units.ecore#//MetricSystemUnit"/>
-    <genClasses ecoreClass="units.ecore#//ImperialSystemUnit"/>
-    <genClasses ecoreClass="units.ecore#//AngleUnit"/>
-    <genClasses ecoreClass="units.ecore#//Radian"/>
-    <genClasses ecoreClass="units.ecore#//Degree"/>
-    <genClasses ecoreClass="units.ecore#//Turn"/>
-    <genClasses ecoreClass="units.ecore#//Gradian"/>
-    <genClasses ecoreClass="units.ecore#//Quantity">
-      <genFeatures children="true" createChild="true" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//Quantity/unit"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//Quantity/value"/>
+  <genPackages prefix="Units" basePackage="org.modelexecution" disposableProviderFactory="true">
+    <ecorePackage href="units.ecore#/"/>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Unit"/>
     </genClasses>
-    <genClasses ecoreClass="units.ecore#//Length"/>
-    <genClasses ecoreClass="units.ecore#//Angle"/>
-    <genClasses ecoreClass="units.ecore#//NumericValue"/>
-    <genClasses ecoreClass="units.ecore#//QuantityOperation"/>
-    <genClasses ecoreClass="units.ecore#//LengthOperation"/>
-    <genClasses ecoreClass="units.ecore#//LengthAdd"/>
-    <genClasses ecoreClass="units.ecore#//LengthSubtract"/>
-    <genClasses ecoreClass="units.ecore#//LengthScalarMultiply"/>
-    <genClasses ecoreClass="units.ecore#//LengthScalarDivide"/>
-    <genClasses ecoreClass="units.ecore#//LengthEquals"/>
-    <genClasses ecoreClass="units.ecore#//LengthDistinct"/>
-    <genClasses ecoreClass="units.ecore#//LengthSmaller"/>
-    <genClasses ecoreClass="units.ecore#//LengthGreater"/>
-    <genClasses ecoreClass="units.ecore#//AngleOperation"/>
-    <genClasses ecoreClass="units.ecore#//AngleAdd"/>
-    <genClasses ecoreClass="units.ecore#//AngleSubtract"/>
-    <genClasses ecoreClass="units.ecore#//AngleScalarMultiply"/>
-    <genClasses ecoreClass="units.ecore#//AngleScalarDivide"/>
-    <genClasses ecoreClass="units.ecore#//AngleEquals"/>
-    <genClasses ecoreClass="units.ecore#//AngleDistinct"/>
-    <genClasses ecoreClass="units.ecore#//AngleSmaller"/>
-    <genClasses ecoreClass="units.ecore#//AngleGreater"/>
-    <genClasses ecoreClass="units.ecore#//QuantityArithmeticOperation"/>
-    <genClasses ecoreClass="units.ecore#//QuantityComparisonOperation"/>
-    <genClasses ecoreClass="units.ecore#//QuantityHomogenousOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//QuantityHomogenousOperation/lhs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//QuantityHomogenousOperation/rhs"/>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthUnit"/>
     </genClasses>
-    <genClasses ecoreClass="units.ecore#//QuantityScalarOperation">
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//QuantityScalarOperation/lhs"/>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true" ecoreFeature="ecore:EReference units.ecore#//QuantityScalarOperation/rhs"/>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Centimeter"/>
     </genClasses>
-    <genClasses ecoreClass="units.ecore#//TmpContainer">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference units.ecore#//TmpContainer/quantities"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference units.ecore#//TmpContainer/numericValues"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference units.ecore#//TmpContainer/operations"/>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Millimeter"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Meter"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Foot"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Inch"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Yard"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//MetricSystemUnit"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//ImperialSystemUnit"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleUnit"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Radian"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Degree"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Turn"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Gradian"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Quantity"/>
+      <genFeatures children="true" createChild="true" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//Quantity/unit"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//Quantity/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Length"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//Angle"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//NumericValue"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//QuantityOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthAdd"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthSubtract"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthScalarMultiply"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthScalarDivide"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthEquals"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthDistinct"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthSmaller"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//LengthGreater"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleAdd"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleSubtract"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleScalarMultiply"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleScalarDivide"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleEquals"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleDistinct"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleSmaller"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//AngleGreater"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//QuantityArithmeticOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//QuantityComparisonOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//QuantityHomogenousOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityHomogenousOperation/lhs"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityHomogenousOperation/rhs"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="units.ecore#//QuantityScalarOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityScalarOperation/lhs"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityScalarOperation/rhs"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

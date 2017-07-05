@@ -98,7 +98,6 @@ public class UnitsFactoryImpl extends EFactoryImpl implements UnitsFactory {
 			case UnitsPackage.ANGLE_DISTINCT: return createAngleDistinct();
 			case UnitsPackage.ANGLE_SMALLER: return createAngleSmaller();
 			case UnitsPackage.ANGLE_GREATER: return createAngleGreater();
-			case UnitsPackage.TMP_CONTAINER: return createTmpContainer();
 			default:
 				throw new IllegalArgumentException("The class '" + eClass.getName() + "' is not a valid classifier");
 		}
@@ -382,16 +381,6 @@ public class UnitsFactoryImpl extends EFactoryImpl implements UnitsFactory {
 	public AngleGreater createAngleGreater() {
 		AngleGreaterImpl angleGreater = new AngleGreaterImpl();
 		return angleGreater;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public TmpContainer createTmpContainer() {
-		TmpContainerImpl tmpContainer = new TmpContainerImpl();
-		return tmpContainer;
 	}
 
 	/**
