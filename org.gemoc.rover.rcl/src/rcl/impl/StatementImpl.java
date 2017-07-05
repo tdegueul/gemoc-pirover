@@ -4,14 +4,16 @@ package rcl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import rcl.Block;
+
+import rcl.RclBlock;
 import rcl.RclPackage;
 import rcl.Statement;
 
@@ -53,9 +55,9 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getEnclosing() {
+	public RclBlock getEnclosing() {
 		if (eContainerFeatureID() != RclPackage.STATEMENT__ENCLOSING) return null;
-		return (Block)eInternalContainer();
+		return (RclBlock)eInternalContainer();
 	}
 
 	/**
@@ -63,7 +65,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnclosing(Block newEnclosing, NotificationChain msgs) {
+	public NotificationChain basicSetEnclosing(RclBlock newEnclosing, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newEnclosing, RclPackage.STATEMENT__ENCLOSING, msgs);
 		return msgs;
 	}
@@ -73,7 +75,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnclosing(Block newEnclosing) {
+	public void setEnclosing(RclBlock newEnclosing) {
 		if (newEnclosing != eInternalContainer() || (eContainerFeatureID() != RclPackage.STATEMENT__ENCLOSING && newEnclosing != null)) {
 			if (EcoreUtil.isAncestor(this, newEnclosing))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -81,7 +83,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newEnclosing != null)
-				msgs = ((InternalEObject)newEnclosing).eInverseAdd(this, RclPackage.BLOCK__STMTS, Block.class, msgs);
+				msgs = ((InternalEObject)newEnclosing).eInverseAdd(this, RclPackage.RCL_BLOCK__STMTS, RclBlock.class, msgs);
 			msgs = basicSetEnclosing(newEnclosing, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -100,7 +102,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 			case RclPackage.STATEMENT__ENCLOSING:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetEnclosing((Block)otherEnd, msgs);
+				return basicSetEnclosing((RclBlock)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -128,7 +130,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RclPackage.STATEMENT__ENCLOSING:
-				return eInternalContainer().eInverseRemove(this, RclPackage.BLOCK__STMTS, Block.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RclPackage.RCL_BLOCK__STMTS, RclBlock.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -156,7 +158,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RclPackage.STATEMENT__ENCLOSING:
-				setEnclosing((Block)newValue);
+				setEnclosing((RclBlock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -171,7 +173,7 @@ public abstract class StatementImpl extends MinimalEObjectImpl.Container impleme
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RclPackage.STATEMENT__ENCLOSING:
-				setEnclosing((Block)null);
+				setEnclosing((RclBlock)null);
 				return;
 		}
 		super.eUnset(featureID);

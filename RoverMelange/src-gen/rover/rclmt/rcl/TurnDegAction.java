@@ -21,30 +21,30 @@ package rover.rclmt.rcl;
  */
 public interface TurnDegAction extends Action {
 	/**
-	 * Returns the value of the '<em><b>Degrees</b></em>' attribute.
+	 * Returns the value of the '<em><b>Degrees</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Degrees</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Degrees</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Degrees</em>' attribute.
-	 * @see #setDegrees(int)
+	 * @return the value of the '<em>Degrees</em>' containment reference.
+	 * @see #setDegrees(NumberValue)
 	 * @see rover.rclmt.rcl.RclPackage#getTurnDegAction_Degrees()
-	 * @model
+	 * @model containment="true"
 	 * @generated
 	 */
-	int getDegrees();
+	NumberValue getDegrees();
 
 	/**
-	 * Sets the value of the '{@link rover.rclmt.rcl.TurnDegAction#getDegrees <em>Degrees</em>}' attribute.
+	 * Sets the value of the '{@link rover.rclmt.rcl.TurnDegAction#getDegrees <em>Degrees</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Degrees</em>' attribute.
+	 * @param value the new value of the '<em>Degrees</em>' containment reference.
 	 * @see #getDegrees()
 	 * @generated
 	 */
-	void setDegrees(int value);
+	void setDegrees(NumberValue value);
 
 	/**
 	 * <!-- begin-user-doc -->

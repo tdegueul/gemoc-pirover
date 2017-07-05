@@ -12,7 +12,7 @@ package rcl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rcl.BackwardMinAction#getDuration <em>Duration</em>}</li>
+ *   <li>{@link rcl.BackwardMinAction#getDistance <em>Distance</em>}</li>
  * </ul>
  *
  * @see rcl.RclPackage#getBackwardMinAction()
@@ -21,29 +21,29 @@ package rcl;
  */
 public interface BackwardMinAction extends Action {
 	/**
-	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
+	 * Returns the value of the '<em><b>Distance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Duration</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Distance</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Duration</em>' attribute.
-	 * @see #setDuration(int)
-	 * @see rcl.RclPackage#getBackwardMinAction_Duration()
-	 * @model
+	 * @return the value of the '<em>Distance</em>' containment reference.
+	 * @see #setDistance(NumberValue)
+	 * @see rcl.RclPackage#getBackwardMinAction_Distance()
+	 * @model containment="true"
 	 * @generated
 	 */
-	int getDuration();
+	NumberValue getDistance();
 
 	/**
-	 * Sets the value of the '{@link rcl.BackwardMinAction#getDuration <em>Duration</em>}' attribute.
+	 * Sets the value of the '{@link rcl.BackwardMinAction#getDistance <em>Distance</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Duration</em>' attribute.
-	 * @see #getDuration()
+	 * @param value the new value of the '<em>Distance</em>' containment reference.
+	 * @see #getDistance()
 	 * @generated
 	 */
-	void setDuration(int value);
+	void setDistance(NumberValue value);
 
 } // BackwardMinAction

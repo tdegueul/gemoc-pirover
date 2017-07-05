@@ -18,8 +18,8 @@ import org.eclipse.emf.ecore.impl.MinimalEObjectImpl;
 import org.eclipse.emf.ecore.util.EObjectContainmentEList;
 import org.eclipse.emf.ecore.util.InternalEList;
 
-import rcl.Block;
 import rcl.Param;
+import rcl.RclBlock;
 import rcl.RclPackage;
 import rcl.RoverProgram;
 
@@ -77,7 +77,7 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 	 * @generated
 	 * @ordered
 	 */
-	protected Block block;
+	protected RclBlock block;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -136,7 +136,7 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getBlock() {
+	public RclBlock getBlock() {
 		return block;
 	}
 
@@ -145,8 +145,8 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBlock(Block newBlock, NotificationChain msgs) {
-		Block oldBlock = block;
+	public NotificationChain basicSetBlock(RclBlock newBlock, NotificationChain msgs) {
+		RclBlock oldBlock = block;
 		block = newBlock;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RclPackage.ROVER_PROGRAM__BLOCK, oldBlock, newBlock);
@@ -160,7 +160,7 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBlock(Block newBlock) {
+	public void setBlock(RclBlock newBlock) {
 		if (newBlock != block) {
 			NotificationChain msgs = null;
 			if (block != null)
@@ -225,7 +225,7 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 				getParams().addAll((Collection<? extends Param>)newValue);
 				return;
 			case RclPackage.ROVER_PROGRAM__BLOCK:
-				setBlock((Block)newValue);
+				setBlock((RclBlock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -246,7 +246,7 @@ public class RoverProgramImpl extends MinimalEObjectImpl.Container implements Ro
 				getParams().clear();
 				return;
 			case RclPackage.ROVER_PROGRAM__BLOCK:
-				setBlock((Block)null);
+				setBlock((RclBlock)null);
 				return;
 		}
 		super.eUnset(featureID);

@@ -6,6 +6,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import rover.rcl.aspects.ActionAspect;
 import rover.rcl.aspects.ForwardMinActionAspectForwardMinActionAspectProperties;
 import rover.rcl.rcl.ForwardMinAction;
+import rover.rcl.rcl.NumberValue;
 
 @Aspect(className = ForwardMinAction.class)
 @SuppressWarnings("all")
@@ -19,8 +20,8 @@ public class ForwardMinActionAspect extends ActionAspect {
 }
   
   protected static void _privk3_eval(final ForwardMinActionAspectForwardMinActionAspectProperties _self_, final ForwardMinAction _self) {
-    int _duration = _self.getDuration();
-    String _plus = ("<forward (" + Integer.valueOf(_duration));
+    NumberValue _distance = _self.getDistance();
+    String _plus = ("<forward (" + _distance);
     String _plus_1 = (_plus + ")>");
     InputOutput.<String>println(_plus_1);
   }

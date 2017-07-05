@@ -5,8 +5,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import rover.rcl.aspects.ConditionalAspectConditionalAspectProperties;
 import rover.rcl.aspects.RoverExpressionAspect;
 import rover.rcl.aspects.StatementAspect;
-import rover.rcl.rcl.Block;
 import rover.rcl.rcl.Conditional;
+import rover.rcl.rcl.RclBlock;
 import rover.rcl.rcl.RoverExpression;
 
 @Aspect(className = Conditional.class)
@@ -24,10 +24,10 @@ public class ConditionalAspect extends StatementAspect {
     RoverExpression _expr = _self.getExpr();
     boolean _eval = RoverExpressionAspect.eval(_expr);
     if (_eval) {
-      Block _condTrue = _self.getCondTrue();
+      RclBlock _condTrue = _self.getCondTrue();
       StatementAspect.eval(_condTrue);
     } else {
-      Block _condFalse = _self.getCondFalse();
+      RclBlock _condFalse = _self.getCondFalse();
       StatementAspect.eval(_condFalse);
     }
   }

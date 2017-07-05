@@ -4,7 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.Conditional;
-import rover.rclmt.rcl.Block;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverExpression;
 import rover.rclmt.rcl.RoverProgram;
 
@@ -18,14 +18,14 @@ public class ConditionalAdapter extends EObjectAdapter<Conditional> implements r
   }
   
   @Override
-  public Block getEnclosing() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
+  public RclBlock getEnclosing() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
   }
   
   @Override
-  public void setEnclosing(final Block o) {
+  public void setEnclosing(final RclBlock o) {
     if (o != null)
-    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setEnclosing(null);
   }
   
@@ -42,26 +42,26 @@ public class ConditionalAdapter extends EObjectAdapter<Conditional> implements r
   }
   
   @Override
-  public Block getCondTrue() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getCondTrue(), eResource);
+  public RclBlock getCondTrue() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getCondTrue(), eResource);
   }
   
   @Override
-  public void setCondTrue(final Block o) {
+  public void setCondTrue(final RclBlock o) {
     if (o != null)
-    	adaptee.setCondTrue(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setCondTrue(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setCondTrue(null);
   }
   
   @Override
-  public Block getCondFalse() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getCondFalse(), eResource);
+  public RclBlock getCondFalse() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getCondFalse(), eResource);
   }
   
   @Override
-  public void setCondFalse(final Block o) {
+  public void setCondFalse(final RclBlock o) {
     if (o != null)
-    	adaptee.setCondFalse(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setCondFalse(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setCondFalse(null);
   }
   
@@ -117,7 +117,7 @@ public class ConditionalAdapter extends EObjectAdapter<Conditional> implements r
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.CONDITIONAL__ENCLOSING:
     		setEnclosing(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     	case rover.rclmt.rcl.RclPackage.CONDITIONAL__EXPR:
@@ -127,12 +127,12 @@ public class ConditionalAdapter extends EObjectAdapter<Conditional> implements r
     		return;
     	case rover.rclmt.rcl.RclPackage.CONDITIONAL__COND_TRUE:
     		setCondTrue(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     	case rover.rclmt.rcl.RclPackage.CONDITIONAL__COND_FALSE:
     		setCondFalse(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     }

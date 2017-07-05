@@ -84,10 +84,10 @@ public class RclSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RclPackage.ASSIGNMENT: {
-				Assignment assignment = (Assignment)theEObject;
-				T result = caseAssignment(assignment);
-				if (result == null) result = caseStatement(assignment);
+			case RclPackage.VAR_ASSIGNMENT: {
+				VarAssignment varAssignment = (VarAssignment)theEObject;
+				T result = caseVarAssignment(varAssignment);
+				if (result == null) result = caseStatement(varAssignment);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -105,10 +105,10 @@ public class RclSwitch<T> extends Switch<T> {
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
-			case RclPackage.BLOCK: {
-				Block block = (Block)theEObject;
-				T result = caseBlock(block);
-				if (result == null) result = caseStatement(block);
+			case RclPackage.RCL_BLOCK: {
+				RclBlock rclBlock = (RclBlock)theEObject;
+				T result = caseRclBlock(rclBlock);
+				if (result == null) result = caseStatement(rclBlock);
 				if (result == null) result = defaultCase(theEObject);
 				return result;
 			}
@@ -348,17 +348,17 @@ public class RclSwitch<T> extends Switch<T> {
 	}
 
 	/**
-	 * Returns the result of interpreting the object as an instance of '<em>Assignment</em>'.
+	 * Returns the result of interpreting the object as an instance of '<em>Var Assignment</em>'.
 	 * <!-- begin-user-doc -->
 	 * This implementation returns null;
 	 * returning a non-null result will terminate the switch.
 	 * <!-- end-user-doc -->
 	 * @param object the target of the switch.
-	 * @return the result of interpreting the object as an instance of '<em>Assignment</em>'.
+	 * @return the result of interpreting the object as an instance of '<em>Var Assignment</em>'.
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseAssignment(Assignment object) {
+	public T caseVarAssignment(VarAssignment object) {
 		return null;
 	}
 
@@ -403,7 +403,7 @@ public class RclSwitch<T> extends Switch<T> {
 	 * @see #doSwitch(org.eclipse.emf.ecore.EObject) doSwitch(EObject)
 	 * @generated
 	 */
-	public T caseBlock(Block object) {
+	public T caseRclBlock(RclBlock object) {
 		return null;
 	}
 

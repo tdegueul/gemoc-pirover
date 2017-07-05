@@ -3,11 +3,14 @@
 package rover.rcl.rcl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
+import org.eclipse.emf.common.notify.NotificationChain;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
+import rover.rcl.rcl.NumberValue;
 import rover.rcl.rcl.RclPackage;
 import rover.rcl.rcl.TurnDegAction;
 
@@ -26,24 +29,14 @@ import rover.rcl.rcl.TurnDegAction;
  */
 public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	/**
-	 * The default value of the '{@link #getDegrees() <em>Degrees</em>}' attribute.
+	 * The cached value of the '{@link #getDegrees() <em>Degrees</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getDegrees()
 	 * @generated
 	 * @ordered
 	 */
-	protected static final int DEGREES_EDEFAULT = 0;
-
-	/**
-	 * The cached value of the '{@link #getDegrees() <em>Degrees</em>}' attribute.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see #getDegrees()
-	 * @generated
-	 * @ordered
-	 */
-	protected int degrees = DEGREES_EDEFAULT;
+	protected NumberValue degrees;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -69,7 +62,7 @@ public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public int getDegrees() {
+	public NumberValue getDegrees() {
 		return degrees;
 	}
 
@@ -78,11 +71,47 @@ public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setDegrees(int newDegrees) {
-		int oldDegrees = degrees;
+	public NotificationChain basicSetDegrees(NumberValue newDegrees, NotificationChain msgs) {
+		NumberValue oldDegrees = degrees;
 		degrees = newDegrees;
-		if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RclPackage.TURN_DEG_ACTION__DEGREES, oldDegrees, degrees));
+		if (eNotificationRequired()) {
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RclPackage.TURN_DEG_ACTION__DEGREES, oldDegrees, newDegrees);
+			if (msgs == null) msgs = notification; else msgs.add(notification);
+		}
+		return msgs;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public void setDegrees(NumberValue newDegrees) {
+		if (newDegrees != degrees) {
+			NotificationChain msgs = null;
+			if (degrees != null)
+				msgs = ((InternalEObject)degrees).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RclPackage.TURN_DEG_ACTION__DEGREES, null, msgs);
+			if (newDegrees != null)
+				msgs = ((InternalEObject)newDegrees).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RclPackage.TURN_DEG_ACTION__DEGREES, null, msgs);
+			msgs = basicSetDegrees(newDegrees, msgs);
+			if (msgs != null) msgs.dispatch();
+		}
+		else if (eNotificationRequired())
+			eNotify(new ENotificationImpl(this, Notification.SET, RclPackage.TURN_DEG_ACTION__DEGREES, newDegrees, newDegrees));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
+		switch (featureID) {
+			case RclPackage.TURN_DEG_ACTION__DEGREES:
+				return basicSetDegrees(null, msgs);
+		}
+		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
 
 	/**
@@ -108,7 +137,7 @@ public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	public void eSet(int featureID, Object newValue) {
 		switch (featureID) {
 			case RclPackage.TURN_DEG_ACTION__DEGREES:
-				setDegrees((Integer)newValue);
+				setDegrees((NumberValue)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -123,7 +152,7 @@ public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	public void eUnset(int featureID) {
 		switch (featureID) {
 			case RclPackage.TURN_DEG_ACTION__DEGREES:
-				setDegrees(DEGREES_EDEFAULT);
+				setDegrees((NumberValue)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -138,25 +167,9 @@ public class TurnDegActionImpl extends ActionImpl implements TurnDegAction {
 	public boolean eIsSet(int featureID) {
 		switch (featureID) {
 			case RclPackage.TURN_DEG_ACTION__DEGREES:
-				return degrees != DEGREES_EDEFAULT;
+				return degrees != null;
 		}
 		return super.eIsSet(featureID);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	@Override
-	public String toString() {
-		if (eIsProxy()) return super.toString();
-
-		StringBuffer result = new StringBuffer(super.toString());
-		result.append(" (degrees: ");
-		result.append(degrees);
-		result.append(')');
-		return result.toString();
 	}
 
 } //TurnDegActionImpl

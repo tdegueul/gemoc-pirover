@@ -57,12 +57,12 @@ public interface Conditional extends Statement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cond True</em>' containment reference.
-	 * @see #setCondTrue(Block)
+	 * @see #setCondTrue(RclBlock)
 	 * @see rcl.RclPackage#getConditional_CondTrue()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Block getCondTrue();
+	RclBlock getCondTrue();
 
 	/**
 	 * Sets the value of the '{@link rcl.Conditional#getCondTrue <em>Cond True</em>}' containment reference.
@@ -72,7 +72,7 @@ public interface Conditional extends Statement {
 	 * @see #getCondTrue()
 	 * @generated
 	 */
-	void setCondTrue(Block value);
+	void setCondTrue(RclBlock value);
 
 	/**
 	 * Returns the value of the '<em><b>Cond False</b></em>' containment reference.
@@ -83,12 +83,12 @@ public interface Conditional extends Statement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Cond False</em>' containment reference.
-	 * @see #setCondFalse(Block)
+	 * @see #setCondFalse(RclBlock)
 	 * @see rcl.RclPackage#getConditional_CondFalse()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Block getCondFalse();
+	RclBlock getCondFalse();
 
 	/**
 	 * Sets the value of the '{@link rcl.Conditional#getCondFalse <em>Cond False</em>}' containment reference.
@@ -98,6 +98,6 @@ public interface Conditional extends Statement {
 	 * @see #getCondFalse()
 	 * @generated
 	 */
-	void setCondFalse(Block value);
+	void setCondFalse(RclBlock value);
 
 } // Conditional

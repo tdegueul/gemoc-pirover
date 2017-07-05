@@ -5,3 +5,4 @@ Bundle-SymbolicName: org.gemoc.rover.rcl.semantics
 Bundle-Version: 1.0.0.qualifier
 Require-Bundle: fr.inria.diverse.k3.al.annotationprocessor.plugin;bundle-version="3.2.1",
  org.gemoc.rover.rcl;bundle-version="1.0.0"
+Export-Package: org.gemoc.rover.rcl.semantics

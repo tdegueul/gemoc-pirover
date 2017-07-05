@@ -21,7 +21,7 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
     <eStructuralFeatures xsi:type="ecore:EReference" name="params" upperBound="-1" eType="//Param" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="//RclBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Param">
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="name">
@@ -35,9 +35,9 @@
     <eOperations name="getProgram" eType="//RoverProgram">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosing" eType="//Block" eOpposite="//Block/stmts"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="enclosing" eType="//RclBlock" eOpposite="//RclBlock/stmts"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Assignment" eSuperTypes="//Statement">
+  <eClassifiers xsi:type="ecore:EClass" name="VarAssignment" eSuperTypes="//Statement">
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
@@ -51,17 +51,17 @@
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="//RoverExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condTrue" eType="//Block" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="condFalse" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condTrue" eType="//RclBlock" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="condFalse" eType="//RclBlock" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Loop" eSuperTypes="//Statement">
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="expr" eType="//RoverExpression" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="//Block" containment="true"/>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="block" eType="//RclBlock" containment="true"/>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Block" eSuperTypes="//Statement">
+  <eClassifiers xsi:type="ecore:EClass" name="RclBlock" eSuperTypes="//Statement">
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
@@ -182,9 +182,7 @@
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="distance" eType="//NumberValue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="BackwardAction" eSuperTypes="//Action">
     <eOperations name="eval">
@@ -195,9 +193,7 @@
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="duration">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="distance" eType="//NumberValue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="TurnAction" eSuperTypes="//Action">
     <eOperations name="eval">
@@ -208,9 +204,7 @@
     <eOperations name="eval">
       <eAnnotations source="aspect"/>
     </eOperations>
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="degrees">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
-    </eStructuralFeatures>
+    <eStructuralFeatures xsi:type="ecore:EReference" name="degrees" eType="//NumberValue" containment="true"/>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="StopAction" eSuperTypes="//Action">
     <eOperations name="eval">

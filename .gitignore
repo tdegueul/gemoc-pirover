@@ -1,0 +1,5 @@
+.JETEmitters/
+.metadata/
+**/bin/*
+**/*._trace
+

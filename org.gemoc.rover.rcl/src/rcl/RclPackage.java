@@ -187,14 +187,14 @@ public interface RclPackage extends EPackage {
 	int STATEMENT_OPERATION_COUNT = 0;
 
 	/**
-	 * The meta object id for the '{@link rcl.impl.AssignmentImpl <em>Assignment</em>}' class.
+	 * The meta object id for the '{@link rcl.impl.VarAssignmentImpl <em>Var Assignment</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see rcl.impl.AssignmentImpl
-	 * @see rcl.impl.RclPackageImpl#getAssignment()
+	 * @see rcl.impl.VarAssignmentImpl
+	 * @see rcl.impl.RclPackageImpl#getVarAssignment()
 	 * @generated
 	 */
-	int ASSIGNMENT = 3;
+	int VAR_ASSIGNMENT = 3;
 
 	/**
 	 * The feature id for the '<em><b>Enclosing</b></em>' container reference.
@@ -203,7 +203,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__ENCLOSING = STATEMENT__ENCLOSING;
+	int VAR_ASSIGNMENT__ENCLOSING = STATEMENT__ENCLOSING;
 
 	/**
 	 * The feature id for the '<em><b>Name</b></em>' attribute.
@@ -212,7 +212,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
+	int VAR_ASSIGNMENT__NAME = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The feature id for the '<em><b>Value</b></em>' containment reference.
@@ -221,25 +221,25 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
+	int VAR_ASSIGNMENT__VALUE = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
-	 * The number of structural features of the '<em>Assignment</em>' class.
+	 * The number of structural features of the '<em>Var Assignment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
+	int VAR_ASSIGNMENT_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 2;
 
 	/**
-	 * The number of operations of the '<em>Assignment</em>' class.
+	 * The number of operations of the '<em>Var Assignment</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ASSIGNMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int VAR_ASSIGNMENT_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rcl.impl.ConditionalImpl <em>Conditional</em>}' class.
@@ -361,14 +361,14 @@ public interface RclPackage extends EPackage {
 	int LOOP_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link rcl.impl.BlockImpl <em>Block</em>}' class.
+	 * The meta object id for the '{@link rcl.impl.RclBlockImpl <em>Block</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see rcl.impl.BlockImpl
-	 * @see rcl.impl.RclPackageImpl#getBlock()
+	 * @see rcl.impl.RclBlockImpl
+	 * @see rcl.impl.RclPackageImpl#getRclBlock()
 	 * @generated
 	 */
-	int BLOCK = 6;
+	int RCL_BLOCK = 6;
 
 	/**
 	 * The feature id for the '<em><b>Enclosing</b></em>' container reference.
@@ -377,7 +377,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__ENCLOSING = STATEMENT__ENCLOSING;
+	int RCL_BLOCK__ENCLOSING = STATEMENT__ENCLOSING;
 
 	/**
 	 * The feature id for the '<em><b>Stmts</b></em>' containment reference list.
@@ -386,7 +386,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK__STMTS = STATEMENT_FEATURE_COUNT + 0;
+	int RCL_BLOCK__STMTS = STATEMENT_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Block</em>' class.
@@ -395,7 +395,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
+	int RCL_BLOCK_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of operations of the '<em>Block</em>' class.
@@ -404,7 +404,7 @@ public interface RclPackage extends EPackage {
 	 * @generated
 	 * @ordered
 	 */
-	int BLOCK_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
+	int RCL_BLOCK_OPERATION_COUNT = STATEMENT_OPERATION_COUNT + 0;
 
 	/**
 	 * The meta object id for the '{@link rcl.impl.QueryImpl <em>Query</em>}' class.
@@ -1017,13 +1017,13 @@ public interface RclPackage extends EPackage {
 	int FORWARD_MIN_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * The feature id for the '<em><b>Distance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int FORWARD_MIN_ACTION__DURATION = ACTION_FEATURE_COUNT + 0;
+	int FORWARD_MIN_ACTION__DISTANCE = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Forward Min Action</em>' class.
@@ -1100,13 +1100,13 @@ public interface RclPackage extends EPackage {
 	int BACKWARD_MIN_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
-	 * The feature id for the '<em><b>Duration</b></em>' attribute.
+	 * The feature id for the '<em><b>Distance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int BACKWARD_MIN_ACTION__DURATION = ACTION_FEATURE_COUNT + 0;
+	int BACKWARD_MIN_ACTION__DISTANCE = ACTION_FEATURE_COUNT + 0;
 
 	/**
 	 * The number of structural features of the '<em>Backward Min Action</em>' class.
@@ -1183,7 +1183,7 @@ public interface RclPackage extends EPackage {
 	int TURN_DEG_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
-	 * The feature id for the '<em><b>Degrees</b></em>' attribute.
+	 * The feature id for the '<em><b>Degrees</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1528,36 +1528,36 @@ public interface RclPackage extends EPackage {
 	EReference getStatement_Enclosing();
 
 	/**
-	 * Returns the meta object for class '{@link rcl.Assignment <em>Assignment</em>}'.
+	 * Returns the meta object for class '{@link rcl.VarAssignment <em>Var Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Assignment</em>'.
-	 * @see rcl.Assignment
+	 * @return the meta object for class '<em>Var Assignment</em>'.
+	 * @see rcl.VarAssignment
 	 * @generated
 	 */
-	EClass getAssignment();
+	EClass getVarAssignment();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rcl.Assignment#getName <em>Name</em>}'.
+	 * Returns the meta object for the attribute '{@link rcl.VarAssignment#getName <em>Name</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the attribute '<em>Name</em>'.
-	 * @see rcl.Assignment#getName()
-	 * @see #getAssignment()
+	 * @see rcl.VarAssignment#getName()
+	 * @see #getVarAssignment()
 	 * @generated
 	 */
-	EAttribute getAssignment_Name();
+	EAttribute getVarAssignment_Name();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link rcl.Assignment#getValue <em>Value</em>}'.
+	 * Returns the meta object for the containment reference '{@link rcl.VarAssignment#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference '<em>Value</em>'.
-	 * @see rcl.Assignment#getValue()
-	 * @see #getAssignment()
+	 * @see rcl.VarAssignment#getValue()
+	 * @see #getVarAssignment()
 	 * @generated
 	 */
-	EReference getAssignment_Value();
+	EReference getVarAssignment_Value();
 
 	/**
 	 * Returns the meta object for class '{@link rcl.Conditional <em>Conditional</em>}'.
@@ -1635,25 +1635,25 @@ public interface RclPackage extends EPackage {
 	EReference getLoop_Block();
 
 	/**
-	 * Returns the meta object for class '{@link rcl.Block <em>Block</em>}'.
+	 * Returns the meta object for class '{@link rcl.RclBlock <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for class '<em>Block</em>'.
-	 * @see rcl.Block
+	 * @see rcl.RclBlock
 	 * @generated
 	 */
-	EClass getBlock();
+	EClass getRclBlock();
 
 	/**
-	 * Returns the meta object for the containment reference list '{@link rcl.Block#getStmts <em>Stmts</em>}'.
+	 * Returns the meta object for the containment reference list '{@link rcl.RclBlock#getStmts <em>Stmts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @return the meta object for the containment reference list '<em>Stmts</em>'.
-	 * @see rcl.Block#getStmts()
-	 * @see #getBlock()
+	 * @see rcl.RclBlock#getStmts()
+	 * @see #getRclBlock()
 	 * @generated
 	 */
-	EReference getBlock_Stmts();
+	EReference getRclBlock_Stmts();
 
 	/**
 	 * Returns the meta object for class '{@link rcl.Query <em>Query</em>}'.
@@ -1959,15 +1959,15 @@ public interface RclPackage extends EPackage {
 	EClass getForwardMinAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rcl.ForwardMinAction#getDuration <em>Duration</em>}'.
+	 * Returns the meta object for the containment reference '{@link rcl.ForwardMinAction#getDistance <em>Distance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see rcl.ForwardMinAction#getDuration()
+	 * @return the meta object for the containment reference '<em>Distance</em>'.
+	 * @see rcl.ForwardMinAction#getDistance()
 	 * @see #getForwardMinAction()
 	 * @generated
 	 */
-	EAttribute getForwardMinAction_Duration();
+	EReference getForwardMinAction_Distance();
 
 	/**
 	 * Returns the meta object for class '{@link rcl.BackwardAction <em>Backward Action</em>}'.
@@ -1990,15 +1990,15 @@ public interface RclPackage extends EPackage {
 	EClass getBackwardMinAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rcl.BackwardMinAction#getDuration <em>Duration</em>}'.
+	 * Returns the meta object for the containment reference '{@link rcl.BackwardMinAction#getDistance <em>Distance</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Duration</em>'.
-	 * @see rcl.BackwardMinAction#getDuration()
+	 * @return the meta object for the containment reference '<em>Distance</em>'.
+	 * @see rcl.BackwardMinAction#getDistance()
 	 * @see #getBackwardMinAction()
 	 * @generated
 	 */
-	EAttribute getBackwardMinAction_Duration();
+	EReference getBackwardMinAction_Distance();
 
 	/**
 	 * Returns the meta object for class '{@link rcl.TurnAction <em>Turn Action</em>}'.
@@ -2021,15 +2021,15 @@ public interface RclPackage extends EPackage {
 	EClass getTurnDegAction();
 
 	/**
-	 * Returns the meta object for the attribute '{@link rcl.TurnDegAction#getDegrees <em>Degrees</em>}'.
+	 * Returns the meta object for the containment reference '{@link rcl.TurnDegAction#getDegrees <em>Degrees</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the attribute '<em>Degrees</em>'.
+	 * @return the meta object for the containment reference '<em>Degrees</em>'.
 	 * @see rcl.TurnDegAction#getDegrees()
 	 * @see #getTurnDegAction()
 	 * @generated
 	 */
-	EAttribute getTurnDegAction_Degrees();
+	EReference getTurnDegAction_Degrees();
 
 	/**
 	 * Returns the meta object for class '{@link rcl.StopAction <em>Stop Action</em>}'.
@@ -2228,14 +2228,14 @@ public interface RclPackage extends EPackage {
 		EReference STATEMENT__ENCLOSING = eINSTANCE.getStatement_Enclosing();
 
 		/**
-		 * The meta object literal for the '{@link rcl.impl.AssignmentImpl <em>Assignment</em>}' class.
+		 * The meta object literal for the '{@link rcl.impl.VarAssignmentImpl <em>Var Assignment</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see rcl.impl.AssignmentImpl
-		 * @see rcl.impl.RclPackageImpl#getAssignment()
+		 * @see rcl.impl.VarAssignmentImpl
+		 * @see rcl.impl.RclPackageImpl#getVarAssignment()
 		 * @generated
 		 */
-		EClass ASSIGNMENT = eINSTANCE.getAssignment();
+		EClass VAR_ASSIGNMENT = eINSTANCE.getVarAssignment();
 
 		/**
 		 * The meta object literal for the '<em><b>Name</b></em>' attribute feature.
@@ -2243,7 +2243,7 @@ public interface RclPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute ASSIGNMENT__NAME = eINSTANCE.getAssignment_Name();
+		EAttribute VAR_ASSIGNMENT__NAME = eINSTANCE.getVarAssignment_Name();
 
 		/**
 		 * The meta object literal for the '<em><b>Value</b></em>' containment reference feature.
@@ -2251,7 +2251,7 @@ public interface RclPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference ASSIGNMENT__VALUE = eINSTANCE.getAssignment_Value();
+		EReference VAR_ASSIGNMENT__VALUE = eINSTANCE.getVarAssignment_Value();
 
 		/**
 		 * The meta object literal for the '{@link rcl.impl.ConditionalImpl <em>Conditional</em>}' class.
@@ -2314,14 +2314,14 @@ public interface RclPackage extends EPackage {
 		EReference LOOP__BLOCK = eINSTANCE.getLoop_Block();
 
 		/**
-		 * The meta object literal for the '{@link rcl.impl.BlockImpl <em>Block</em>}' class.
+		 * The meta object literal for the '{@link rcl.impl.RclBlockImpl <em>Block</em>}' class.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
-		 * @see rcl.impl.BlockImpl
-		 * @see rcl.impl.RclPackageImpl#getBlock()
+		 * @see rcl.impl.RclBlockImpl
+		 * @see rcl.impl.RclPackageImpl#getRclBlock()
 		 * @generated
 		 */
-		EClass BLOCK = eINSTANCE.getBlock();
+		EClass RCL_BLOCK = eINSTANCE.getRclBlock();
 
 		/**
 		 * The meta object literal for the '<em><b>Stmts</b></em>' containment reference list feature.
@@ -2329,7 +2329,7 @@ public interface RclPackage extends EPackage {
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference BLOCK__STMTS = eINSTANCE.getBlock_Stmts();
+		EReference RCL_BLOCK__STMTS = eINSTANCE.getRclBlock_Stmts();
 
 		/**
 		 * The meta object literal for the '{@link rcl.impl.QueryImpl <em>Query</em>}' class.
@@ -2596,12 +2596,12 @@ public interface RclPackage extends EPackage {
 		EClass FORWARD_MIN_ACTION = eINSTANCE.getForwardMinAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Distance</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute FORWARD_MIN_ACTION__DURATION = eINSTANCE.getForwardMinAction_Duration();
+		EReference FORWARD_MIN_ACTION__DISTANCE = eINSTANCE.getForwardMinAction_Distance();
 
 		/**
 		 * The meta object literal for the '{@link rcl.impl.BackwardActionImpl <em>Backward Action</em>}' class.
@@ -2624,12 +2624,12 @@ public interface RclPackage extends EPackage {
 		EClass BACKWARD_MIN_ACTION = eINSTANCE.getBackwardMinAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Duration</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Distance</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute BACKWARD_MIN_ACTION__DURATION = eINSTANCE.getBackwardMinAction_Duration();
+		EReference BACKWARD_MIN_ACTION__DISTANCE = eINSTANCE.getBackwardMinAction_Distance();
 
 		/**
 		 * The meta object literal for the '{@link rcl.impl.TurnActionImpl <em>Turn Action</em>}' class.
@@ -2652,12 +2652,12 @@ public interface RclPackage extends EPackage {
 		EClass TURN_DEG_ACTION = eINSTANCE.getTurnDegAction();
 
 		/**
-		 * The meta object literal for the '<em><b>Degrees</b></em>' attribute feature.
+		 * The meta object literal for the '<em><b>Degrees</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EAttribute TURN_DEG_ACTION__DEGREES = eINSTANCE.getTurnDegAction_Degrees();
+		EReference TURN_DEG_ACTION__DEGREES = eINSTANCE.getTurnDegAction_Degrees();
 
 		/**
 		 * The meta object literal for the '{@link rcl.impl.StopActionImpl <em>Stop Action</em>}' class.

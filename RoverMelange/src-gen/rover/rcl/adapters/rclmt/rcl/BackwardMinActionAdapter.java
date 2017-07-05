@@ -4,7 +4,8 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.BackwardMinAction;
-import rover.rclmt.rcl.Block;
+import rover.rclmt.rcl.NumberValue;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverProgram;
 
 @SuppressWarnings("all")
@@ -17,25 +18,27 @@ public class BackwardMinActionAdapter extends EObjectAdapter<BackwardMinAction> 
   }
   
   @Override
-  public int getDuration() {
-    return adaptee.getDuration();
+  public RclBlock getEnclosing() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
   }
   
   @Override
-  public void setDuration(final int o) {
-    adaptee.setDuration(o);
-  }
-  
-  @Override
-  public Block getEnclosing() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
-  }
-  
-  @Override
-  public void setEnclosing(final Block o) {
+  public void setEnclosing(final RclBlock o) {
     if (o != null)
-    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setEnclosing(null);
+  }
+  
+  @Override
+  public NumberValue getDistance() {
+    return (NumberValue) adaptersFactory.createAdapter(adaptee.getDistance(), eResource);
+  }
+  
+  @Override
+  public void setDistance(final NumberValue o) {
+    if (o != null)
+    	adaptee.setDistance(((rover.rcl.adapters.rclmt.rcl.NumberValueAdapter) o).getAdaptee());
+    else adaptee.setDistance(null);
   }
   
   @Override
@@ -48,8 +51,6 @@ public class BackwardMinActionAdapter extends EObjectAdapter<BackwardMinAction> 
     return (RoverProgram) adaptersFactory.createAdapter(rover.rcl.aspects.StatementAspect.getProgram(adaptee), eResource);
   }
   
-  protected final static int DURATION_EDEFAULT = 0;
-  
   @Override
   public EClass eClass() {
     return rover.rclmt.rcl.RclPackage.eINSTANCE.getBackwardMinAction();
@@ -60,8 +61,8 @@ public class BackwardMinActionAdapter extends EObjectAdapter<BackwardMinAction> 
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__ENCLOSING:
     		return getEnclosing();
-    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DURATION:
-    		return new java.lang.Integer(getDuration());
+    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DISTANCE:
+    		return getDistance();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -72,8 +73,8 @@ public class BackwardMinActionAdapter extends EObjectAdapter<BackwardMinAction> 
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__ENCLOSING:
     		return getEnclosing() != null;
-    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DURATION:
-    		return getDuration() != DURATION_EDEFAULT;
+    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DISTANCE:
+    		return getDistance() != null;
     }
     
     return super.eIsSet(featureID);
@@ -84,11 +85,13 @@ public class BackwardMinActionAdapter extends EObjectAdapter<BackwardMinAction> 
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__ENCLOSING:
     		setEnclosing(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
-    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DURATION:
-    		setDuration(((java.lang.Integer) newValue).intValue());
+    	case rover.rclmt.rcl.RclPackage.BACKWARD_MIN_ACTION__DISTANCE:
+    		setDistance(
+    		(rover.rclmt.rcl.NumberValue)
+    		 newValue);
     		return;
     }
     

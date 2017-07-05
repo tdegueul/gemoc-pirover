@@ -59,10 +59,10 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 		switch (eClass.getClassifierID()) {
 			case RclPackage.ROVER_PROGRAM: return createRoverProgram();
 			case RclPackage.PARAM: return createParam();
-			case RclPackage.ASSIGNMENT: return createAssignment();
+			case RclPackage.VAR_ASSIGNMENT: return createVarAssignment();
 			case RclPackage.CONDITIONAL: return createConditional();
 			case RclPackage.LOOP: return createLoop();
-			case RclPackage.BLOCK: return createBlock();
+			case RclPackage.RCL_BLOCK: return createRclBlock();
 			case RclPackage.TEMPERATURE_QUERY: return createTemperatureQuery();
 			case RclPackage.HUMIDITY_QUERY: return createHumidityQuery();
 			case RclPackage.MESSAGE_QUERY: return createMessageQuery();
@@ -150,7 +150,7 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assignment createAssignment() {
+	public VarAssignment createVarAssignment() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 
@@ -177,7 +177,7 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block createBlock() {
+	public RclBlock createRclBlock() {
 		throw new UnsupportedOperationException("Cannot invoke element creation on a model type");
 	}
 

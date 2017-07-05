@@ -23,7 +23,7 @@ import org.eclipse.emf.ecore.EObject;
 public interface Statement extends EObject {
 	/**
 	 * Returns the value of the '<em><b>Enclosing</b></em>' container reference.
-	 * It is bidirectional and its opposite is '{@link rover.rclmt.rcl.Block#getStmts <em>Stmts</em>}'.
+	 * It is bidirectional and its opposite is '{@link rover.rclmt.rcl.RclBlock#getStmts <em>Stmts</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <p>
 	 * If the meaning of the '<em>Enclosing</em>' container reference isn't clear,
@@ -31,13 +31,13 @@ public interface Statement extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Enclosing</em>' container reference.
-	 * @see #setEnclosing(Block)
+	 * @see #setEnclosing(RclBlock)
 	 * @see rover.rclmt.rcl.RclPackage#getStatement_Enclosing()
-	 * @see rover.rclmt.rcl.Block#getStmts
+	 * @see rover.rclmt.rcl.RclBlock#getStmts
 	 * @model opposite="stmts" transient="false"
 	 * @generated
 	 */
-	Block getEnclosing();
+	RclBlock getEnclosing();
 
 	/**
 	 * Sets the value of the '{@link rover.rclmt.rcl.Statement#getEnclosing <em>Enclosing</em>}' container reference.
@@ -47,7 +47,7 @@ public interface Statement extends EObject {
 	 * @see #getEnclosing()
 	 * @generated
 	 */
-	void setEnclosing(Block value);
+	void setEnclosing(RclBlock value);
 
 	/**
 	 * <!-- begin-user-doc -->

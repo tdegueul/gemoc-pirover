@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import rcl.Block;
 import rcl.Conditional;
+import rcl.RclBlock;
 import rcl.RclPackage;
 import rcl.RoverExpression;
 
@@ -49,7 +49,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * @generated
 	 * @ordered
 	 */
-	protected Block condTrue;
+	protected RclBlock condTrue;
 
 	/**
 	 * The cached value of the '{@link #getCondFalse() <em>Cond False</em>}' containment reference.
@@ -59,7 +59,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * @generated
 	 * @ordered
 	 */
-	protected Block condFalse;
+	protected RclBlock condFalse;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -128,7 +128,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getCondTrue() {
+	public RclBlock getCondTrue() {
 		return condTrue;
 	}
 
@@ -137,8 +137,8 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondTrue(Block newCondTrue, NotificationChain msgs) {
-		Block oldCondTrue = condTrue;
+	public NotificationChain basicSetCondTrue(RclBlock newCondTrue, NotificationChain msgs) {
+		RclBlock oldCondTrue = condTrue;
 		condTrue = newCondTrue;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RclPackage.CONDITIONAL__COND_TRUE, oldCondTrue, newCondTrue);
@@ -152,7 +152,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondTrue(Block newCondTrue) {
+	public void setCondTrue(RclBlock newCondTrue) {
 		if (newCondTrue != condTrue) {
 			NotificationChain msgs = null;
 			if (condTrue != null)
@@ -171,7 +171,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getCondFalse() {
+	public RclBlock getCondFalse() {
 		return condFalse;
 	}
 
@@ -180,8 +180,8 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetCondFalse(Block newCondFalse, NotificationChain msgs) {
-		Block oldCondFalse = condFalse;
+	public NotificationChain basicSetCondFalse(RclBlock newCondFalse, NotificationChain msgs) {
+		RclBlock oldCondFalse = condFalse;
 		condFalse = newCondFalse;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RclPackage.CONDITIONAL__COND_FALSE, oldCondFalse, newCondFalse);
@@ -195,7 +195,7 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setCondFalse(Block newCondFalse) {
+	public void setCondFalse(RclBlock newCondFalse) {
 		if (newCondFalse != condFalse) {
 			NotificationChain msgs = null;
 			if (condFalse != null)
@@ -257,10 +257,10 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 				setExpr((RoverExpression)newValue);
 				return;
 			case RclPackage.CONDITIONAL__COND_TRUE:
-				setCondTrue((Block)newValue);
+				setCondTrue((RclBlock)newValue);
 				return;
 			case RclPackage.CONDITIONAL__COND_FALSE:
-				setCondFalse((Block)newValue);
+				setCondFalse((RclBlock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -278,10 +278,10 @@ public class ConditionalImpl extends StatementImpl implements Conditional {
 				setExpr((RoverExpression)null);
 				return;
 			case RclPackage.CONDITIONAL__COND_TRUE:
-				setCondTrue((Block)null);
+				setCondTrue((RclBlock)null);
 				return;
 			case RclPackage.CONDITIONAL__COND_FALSE:
-				setCondFalse((Block)null);
+				setCondFalse((RclBlock)null);
 				return;
 		}
 		super.eUnset(featureID);

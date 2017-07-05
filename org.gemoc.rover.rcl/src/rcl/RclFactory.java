@@ -40,13 +40,13 @@ public interface RclFactory extends EFactory {
 	Param createParam();
 
 	/**
-	 * Returns a new object of class '<em>Assignment</em>'.
+	 * Returns a new object of class '<em>Var Assignment</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Assignment</em>'.
+	 * @return a new object of class '<em>Var Assignment</em>'.
 	 * @generated
 	 */
-	Assignment createAssignment();
+	VarAssignment createVarAssignment();
 
 	/**
 	 * Returns a new object of class '<em>Conditional</em>'.
@@ -73,7 +73,7 @@ public interface RclFactory extends EFactory {
 	 * @return a new object of class '<em>Block</em>'.
 	 * @generated
 	 */
-	Block createBlock();
+	RclBlock createRclBlock();
 
 	/**
 	 * Returns a new object of class '<em>Temperature Query</em>'.

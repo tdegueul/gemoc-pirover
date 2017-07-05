@@ -6,10 +6,10 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import java.util.Map
 import java.util.concurrent.ThreadLocalRandom
 import rcl.Action
-import rcl.Assignment
+import rcl.VarAssignment
 import rcl.BackwardAction
 import rcl.BackwardMinAction
-import rcl.Block
+import rcl.RclBlock
 import rcl.BooleanExpression
 import rcl.BooleanOperator
 import rcl.BooleanValue
@@ -71,12 +71,12 @@ class RoverProgramAspect {
 abstract class StatementAspect {
 	abstract def void eval()
 	def RoverProgram getProgram() {
-		return _self.eResource.contents.head as RoverProgram
+		return _self.eResource.allContents.filter(RoverProgram).head
 	}
 }
 
-@Aspect(className = Assignment)
-class AssignmentAspect extends StatementAspect {
+@Aspect(className = VarAssignment)
+class VarAssignmentAspect extends StatementAspect {
 	@OverrideAspectMethod
 	def void eval() {
 		_self.program.bindVar(_self.name, _self.value)
@@ -103,8 +103,8 @@ class LoopAspect extends StatementAspect {
 	}
 }
 
-@Aspect(className = Block)
-class BlockAspect extends StatementAspect {
+@Aspect(className = RclBlock)
+class RclBlockAspect extends StatementAspect {
 	@OverrideAspectMethod
 	def void eval() {
 		_self.stmts.forEach[eval]
@@ -134,7 +134,8 @@ class MessageQueryAspect extends StringValueAspect {
 	@OverrideAspectMethod
 	def String getStringValue() {
 		// Just some placeholder
-		return ThreadLocalRandom.current().nextInt(0, 1000).toString()
+		val messages = #["start", "stop", "pause", "whatever"]
+		return messages.get(ThreadLocalRandom.current().nextInt(0, 4))
 	}
 }
 
@@ -228,7 +229,7 @@ class ForwardActionAspect extends ActionAspect {
 class ForwardMinActionAspect extends ActionAspect {
 	@OverrideAspectMethod
 	def void eval() {
-		println("<forward (" + _self.duration + ")>")
+		println("<forward (" + _self.distance + ")>")
 	}
 }
 
@@ -244,7 +245,7 @@ class BackwardActionAspect extends ActionAspect {
 class BackwardMinActionAspect extends ActionAspect {
 	@OverrideAspectMethod
 	def void eval() {
-		println("<backward (" + _self.duration + ")>")
+		println("<backward (" + _self.distance + ")>")
 	}
 }
 
@@ -317,6 +318,6 @@ class VarRefAspect extends NumberValueAspect {
 	}
 
 	private def RoverProgram getProgram() {
-		return _self.eResource.contents.head as RoverProgram
+		return _self.eResource.allContents.filter(RoverProgram).head
 	}
 }

@@ -4,7 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.Loop;
-import rover.rclmt.rcl.Block;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverExpression;
 import rover.rclmt.rcl.RoverProgram;
 
@@ -18,14 +18,14 @@ public class LoopAdapter extends EObjectAdapter<Loop> implements rover.rclmt.rcl
   }
   
   @Override
-  public Block getEnclosing() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
+  public RclBlock getEnclosing() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
   }
   
   @Override
-  public void setEnclosing(final Block o) {
+  public void setEnclosing(final RclBlock o) {
     if (o != null)
-    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setEnclosing(null);
   }
   
@@ -42,14 +42,14 @@ public class LoopAdapter extends EObjectAdapter<Loop> implements rover.rclmt.rcl
   }
   
   @Override
-  public Block getBlock() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getBlock(), eResource);
+  public RclBlock getBlock() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getBlock(), eResource);
   }
   
   @Override
-  public void setBlock(final Block o) {
+  public void setBlock(final RclBlock o) {
     if (o != null)
-    	adaptee.setBlock(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setBlock(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setBlock(null);
   }
   
@@ -101,7 +101,7 @@ public class LoopAdapter extends EObjectAdapter<Loop> implements rover.rclmt.rcl
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.LOOP__ENCLOSING:
     		setEnclosing(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     	case rover.rclmt.rcl.RclPackage.LOOP__EXPR:
@@ -111,7 +111,7 @@ public class LoopAdapter extends EObjectAdapter<Loop> implements rover.rclmt.rcl
     		return;
     	case rover.rclmt.rcl.RclPackage.LOOP__BLOCK:
     		setBlock(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     }

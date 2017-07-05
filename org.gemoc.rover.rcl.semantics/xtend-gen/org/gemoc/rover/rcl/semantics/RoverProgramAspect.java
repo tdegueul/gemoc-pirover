@@ -7,9 +7,9 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import org.gemoc.rover.rcl.semantics.RoverProgramAspectRoverProgramAspectProperties;
 import org.gemoc.rover.rcl.semantics.StatementAspect;
-import rcl.Block;
 import rcl.NumberValue;
 import rcl.Param;
+import rcl.RclBlock;
 import rcl.RclFactory;
 import rcl.RoverProgram;
 import rcl.RoverValue;
@@ -65,7 +65,7 @@ public class RoverProgramAspect {
       RoverProgramAspect.bindVar(_self, _name, _createNumberValue);
     };
     _params.forEach(_function);
-    Block _block = _self.getBlock();
+    RclBlock _block = _self.getBlock();
     StatementAspect.eval(_block);
   }
   

@@ -91,15 +91,15 @@
       </genOperations>
     </genClasses>
     <genClasses>
-      <ecoreClass href="RCLMT.ecore#//Assignment"/>
+      <ecoreClass href="RCLMT.ecore#//VarAssignment"/>
       <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="RCLMT.ecore#//Assignment/name"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCLMT.ecore#//VarAssignment/name"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//Assignment/value"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//VarAssignment/value"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="RCLMT.ecore#//Assignment/eval"/>
+        <ecoreOperation href="RCLMT.ecore#//VarAssignment/eval"/>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -130,12 +130,12 @@
       </genOperations>
     </genClasses>
     <genClasses>
-      <ecoreClass href="RCLMT.ecore#//Block"/>
+      <ecoreClass href="RCLMT.ecore#//RclBlock"/>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//Block/stmts"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//RclBlock/stmts"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="RCLMT.ecore#//Block/eval"/>
+        <ecoreOperation href="RCLMT.ecore#//RclBlock/eval"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">
@@ -260,8 +260,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="RCLMT.ecore#//ForwardMinAction"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="RCLMT.ecore#//ForwardMinAction/duration"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//ForwardMinAction/distance"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="RCLMT.ecore#//ForwardMinAction/eval"/>
@@ -275,8 +275,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="RCLMT.ecore#//BackwardMinAction"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="RCLMT.ecore#//BackwardMinAction/duration"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//BackwardMinAction/distance"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="RCLMT.ecore#//BackwardMinAction/eval"/>
@@ -290,8 +290,8 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="RCLMT.ecore#//TurnDegAction"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="RCLMT.ecore#//TurnDegAction/degrees"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCLMT.ecore#//TurnDegAction/degrees"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="RCLMT.ecore#//TurnDegAction/eval"/>

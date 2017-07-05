@@ -5,8 +5,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.gemoc.rover.rcl.semantics.ConditionalAspectConditionalAspectProperties;
 import org.gemoc.rover.rcl.semantics.RoverExpressionAspect;
 import org.gemoc.rover.rcl.semantics.StatementAspect;
-import rcl.Block;
 import rcl.Conditional;
+import rcl.RclBlock;
 import rcl.RoverExpression;
 
 @Aspect(className = Conditional.class)
@@ -26,10 +26,10 @@ public class ConditionalAspect extends StatementAspect {
     RoverExpression _expr = _self.getExpr();
     boolean _eval = RoverExpressionAspect.eval(_expr);
     if (_eval) {
-      Block _condTrue = _self.getCondTrue();
+      RclBlock _condTrue = _self.getCondTrue();
       StatementAspect.eval(_condTrue);
     } else {
-      Block _condFalse = _self.getCondFalse();
+      RclBlock _condFalse = _self.getCondFalse();
       StatementAspect.eval(_condFalse);
     }
   }

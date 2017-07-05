@@ -6,8 +6,8 @@ import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.RoverProgram;
-import rover.rclmt.rcl.Block;
 import rover.rclmt.rcl.Param;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverValue;
 
 @SuppressWarnings("all")
@@ -39,14 +39,14 @@ public class RoverProgramAdapter extends EObjectAdapter<RoverProgram> implements
   }
   
   @Override
-  public Block getBlock() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getBlock(), eResource);
+  public RclBlock getBlock() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getBlock(), eResource);
   }
   
   @Override
-  public void setBlock(final Block o) {
+  public void setBlock(final RclBlock o) {
     if (o != null)
-    	adaptee.setBlock(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setBlock(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setBlock(null);
   }
   
@@ -117,7 +117,7 @@ public class RoverProgramAdapter extends EObjectAdapter<RoverProgram> implements
     		return;
     	case rover.rclmt.rcl.RclPackage.ROVER_PROGRAM__BLOCK:
     		setBlock(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     }

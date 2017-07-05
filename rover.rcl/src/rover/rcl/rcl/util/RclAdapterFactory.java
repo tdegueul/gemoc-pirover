@@ -80,8 +80,8 @@ public class RclAdapterFactory extends AdapterFactoryImpl {
 				return createStatementAdapter();
 			}
 			@Override
-			public Adapter caseAssignment(Assignment object) {
-				return createAssignmentAdapter();
+			public Adapter caseVarAssignment(VarAssignment object) {
+				return createVarAssignmentAdapter();
 			}
 			@Override
 			public Adapter caseConditional(Conditional object) {
@@ -92,8 +92,8 @@ public class RclAdapterFactory extends AdapterFactoryImpl {
 				return createLoopAdapter();
 			}
 			@Override
-			public Adapter caseBlock(Block object) {
-				return createBlockAdapter();
+			public Adapter caseRclBlock(RclBlock object) {
+				return createRclBlockAdapter();
 			}
 			@Override
 			public Adapter caseQuery(Query object) {
@@ -254,16 +254,16 @@ public class RclAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link rover.rcl.rcl.Assignment <em>Assignment</em>}'.
+	 * Creates a new adapter for an object of class '{@link rover.rcl.rcl.VarAssignment <em>Var Assignment</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see rover.rcl.rcl.Assignment
+	 * @see rover.rcl.rcl.VarAssignment
 	 * @generated
 	 */
-	public Adapter createAssignmentAdapter() {
+	public Adapter createVarAssignmentAdapter() {
 		return null;
 	}
 
@@ -296,16 +296,16 @@ public class RclAdapterFactory extends AdapterFactoryImpl {
 	}
 
 	/**
-	 * Creates a new adapter for an object of class '{@link rover.rcl.rcl.Block <em>Block</em>}'.
+	 * Creates a new adapter for an object of class '{@link rover.rcl.rcl.RclBlock <em>Block</em>}'.
 	 * <!-- begin-user-doc -->
 	 * This default implementation returns null so that we can easily ignore cases;
 	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
 	 * <!-- end-user-doc -->
 	 * @return the new adapter.
-	 * @see rover.rcl.rcl.Block
+	 * @see rover.rcl.rcl.RclBlock
 	 * @generated
 	 */
-	public Adapter createBlockAdapter() {
+	public Adapter createRclBlockAdapter() {
 		return null;
 	}
 

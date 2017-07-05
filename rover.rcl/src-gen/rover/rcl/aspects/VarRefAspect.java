@@ -1,12 +1,14 @@
 package rover.rcl.aspects;
 
+import com.google.common.collect.Iterators;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.emf.common.util.EList;
+import java.util.Iterator;
+import org.eclipse.emf.common.util.TreeIterator;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import org.eclipse.xtext.xbase.lib.InputOutput;
-import org.eclipse.xtext.xbase.lib.IterableExtensions;
+import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import rover.rcl.aspects.BooleanValueAspect;
 import rover.rcl.aspects.NumberValueAspect;
 import rover.rcl.aspects.RoverProgramAspect;
@@ -127,8 +129,8 @@ public class VarRefAspect extends NumberValueAspect {
   
   protected static RoverProgram _privk3_getProgram(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     Resource _eResource = _self.eResource();
-    EList<EObject> _contents = _eResource.getContents();
-    EObject _head = IterableExtensions.<EObject>head(_contents);
-    return ((RoverProgram) _head);
+    TreeIterator<EObject> _allContents = _eResource.getAllContents();
+    Iterator<RoverProgram> _filter = Iterators.<RoverProgram>filter(_allContents, RoverProgram.class);
+    return IteratorExtensions.<RoverProgram>head(_filter);
   }
 }

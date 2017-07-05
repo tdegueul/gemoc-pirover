@@ -5,6 +5,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import rover.rcl.aspects.ActionAspect;
 import rover.rcl.aspects.TurnDegActionAspectTurnDegActionAspectProperties;
+import rover.rcl.rcl.NumberValue;
 import rover.rcl.rcl.TurnDegAction;
 
 @Aspect(className = TurnDegAction.class)
@@ -19,8 +20,8 @@ public class TurnDegActionAspect extends ActionAspect {
 }
   
   protected static void _privk3_eval(final TurnDegActionAspectTurnDegActionAspectProperties _self_, final TurnDegAction _self) {
-    int _degrees = _self.getDegrees();
-    String _plus = ("<turn (" + Integer.valueOf(_degrees));
+    NumberValue _degrees = _self.getDegrees();
+    String _plus = ("<turn (" + _degrees);
     String _plus_1 = (_plus + ")>");
     InputOutput.<String>println(_plus_1);
   }

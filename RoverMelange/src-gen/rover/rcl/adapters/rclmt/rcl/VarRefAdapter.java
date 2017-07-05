@@ -4,7 +4,7 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.VarRef;
-import rover.rclmt.rcl.Block;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverProgram;
 
 @SuppressWarnings("all")
@@ -57,14 +57,14 @@ public class VarRefAdapter extends EObjectAdapter<VarRef> implements rover.rclmt
   }
   
   @Override
-  public Block getEnclosing() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
+  public RclBlock getEnclosing() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
   }
   
   @Override
-  public void setEnclosing(final Block o) {
+  public void setEnclosing(final RclBlock o) {
     if (o != null)
-    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setEnclosing(null);
   }
   
@@ -158,7 +158,7 @@ public class VarRefAdapter extends EObjectAdapter<VarRef> implements rover.rclmt
     		return;
     	case rover.rclmt.rcl.RclPackage.VAR_REF__ENCLOSING:
     		setEnclosing(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     	case rover.rclmt.rcl.RclPackage.VAR_REF__NAME:

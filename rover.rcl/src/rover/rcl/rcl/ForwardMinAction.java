@@ -12,7 +12,7 @@ package rover.rcl.rcl;
  * The following features are supported:
  * </p>
  * <ul>
- *   <li>{@link rover.rcl.rcl.ForwardMinAction#getDuration <em>Duration</em>}</li>
+ *   <li>{@link rover.rcl.rcl.ForwardMinAction#getDistance <em>Distance</em>}</li>
  * </ul>
  *
  * @see rover.rcl.rcl.RclPackage#getForwardMinAction()
@@ -21,30 +21,30 @@ package rover.rcl.rcl;
  */
 public interface ForwardMinAction extends Action {
 	/**
-	 * Returns the value of the '<em><b>Duration</b></em>' attribute.
+	 * Returns the value of the '<em><b>Distance</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Duration</em>' attribute isn't clear,
+	 * If the meaning of the '<em>Distance</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Duration</em>' attribute.
-	 * @see #setDuration(int)
-	 * @see rover.rcl.rcl.RclPackage#getForwardMinAction_Duration()
-	 * @model
+	 * @return the value of the '<em>Distance</em>' containment reference.
+	 * @see #setDistance(NumberValue)
+	 * @see rover.rcl.rcl.RclPackage#getForwardMinAction_Distance()
+	 * @model containment="true"
 	 * @generated
 	 */
-	int getDuration();
+	NumberValue getDistance();
 
 	/**
-	 * Sets the value of the '{@link rover.rcl.rcl.ForwardMinAction#getDuration <em>Duration</em>}' attribute.
+	 * Sets the value of the '{@link rover.rcl.rcl.ForwardMinAction#getDistance <em>Distance</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Duration</em>' attribute.
-	 * @see #getDuration()
+	 * @param value the new value of the '<em>Distance</em>' containment reference.
+	 * @see #getDistance()
 	 * @generated
 	 */
-	void setDuration(int value);
+	void setDistance(NumberValue value);
 
 	/**
 	 * <!-- begin-user-doc -->

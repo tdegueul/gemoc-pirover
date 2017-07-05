@@ -76,12 +76,12 @@ public interface RoverProgram extends EObject {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Block</em>' containment reference.
-	 * @see #setBlock(Block)
+	 * @see #setBlock(RclBlock)
 	 * @see rover.rclmt.rcl.RclPackage#getRoverProgram_Block()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Block getBlock();
+	RclBlock getBlock();
 
 	/**
 	 * Sets the value of the '{@link rover.rclmt.rcl.RoverProgram#getBlock <em>Block</em>}' containment reference.
@@ -91,7 +91,7 @@ public interface RoverProgram extends EObject {
 	 * @see #getBlock()
 	 * @generated
 	 */
-	void setBlock(Block value);
+	void setBlock(RclBlock value);
 
 	/**
 	 * <!-- begin-user-doc -->

@@ -3,10 +3,8 @@ package rover.rcl.adapters.rclmt.rcl;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.impl.EFactoryImpl;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
-import rover.rclmt.rcl.Assignment;
 import rover.rclmt.rcl.BackwardAction;
 import rover.rclmt.rcl.BackwardMinAction;
-import rover.rclmt.rcl.Block;
 import rover.rclmt.rcl.BooleanExpression;
 import rover.rclmt.rcl.BooleanValue;
 import rover.rclmt.rcl.Conditional;
@@ -20,6 +18,7 @@ import rover.rclmt.rcl.NumberValue;
 import rover.rclmt.rcl.NumericExpression;
 import rover.rclmt.rcl.ObstacleQuery;
 import rover.rclmt.rcl.Param;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RclFactory;
 import rover.rclmt.rcl.RclPackage;
 import rover.rclmt.rcl.RoverProgram;
@@ -31,6 +30,7 @@ import rover.rclmt.rcl.StringValue;
 import rover.rclmt.rcl.TemperatureQuery;
 import rover.rclmt.rcl.TurnAction;
 import rover.rclmt.rcl.TurnDegAction;
+import rover.rclmt.rcl.VarAssignment;
 import rover.rclmt.rcl.VarRef;
 
 @SuppressWarnings("all")
@@ -50,8 +50,8 @@ public class RclFactoryAdapter extends EFactoryImpl implements RclFactory {
   }
   
   @Override
-  public Assignment createAssignment() {
-    return adaptersFactory.createAssignmentAdapter(rclAdaptee.createAssignment(), null);
+  public VarAssignment createVarAssignment() {
+    return adaptersFactory.createVarAssignmentAdapter(rclAdaptee.createVarAssignment(), null);
   }
   
   @Override
@@ -65,8 +65,8 @@ public class RclFactoryAdapter extends EFactoryImpl implements RclFactory {
   }
   
   @Override
-  public Block createBlock() {
-    return adaptersFactory.createBlockAdapter(rclAdaptee.createBlock(), null);
+  public RclBlock createRclBlock() {
+    return adaptersFactory.createRclBlockAdapter(rclAdaptee.createRclBlock(), null);
   }
   
   @Override

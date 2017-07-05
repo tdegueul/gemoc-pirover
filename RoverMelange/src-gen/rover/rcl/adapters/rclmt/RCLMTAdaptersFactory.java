@@ -6,10 +6,8 @@ import java.util.WeakHashMap;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.resource.Resource;
 import rover.rcl.adapters.rclmt.rcl.ActionAdapter;
-import rover.rcl.adapters.rclmt.rcl.AssignmentAdapter;
 import rover.rcl.adapters.rclmt.rcl.BackwardActionAdapter;
 import rover.rcl.adapters.rclmt.rcl.BackwardMinActionAdapter;
-import rover.rcl.adapters.rclmt.rcl.BlockAdapter;
 import rover.rcl.adapters.rclmt.rcl.BooleanExpressionAdapter;
 import rover.rcl.adapters.rclmt.rcl.BooleanValueAdapter;
 import rover.rcl.adapters.rclmt.rcl.ConditionalAdapter;
@@ -24,6 +22,7 @@ import rover.rcl.adapters.rclmt.rcl.NumericExpressionAdapter;
 import rover.rcl.adapters.rclmt.rcl.ObstacleQueryAdapter;
 import rover.rcl.adapters.rclmt.rcl.ParamAdapter;
 import rover.rcl.adapters.rclmt.rcl.QueryAdapter;
+import rover.rcl.adapters.rclmt.rcl.RclBlockAdapter;
 import rover.rcl.adapters.rclmt.rcl.RoverExpressionAdapter;
 import rover.rcl.adapters.rclmt.rcl.RoverProgramAdapter;
 import rover.rcl.adapters.rclmt.rcl.RoverValueAdapter;
@@ -35,12 +34,11 @@ import rover.rcl.adapters.rclmt.rcl.StringValueAdapter;
 import rover.rcl.adapters.rclmt.rcl.TemperatureQueryAdapter;
 import rover.rcl.adapters.rclmt.rcl.TurnActionAdapter;
 import rover.rcl.adapters.rclmt.rcl.TurnDegActionAdapter;
+import rover.rcl.adapters.rclmt.rcl.VarAssignmentAdapter;
 import rover.rcl.adapters.rclmt.rcl.VarRefAdapter;
 import rover.rcl.rcl.Action;
-import rover.rcl.rcl.Assignment;
 import rover.rcl.rcl.BackwardAction;
 import rover.rcl.rcl.BackwardMinAction;
-import rover.rcl.rcl.Block;
 import rover.rcl.rcl.BooleanExpression;
 import rover.rcl.rcl.BooleanValue;
 import rover.rcl.rcl.Conditional;
@@ -55,6 +53,7 @@ import rover.rcl.rcl.NumericExpression;
 import rover.rcl.rcl.ObstacleQuery;
 import rover.rcl.rcl.Param;
 import rover.rcl.rcl.Query;
+import rover.rcl.rcl.RclBlock;
 import rover.rcl.rcl.RoverExpression;
 import rover.rcl.rcl.RoverProgram;
 import rover.rcl.rcl.RoverValue;
@@ -66,6 +65,7 @@ import rover.rcl.rcl.StringValue;
 import rover.rcl.rcl.TemperatureQuery;
 import rover.rcl.rcl.TurnAction;
 import rover.rcl.rcl.TurnDegAction;
+import rover.rcl.rcl.VarAssignment;
 import rover.rcl.rcl.VarRef;
 
 @SuppressWarnings("all")
@@ -92,8 +92,8 @@ public class RCLMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof rover.rcl.rcl.Param){
     	return createParamAdapter((rover.rcl.rcl.Param) o, res);
     }
-    if (o instanceof rover.rcl.rcl.Assignment){
-    	return createAssignmentAdapter((rover.rcl.rcl.Assignment) o, res);
+    if (o instanceof rover.rcl.rcl.VarAssignment){
+    	return createVarAssignmentAdapter((rover.rcl.rcl.VarAssignment) o, res);
     }
     if (o instanceof rover.rcl.rcl.Conditional){
     	return createConditionalAdapter((rover.rcl.rcl.Conditional) o, res);
@@ -101,8 +101,8 @@ public class RCLMTAdaptersFactory implements AdaptersFactory {
     if (o instanceof rover.rcl.rcl.Loop){
     	return createLoopAdapter((rover.rcl.rcl.Loop) o, res);
     }
-    if (o instanceof rover.rcl.rcl.Block){
-    	return createBlockAdapter((rover.rcl.rcl.Block) o, res);
+    if (o instanceof rover.rcl.rcl.RclBlock){
+    	return createRclBlockAdapter((rover.rcl.rcl.RclBlock) o, res);
     }
     if (o instanceof rover.rcl.rcl.TemperatureQuery){
     	return createTemperatureQueryAdapter((rover.rcl.rcl.TemperatureQuery) o, res);
@@ -216,18 +216,18 @@ public class RCLMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public AssignmentAdapter createAssignmentAdapter(final Assignment adaptee, final Resource res) {
+  public VarAssignmentAdapter createVarAssignmentAdapter(final VarAssignment adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
     if(adapter != null)
-    	 return (rover.rcl.adapters.rclmt.rcl.AssignmentAdapter) adapter;
+    	 return (rover.rcl.adapters.rclmt.rcl.VarAssignmentAdapter) adapter;
     else {
-    	adapter = new rover.rcl.adapters.rclmt.rcl.AssignmentAdapter();
+    	adapter = new rover.rcl.adapters.rclmt.rcl.VarAssignmentAdapter();
     	adapter.setAdaptee(adaptee);
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
-    	return (rover.rcl.adapters.rclmt.rcl.AssignmentAdapter) adapter;
+    	return (rover.rcl.adapters.rclmt.rcl.VarAssignmentAdapter) adapter;
     }
   }
   
@@ -261,18 +261,18 @@ public class RCLMTAdaptersFactory implements AdaptersFactory {
     }
   }
   
-  public BlockAdapter createBlockAdapter(final Block adaptee, final Resource res) {
+  public RclBlockAdapter createRclBlockAdapter(final RclBlock adaptee, final Resource res) {
     if (adaptee == null)
     	return null;
     EObjectAdapter adapter = register.get(adaptee);
     if(adapter != null)
-    	 return (rover.rcl.adapters.rclmt.rcl.BlockAdapter) adapter;
+    	 return (rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) adapter;
     else {
-    	adapter = new rover.rcl.adapters.rclmt.rcl.BlockAdapter();
+    	adapter = new rover.rcl.adapters.rclmt.rcl.RclBlockAdapter();
     	adapter.setAdaptee(adaptee);
     	adapter.setResource(res);
     	register.put(adaptee, adapter);
-    	return (rover.rcl.adapters.rclmt.rcl.BlockAdapter) adapter;
+    	return (rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) adapter;
     }
   }
   

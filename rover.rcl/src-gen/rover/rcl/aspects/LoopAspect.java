@@ -5,8 +5,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import rover.rcl.aspects.LoopAspectLoopAspectProperties;
 import rover.rcl.aspects.RoverExpressionAspect;
 import rover.rcl.aspects.StatementAspect;
-import rover.rcl.rcl.Block;
 import rover.rcl.rcl.Loop;
+import rover.rcl.rcl.RclBlock;
 
 @Aspect(className = Loop.class)
 @SuppressWarnings("all")
@@ -21,7 +21,7 @@ public class LoopAspect extends StatementAspect {
   
   protected static void _privk3_eval(final LoopAspectLoopAspectProperties _self_, final Loop _self) {
     while (RoverExpressionAspect.eval(_self.getExpr())) {
-      Block _block = _self.getBlock();
+      RclBlock _block = _self.getBlock();
       StatementAspect.eval(_block);
     }
   }

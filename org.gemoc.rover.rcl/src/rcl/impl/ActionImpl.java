@@ -3,6 +3,7 @@
 package rcl.impl;
 
 import org.eclipse.emf.ecore.EClass;
+
 import rcl.Action;
 import rcl.RclPackage;
 

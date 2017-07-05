@@ -59,10 +59,10 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 		switch (eClass.getClassifierID()) {
 			case RclPackage.ROVER_PROGRAM: return createRoverProgram();
 			case RclPackage.PARAM: return createParam();
-			case RclPackage.ASSIGNMENT: return createAssignment();
+			case RclPackage.VAR_ASSIGNMENT: return createVarAssignment();
 			case RclPackage.CONDITIONAL: return createConditional();
 			case RclPackage.LOOP: return createLoop();
-			case RclPackage.BLOCK: return createBlock();
+			case RclPackage.RCL_BLOCK: return createRclBlock();
 			case RclPackage.TEMPERATURE_QUERY: return createTemperatureQuery();
 			case RclPackage.HUMIDITY_QUERY: return createHumidityQuery();
 			case RclPackage.MESSAGE_QUERY: return createMessageQuery();
@@ -151,9 +151,9 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Assignment createAssignment() {
-		AssignmentImpl assignment = new AssignmentImpl();
-		return assignment;
+	public VarAssignment createVarAssignment() {
+		VarAssignmentImpl varAssignment = new VarAssignmentImpl();
+		return varAssignment;
 	}
 
 	/**
@@ -181,9 +181,9 @@ public class RclFactoryImpl extends EFactoryImpl implements RclFactory {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block createBlock() {
-		BlockImpl block = new BlockImpl();
-		return block;
+	public RclBlock createRclBlock() {
+		RclBlockImpl rclBlock = new RclBlockImpl();
+		return rclBlock;
 	}
 
 	/**

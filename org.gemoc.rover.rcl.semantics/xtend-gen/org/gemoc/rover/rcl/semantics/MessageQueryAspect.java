@@ -2,7 +2,10 @@ package org.gemoc.rover.rcl.semantics;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
+import java.util.Collections;
+import java.util.List;
 import java.util.concurrent.ThreadLocalRandom;
+import org.eclipse.xtext.xbase.lib.CollectionLiterals;
 import org.gemoc.rover.rcl.semantics.MessageQueryAspectMessageQueryAspectProperties;
 import org.gemoc.rover.rcl.semantics.StringValueAspect;
 import rcl.MessageQuery;
@@ -28,8 +31,9 @@ public class MessageQueryAspect extends StringValueAspect {
   }
   
   protected static String _privk3_getStringValue(final MessageQueryAspectMessageQueryAspectProperties _self_, final MessageQuery _self) {
+    final List<String> messages = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("start", "stop", "pause", "whatever"));
     ThreadLocalRandom _current = ThreadLocalRandom.current();
-    int _nextInt = _current.nextInt(0, 1000);
-    return Integer.valueOf(_nextInt).toString();
+    int _nextInt = _current.nextInt(0, 4);
+    return messages.get(_nextInt);
   }
 }

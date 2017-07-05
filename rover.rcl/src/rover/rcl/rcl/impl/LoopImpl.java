@@ -10,8 +10,8 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import rover.rcl.rcl.Block;
 import rover.rcl.rcl.Loop;
+import rover.rcl.rcl.RclBlock;
 import rover.rcl.rcl.RclPackage;
 import rover.rcl.rcl.RoverExpression;
 
@@ -48,7 +48,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * @generated
 	 * @ordered
 	 */
-	protected Block block;
+	protected RclBlock block;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -117,7 +117,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getBlock() {
+	public RclBlock getBlock() {
 		return block;
 	}
 
@@ -126,8 +126,8 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetBlock(Block newBlock, NotificationChain msgs) {
-		Block oldBlock = block;
+	public NotificationChain basicSetBlock(RclBlock newBlock, NotificationChain msgs) {
+		RclBlock oldBlock = block;
 		block = newBlock;
 		if (eNotificationRequired()) {
 			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RclPackage.LOOP__BLOCK, oldBlock, newBlock);
@@ -141,7 +141,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setBlock(Block newBlock) {
+	public void setBlock(RclBlock newBlock) {
 		if (newBlock != block) {
 			NotificationChain msgs = null;
 			if (block != null)
@@ -199,7 +199,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 				setExpr((RoverExpression)newValue);
 				return;
 			case RclPackage.LOOP__BLOCK:
-				setBlock((Block)newValue);
+				setBlock((RclBlock)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -217,7 +217,7 @@ public class LoopImpl extends StatementImpl implements Loop {
 				setExpr((RoverExpression)null);
 				return;
 			case RclPackage.LOOP__BLOCK:
-				setBlock((Block)null);
+				setBlock((RclBlock)null);
 				return;
 		}
 		super.eUnset(featureID);

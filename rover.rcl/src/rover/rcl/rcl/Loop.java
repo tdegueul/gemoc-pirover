@@ -56,12 +56,12 @@ public interface Loop extends Statement {
 	 * </p>
 	 * <!-- end-user-doc -->
 	 * @return the value of the '<em>Block</em>' containment reference.
-	 * @see #setBlock(Block)
+	 * @see #setBlock(RclBlock)
 	 * @see rover.rcl.rcl.RclPackage#getLoop_Block()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Block getBlock();
+	RclBlock getBlock();
 
 	/**
 	 * Sets the value of the '{@link rover.rcl.rcl.Loop#getBlock <em>Block</em>}' containment reference.
@@ -71,7 +71,7 @@ public interface Loop extends Statement {
 	 * @see #getBlock()
 	 * @generated
 	 */
-	void setBlock(Block value);
+	void setBlock(RclBlock value);
 
 	/**
 	 * <!-- begin-user-doc -->

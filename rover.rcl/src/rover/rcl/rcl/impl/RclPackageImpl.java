@@ -12,10 +12,8 @@ import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.impl.EPackageImpl;
 
 import rover.rcl.rcl.Action;
-import rover.rcl.rcl.Assignment;
 import rover.rcl.rcl.BackwardAction;
 import rover.rcl.rcl.BackwardMinAction;
-import rover.rcl.rcl.Block;
 import rover.rcl.rcl.BooleanExpression;
 import rover.rcl.rcl.BooleanOperator;
 import rover.rcl.rcl.BooleanValue;
@@ -32,6 +30,7 @@ import rover.rcl.rcl.NumericOperator;
 import rover.rcl.rcl.ObstacleQuery;
 import rover.rcl.rcl.Param;
 import rover.rcl.rcl.Query;
+import rover.rcl.rcl.RclBlock;
 import rover.rcl.rcl.RclFactory;
 import rover.rcl.rcl.RclPackage;
 import rover.rcl.rcl.RoverExpression;
@@ -46,6 +45,7 @@ import rover.rcl.rcl.StringValue;
 import rover.rcl.rcl.TemperatureQuery;
 import rover.rcl.rcl.TurnAction;
 import rover.rcl.rcl.TurnDegAction;
+import rover.rcl.rcl.VarAssignment;
 import rover.rcl.rcl.VarRef;
 
 /**
@@ -81,7 +81,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass assignmentEClass = null;
+	private EClass varAssignmentEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -102,7 +102,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	private EClass blockEClass = null;
+	private EClass rclBlockEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -431,8 +431,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getAssignment() {
-		return assignmentEClass;
+	public EClass getVarAssignment() {
+		return varAssignmentEClass;
 	}
 
 	/**
@@ -440,8 +440,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getAssignment_Name() {
-		return (EAttribute)assignmentEClass.getEStructuralFeatures().get(0);
+	public EAttribute getVarAssignment_Name() {
+		return (EAttribute)varAssignmentEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -449,8 +449,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getAssignment_Value() {
-		return (EReference)assignmentEClass.getEStructuralFeatures().get(1);
+	public EReference getVarAssignment_Value() {
+		return (EReference)varAssignmentEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -521,8 +521,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EClass getBlock() {
-		return blockEClass;
+	public EClass getRclBlock() {
+		return rclBlockEClass;
 	}
 
 	/**
@@ -530,8 +530,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getBlock_Stmts() {
-		return (EReference)blockEClass.getEStructuralFeatures().get(0);
+	public EReference getRclBlock_Stmts() {
+		return (EReference)rclBlockEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -800,8 +800,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getForwardMinAction_Duration() {
-		return (EAttribute)forwardMinActionEClass.getEStructuralFeatures().get(0);
+	public EReference getForwardMinAction_Distance() {
+		return (EReference)forwardMinActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -827,8 +827,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getBackwardMinAction_Duration() {
-		return (EAttribute)backwardMinActionEClass.getEStructuralFeatures().get(0);
+	public EReference getBackwardMinAction_Distance() {
+		return (EReference)backwardMinActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -854,8 +854,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EAttribute getTurnDegAction_Degrees() {
-		return (EAttribute)turnDegActionEClass.getEStructuralFeatures().get(0);
+	public EReference getTurnDegAction_Degrees() {
+		return (EReference)turnDegActionEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -987,9 +987,9 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		statementEClass = createEClass(STATEMENT);
 		createEReference(statementEClass, STATEMENT__ENCLOSING);
 
-		assignmentEClass = createEClass(ASSIGNMENT);
-		createEAttribute(assignmentEClass, ASSIGNMENT__NAME);
-		createEReference(assignmentEClass, ASSIGNMENT__VALUE);
+		varAssignmentEClass = createEClass(VAR_ASSIGNMENT);
+		createEAttribute(varAssignmentEClass, VAR_ASSIGNMENT__NAME);
+		createEReference(varAssignmentEClass, VAR_ASSIGNMENT__VALUE);
 
 		conditionalEClass = createEClass(CONDITIONAL);
 		createEReference(conditionalEClass, CONDITIONAL__EXPR);
@@ -1000,8 +1000,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		createEReference(loopEClass, LOOP__EXPR);
 		createEReference(loopEClass, LOOP__BLOCK);
 
-		blockEClass = createEClass(BLOCK);
-		createEReference(blockEClass, BLOCK__STMTS);
+		rclBlockEClass = createEClass(RCL_BLOCK);
+		createEReference(rclBlockEClass, RCL_BLOCK__STMTS);
 
 		queryEClass = createEClass(QUERY);
 
@@ -1047,17 +1047,17 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		forwardActionEClass = createEClass(FORWARD_ACTION);
 
 		forwardMinActionEClass = createEClass(FORWARD_MIN_ACTION);
-		createEAttribute(forwardMinActionEClass, FORWARD_MIN_ACTION__DURATION);
+		createEReference(forwardMinActionEClass, FORWARD_MIN_ACTION__DISTANCE);
 
 		backwardActionEClass = createEClass(BACKWARD_ACTION);
 
 		backwardMinActionEClass = createEClass(BACKWARD_MIN_ACTION);
-		createEAttribute(backwardMinActionEClass, BACKWARD_MIN_ACTION__DURATION);
+		createEReference(backwardMinActionEClass, BACKWARD_MIN_ACTION__DISTANCE);
 
 		turnActionEClass = createEClass(TURN_ACTION);
 
 		turnDegActionEClass = createEClass(TURN_DEG_ACTION);
-		createEAttribute(turnDegActionEClass, TURN_DEG_ACTION__DEGREES);
+		createEReference(turnDegActionEClass, TURN_DEG_ACTION__DEGREES);
 
 		stopActionEClass = createEClass(STOP_ACTION);
 
@@ -1104,10 +1104,10 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		// Set bounds for type parameters
 
 		// Add supertypes to classes
-		assignmentEClass.getESuperTypes().add(this.getStatement());
+		varAssignmentEClass.getESuperTypes().add(this.getStatement());
 		conditionalEClass.getESuperTypes().add(this.getStatement());
 		loopEClass.getESuperTypes().add(this.getStatement());
-		blockEClass.getESuperTypes().add(this.getStatement());
+		rclBlockEClass.getESuperTypes().add(this.getStatement());
 		temperatureQueryEClass.getESuperTypes().add(this.getQuery());
 		temperatureQueryEClass.getESuperTypes().add(this.getNumberValue());
 		humidityQueryEClass.getESuperTypes().add(this.getQuery());
@@ -1141,7 +1141,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		initEClass(roverProgramEClass, RoverProgram.class, "RoverProgram", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getRoverProgram_Name(), ecorePackage.getEString(), "name", null, 0, 1, RoverProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 		initEReference(getRoverProgram_Params(), this.getParam(), null, "params", null, 0, -1, RoverProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getRoverProgram_Block(), this.getBlock(), null, "block", null, 0, 1, RoverProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getRoverProgram_Block(), this.getRclBlock(), null, "block", null, 0, 1, RoverProgram.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		EOperation op = addEOperation(roverProgramEClass, this.getRoverValue(), "getVar", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEString(), "n", 0, 1, IS_UNIQUE, IS_ORDERED);
@@ -1156,35 +1156,35 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		initEAttribute(getParam_Name(), ecorePackage.getEString(), "name", null, 0, 1, Param.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(statementEClass, Statement.class, "Statement", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getStatement_Enclosing(), this.getBlock(), this.getBlock_Stmts(), "enclosing", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getStatement_Enclosing(), this.getRclBlock(), this.getRclBlock_Stmts(), "enclosing", null, 0, 1, Statement.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(statementEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		addEOperation(statementEClass, this.getRoverProgram(), "getProgram", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(assignmentEClass, Assignment.class, "Assignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getAssignment_Value(), this.getRoverValue(), null, "value", null, 0, 1, Assignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(varAssignmentEClass, VarAssignment.class, "VarAssignment", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getVarAssignment_Name(), ecorePackage.getEString(), "name", null, 0, 1, VarAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getVarAssignment_Value(), this.getRoverValue(), null, "value", null, 0, 1, VarAssignment.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(assignmentEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(varAssignmentEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(conditionalEClass, Conditional.class, "Conditional", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getConditional_Expr(), this.getRoverExpression(), null, "expr", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditional_CondTrue(), this.getBlock(), null, "condTrue", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getConditional_CondFalse(), this.getBlock(), null, "condFalse", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_CondTrue(), this.getRclBlock(), null, "condTrue", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getConditional_CondFalse(), this.getRclBlock(), null, "condFalse", null, 0, 1, Conditional.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(conditionalEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(loopEClass, Loop.class, "Loop", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getLoop_Expr(), this.getRoverExpression(), null, "expr", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getLoop_Block(), this.getBlock(), null, "block", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getLoop_Block(), this.getRclBlock(), null, "block", null, 0, 1, Loop.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(loopEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(blockEClass, Block.class, "Block", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEReference(getBlock_Stmts(), this.getStatement(), this.getStatement_Enclosing(), "stmts", null, 0, -1, Block.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEClass(rclBlockEClass, RclBlock.class, "RclBlock", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getRclBlock_Stmts(), this.getStatement(), this.getStatement_Enclosing(), "stmts", null, 0, -1, RclBlock.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		addEOperation(blockEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(rclBlockEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(queryEClass, Query.class, "Query", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1254,7 +1254,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		addEOperation(forwardActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(forwardMinActionEClass, ForwardMinAction.class, "ForwardMinAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getForwardMinAction_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, ForwardMinAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getForwardMinAction_Distance(), this.getNumberValue(), null, "distance", null, 0, 1, ForwardMinAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(forwardMinActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1263,7 +1263,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		addEOperation(backwardActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(backwardMinActionEClass, BackwardMinAction.class, "BackwardMinAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getBackwardMinAction_Duration(), ecorePackage.getEInt(), "duration", null, 0, 1, BackwardMinAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getBackwardMinAction_Distance(), this.getNumberValue(), null, "distance", null, 0, 1, BackwardMinAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(backwardMinActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1272,7 +1272,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		addEOperation(turnActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(turnDegActionEClass, TurnDegAction.class, "TurnDegAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getTurnDegAction_Degrees(), ecorePackage.getEInt(), "degrees", null, 0, 1, TurnDegAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEReference(getTurnDegAction_Degrees(), this.getNumberValue(), null, "degrees", null, 0, 1, TurnDegAction.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		addEOperation(turnDegActionEClass, null, "eval", 0, 1, IS_UNIQUE, IS_ORDERED);
 
@@ -1360,7 +1360,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (assignmentEClass.getEOperations().get(0), 
+		  (varAssignmentEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1375,7 +1375,7 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (blockEClass.getEOperations().get(0), 
+		  (rclBlockEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	

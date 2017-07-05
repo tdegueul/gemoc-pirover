@@ -6,6 +6,7 @@ import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.gemoc.rover.rcl.semantics.ActionAspect;
 import org.gemoc.rover.rcl.semantics.ForwardMinActionAspectForwardMinActionAspectProperties;
 import rcl.ForwardMinAction;
+import rcl.NumberValue;
 
 @Aspect(className = ForwardMinAction.class)
 @SuppressWarnings("all")
@@ -21,8 +22,8 @@ public class ForwardMinActionAspect extends ActionAspect {
   }
   
   protected static void _privk3_eval(final ForwardMinActionAspectForwardMinActionAspectProperties _self_, final ForwardMinAction _self) {
-    int _duration = _self.getDuration();
-    String _plus = ("<forward (" + Integer.valueOf(_duration));
+    NumberValue _distance = _self.getDistance();
+    String _plus = ("<forward (" + _distance);
     String _plus_1 = (_plus + ")>");
     InputOutput.<String>println(_plus_1);
   }

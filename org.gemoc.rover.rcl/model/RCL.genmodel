@@ -1,109 +1,235 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore"
-    xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.rover.rcl/src" modelPluginID="org.gemoc.rover.rcl"
-    modelName="RCL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container"
-    importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false"
-    operationReflection="true" importOrganizing="true">
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/org.gemoc.rover.rcl/src" modelPluginID="org.gemoc.rover.rcl" modelName="RCL" rootExtendsClass="org.eclipse.emf.ecore.impl.MinimalEObjectImpl$Container" importerID="org.eclipse.emf.importer.ecore" complianceLevel="8.0" copyrightFields="false" operationReflection="true" importOrganizing="true">
   <foreignModel>RCL.ecore</foreignModel>
-  <genPackages prefix="Rcl" disposableProviderFactory="true" ecorePackage="RCL.ecore#/">
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RCL.ecore#//NumericOperator">
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/lt"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/eq"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/neq"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/gt"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/leq"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//NumericOperator/geq"/>
+  <genPackages prefix="Rcl" disposableProviderFactory="true">
+    <ecorePackage href="RCL.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RCL.ecore#//NumericOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/lt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/neq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/gt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/leq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//NumericOperator/geq"/>
+      </genEnumLiterals>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RCL.ecore#//StringOperator">
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//StringOperator/eq"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//StringOperator/neq"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RCL.ecore#//StringOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//StringOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//StringOperator/neq"/>
+      </genEnumLiterals>
     </genEnums>
-    <genEnums typeSafeEnumCompatible="false" ecoreEnum="RCL.ecore#//BooleanOperator">
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//BooleanOperator/eq"/>
-      <genEnumLiterals ecoreEnumLiteral="RCL.ecore#//BooleanOperator/neq"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RCL.ecore#//BooleanOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//BooleanOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RCL.ecore#//BooleanOperator/neq"/>
+      </genEnumLiterals>
     </genEnums>
-    <genClasses ecoreClass="RCL.ecore#//RoverProgram">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//RoverProgram/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//RoverProgram/params"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//RoverProgram/block"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//RoverProgram"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//RoverProgram/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//RoverProgram/params"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//RoverProgram/block"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//Param">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//Param/name"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//Param"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//Param/name"/>
+      </genFeatures>
     </genClasses>
-    <genClasses image="false" ecoreClass="RCL.ecore#//Statement">
-      <genFeatures property="None" notify="false" createChild="false" ecoreFeature="ecore:EReference RCL.ecore#//Statement/enclosing"/>
+    <genClasses image="false">
+      <ecoreClass href="RCL.ecore#//Statement"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Statement/enclosing"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//Assignment">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//Assignment/name"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Assignment/value"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//VarAssignment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//VarAssignment/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//VarAssignment/value"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//Conditional">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Conditional/expr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Conditional/condTrue"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Conditional/condFalse"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//Conditional"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Conditional/expr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Conditional/condTrue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Conditional/condFalse"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//Loop">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Loop/expr"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Loop/block"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//Loop"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Loop/expr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//Loop/block"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//Block">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//Block/stmts"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//RclBlock"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//RclBlock/stmts"/>
+      </genFeatures>
     </genClasses>
-    <genClasses image="false" ecoreClass="RCL.ecore#//Query"/>
-    <genClasses ecoreClass="RCL.ecore#//TemperatureQuery"/>
-    <genClasses ecoreClass="RCL.ecore#//HumidityQuery"/>
-    <genClasses ecoreClass="RCL.ecore#//MessageQuery"/>
-    <genClasses ecoreClass="RCL.ecore#//ObstacleQuery">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//ObstacleQuery/front"/>
+    <genClasses image="false">
+      <ecoreClass href="RCL.ecore#//Query"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="RCL.ecore#//RoverExpression"/>
-    <genClasses ecoreClass="RCL.ecore#//NumericExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//NumericExpression/lhs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//NumericExpression/rhs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//NumericExpression/op"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//TemperatureQuery"/>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//StringExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//StringExpression/lhs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//StringExpression/rhs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//StringExpression/op"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//HumidityQuery"/>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//BooleanExpression">
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//BooleanExpression/lhs"/>
-      <genFeatures property="None" children="true" createChild="true" ecoreFeature="ecore:EReference RCL.ecore#//BooleanExpression/rhs"/>
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//BooleanExpression/op"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//MessageQuery"/>
     </genClasses>
-    <genClasses image="false" ecoreClass="RCL.ecore#//RoverValue"/>
-    <genClasses ecoreClass="RCL.ecore#//NumberValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//NumberValue/nValue"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//ObstacleQuery"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//ObstacleQuery/front"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//StringValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//StringValue/sValue"/>
+    <genClasses image="false">
+      <ecoreClass href="RCL.ecore#//RoverExpression"/>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//BooleanValue">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//BooleanValue/bValue"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//NumericExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//NumericExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//NumericExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//NumericExpression/op"/>
+      </genFeatures>
     </genClasses>
-    <genClasses image="false" ecoreClass="RCL.ecore#//Action"/>
-    <genClasses ecoreClass="RCL.ecore#//ForwardAction"/>
-    <genClasses ecoreClass="RCL.ecore#//ForwardMinAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//ForwardMinAction/duration"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//StringExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//StringExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//StringExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//StringExpression/op"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//BackwardAction"/>
-    <genClasses ecoreClass="RCL.ecore#//BackwardMinAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//BackwardMinAction/duration"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//BooleanExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//BooleanExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//BooleanExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//BooleanExpression/op"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//TurnAction"/>
-    <genClasses ecoreClass="RCL.ecore#//TurnDegAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//TurnDegAction/degrees"/>
+    <genClasses image="false">
+      <ecoreClass href="RCL.ecore#//RoverValue"/>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//StopAction"/>
-    <genClasses ecoreClass="RCL.ecore#//LogAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//LogAction/message"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//NumberValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//NumberValue/nValue"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//SendAction">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//SendAction/message"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//StringValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//StringValue/sValue"/>
+      </genFeatures>
     </genClasses>
-    <genClasses ecoreClass="RCL.ecore#//VarRef">
-      <genFeatures createChild="false" ecoreFeature="ecore:EAttribute RCL.ecore#//VarRef/name"/>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//BooleanValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//BooleanValue/bValue"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RCL.ecore#//Action"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//ForwardAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//ForwardMinAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//ForwardMinAction/distance"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//BackwardAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//BackwardMinAction"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//BackwardMinAction/distance"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//TurnAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//TurnDegAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="RCL.ecore#//TurnDegAction/degrees"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//StopAction"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//LogAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//LogAction/message"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//SendAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//SendAction/message"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RCL.ecore#//VarRef"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RCL.ecore#//VarRef/name"/>
+      </genFeatures>
     </genClasses>
   </genPackages>
 </genmodel:GenModel>

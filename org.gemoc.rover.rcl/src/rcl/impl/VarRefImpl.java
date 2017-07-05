@@ -3,16 +3,17 @@
 package rcl.impl;
 
 import org.eclipse.emf.common.notify.Notification;
-
 import org.eclipse.emf.common.notify.NotificationChain;
-import org.eclipse.emf.ecore.EClass;
 
+import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.InternalEObject;
+
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import org.eclipse.emf.ecore.util.EcoreUtil;
-import rcl.Block;
+
 import rcl.NumberValue;
+import rcl.RclBlock;
 import rcl.RclPackage;
 import rcl.Statement;
 import rcl.StringValue;
@@ -161,9 +162,9 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Block getEnclosing() {
+	public RclBlock getEnclosing() {
 		if (eContainerFeatureID() != RclPackage.VAR_REF__ENCLOSING) return null;
-		return (Block)eInternalContainer();
+		return (RclBlock)eInternalContainer();
 	}
 
 	/**
@@ -171,7 +172,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetEnclosing(Block newEnclosing, NotificationChain msgs) {
+	public NotificationChain basicSetEnclosing(RclBlock newEnclosing, NotificationChain msgs) {
 		msgs = eBasicSetContainer((InternalEObject)newEnclosing, RclPackage.VAR_REF__ENCLOSING, msgs);
 		return msgs;
 	}
@@ -181,7 +182,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setEnclosing(Block newEnclosing) {
+	public void setEnclosing(RclBlock newEnclosing) {
 		if (newEnclosing != eInternalContainer() || (eContainerFeatureID() != RclPackage.VAR_REF__ENCLOSING && newEnclosing != null)) {
 			if (EcoreUtil.isAncestor(this, newEnclosing))
 				throw new IllegalArgumentException("Recursive containment not allowed for " + toString());
@@ -189,7 +190,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 			if (eInternalContainer() != null)
 				msgs = eBasicRemoveFromContainer(msgs);
 			if (newEnclosing != null)
-				msgs = ((InternalEObject)newEnclosing).eInverseAdd(this, RclPackage.BLOCK__STMTS, Block.class, msgs);
+				msgs = ((InternalEObject)newEnclosing).eInverseAdd(this, RclPackage.RCL_BLOCK__STMTS, RclBlock.class, msgs);
 			msgs = basicSetEnclosing(newEnclosing, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
@@ -229,7 +230,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 			case RclPackage.VAR_REF__ENCLOSING:
 				if (eInternalContainer() != null)
 					msgs = eBasicRemoveFromContainer(msgs);
-				return basicSetEnclosing((Block)otherEnd, msgs);
+				return basicSetEnclosing((RclBlock)otherEnd, msgs);
 		}
 		return super.eInverseAdd(otherEnd, featureID, msgs);
 	}
@@ -257,7 +258,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	public NotificationChain eBasicRemoveFromContainerFeature(NotificationChain msgs) {
 		switch (eContainerFeatureID()) {
 			case RclPackage.VAR_REF__ENCLOSING:
-				return eInternalContainer().eInverseRemove(this, RclPackage.BLOCK__STMTS, Block.class, msgs);
+				return eInternalContainer().eInverseRemove(this, RclPackage.RCL_BLOCK__STMTS, RclBlock.class, msgs);
 		}
 		return super.eBasicRemoveFromContainerFeature(msgs);
 	}
@@ -297,7 +298,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 				setSValue((String)newValue);
 				return;
 			case RclPackage.VAR_REF__ENCLOSING:
-				setEnclosing((Block)newValue);
+				setEnclosing((RclBlock)newValue);
 				return;
 			case RclPackage.VAR_REF__NAME:
 				setName((String)newValue);
@@ -321,7 +322,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 				setSValue(SVALUE_EDEFAULT);
 				return;
 			case RclPackage.VAR_REF__ENCLOSING:
-				setEnclosing((Block)null);
+				setEnclosing((RclBlock)null);
 				return;
 			case RclPackage.VAR_REF__NAME:
 				setName(NAME_EDEFAULT);

@@ -4,7 +4,8 @@ import fr.inria.diverse.melange.adapters.EObjectAdapter;
 import org.eclipse.emf.ecore.EClass;
 import rover.rcl.adapters.rclmt.RCLMTAdaptersFactory;
 import rover.rcl.rcl.TurnDegAction;
-import rover.rclmt.rcl.Block;
+import rover.rclmt.rcl.NumberValue;
+import rover.rclmt.rcl.RclBlock;
 import rover.rclmt.rcl.RoverProgram;
 
 @SuppressWarnings("all")
@@ -17,25 +18,27 @@ public class TurnDegActionAdapter extends EObjectAdapter<TurnDegAction> implemen
   }
   
   @Override
-  public int getDegrees() {
-    return adaptee.getDegrees();
+  public RclBlock getEnclosing() {
+    return (RclBlock) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
   }
   
   @Override
-  public void setDegrees(final int o) {
-    adaptee.setDegrees(o);
-  }
-  
-  @Override
-  public Block getEnclosing() {
-    return (Block) adaptersFactory.createAdapter(adaptee.getEnclosing(), eResource);
-  }
-  
-  @Override
-  public void setEnclosing(final Block o) {
+  public void setEnclosing(final RclBlock o) {
     if (o != null)
-    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.BlockAdapter) o).getAdaptee());
+    	adaptee.setEnclosing(((rover.rcl.adapters.rclmt.rcl.RclBlockAdapter) o).getAdaptee());
     else adaptee.setEnclosing(null);
+  }
+  
+  @Override
+  public NumberValue getDegrees() {
+    return (NumberValue) adaptersFactory.createAdapter(adaptee.getDegrees(), eResource);
+  }
+  
+  @Override
+  public void setDegrees(final NumberValue o) {
+    if (o != null)
+    	adaptee.setDegrees(((rover.rcl.adapters.rclmt.rcl.NumberValueAdapter) o).getAdaptee());
+    else adaptee.setDegrees(null);
   }
   
   @Override
@@ -48,8 +51,6 @@ public class TurnDegActionAdapter extends EObjectAdapter<TurnDegAction> implemen
     return (RoverProgram) adaptersFactory.createAdapter(rover.rcl.aspects.StatementAspect.getProgram(adaptee), eResource);
   }
   
-  protected final static int DEGREES_EDEFAULT = 0;
-  
   @Override
   public EClass eClass() {
     return rover.rclmt.rcl.RclPackage.eINSTANCE.getTurnDegAction();
@@ -61,7 +62,7 @@ public class TurnDegActionAdapter extends EObjectAdapter<TurnDegAction> implemen
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__ENCLOSING:
     		return getEnclosing();
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__DEGREES:
-    		return new java.lang.Integer(getDegrees());
+    		return getDegrees();
     }
     
     return super.eGet(featureID, resolve, coreType);
@@ -73,7 +74,7 @@ public class TurnDegActionAdapter extends EObjectAdapter<TurnDegAction> implemen
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__ENCLOSING:
     		return getEnclosing() != null;
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__DEGREES:
-    		return getDegrees() != DEGREES_EDEFAULT;
+    		return getDegrees() != null;
     }
     
     return super.eIsSet(featureID);
@@ -84,11 +85,13 @@ public class TurnDegActionAdapter extends EObjectAdapter<TurnDegAction> implemen
     switch (featureID) {
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__ENCLOSING:
     		setEnclosing(
-    		(rover.rclmt.rcl.Block)
+    		(rover.rclmt.rcl.RclBlock)
     		 newValue);
     		return;
     	case rover.rclmt.rcl.RclPackage.TURN_DEG_ACTION__DEGREES:
-    		setDegrees(((java.lang.Integer) newValue).intValue());
+    		setDegrees(
+    		(rover.rclmt.rcl.NumberValue)
+    		 newValue);
     		return;
     }
     
