@@ -5,7 +5,7 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.melange.annotation.Containment;
 import org.gemoc.rover.rcl.semantics.NumberValueAspect;
 import org.modelexecution.units.Unit;
-import org.modelexecution.units.semantics.UnitAspect;
+import org.modelexecution.units.semantics.LengthUnitAspect;
 import rcl.NumberValue;
 import rover.NumberValueUnitNumberValueAspectProperties;
 
@@ -48,7 +48,16 @@ public class NumberValueUnit extends NumberValueAspect {
   }
   
   protected static int _privk3_getIntValue(final NumberValueUnitNumberValueAspectProperties _self_, final NumberValue _self) {
-    return NumberValueUnit.super_getIntValue(_self);
+    int _xifexpression = (int) 0;
+    Unit _unit = NumberValueUnit.unit(_self);
+    boolean _tripleNotEquals = (_unit != null);
+    if (_tripleNotEquals) {
+      long _round = Math.round(LengthUnitAspect.toCentimeters(NumberValueUnit.unit(_self), _self.getNValue()));
+      _xifexpression = ((int) _round);
+    } else {
+      _xifexpression = NumberValueUnit.super_getIntValue(_self);
+    }
+    return _xifexpression;
   }
   
   private static String super_print(final NumberValue _self) {
@@ -58,7 +67,7 @@ public class NumberValueUnit extends NumberValueAspect {
   
   protected static String _privk3_print(final NumberValueUnitNumberValueAspectProperties _self_, final NumberValue _self) {
     String _super_print = NumberValueUnit.super_print(_self);
-    String _print = UnitAspect.print(NumberValueUnit.unit(_self));
+    String _print = LengthUnitAspect.print(NumberValueUnit.unit(_self));
     return (_super_print + _print);
   }
   

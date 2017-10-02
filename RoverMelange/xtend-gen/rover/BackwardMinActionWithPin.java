@@ -2,7 +2,6 @@ package rover;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect;
 import org.gemoc.rover.rcl.semantics.BackwardMinActionAspect;
 import org.gemoc.sequential.model.arduino.Pin;
@@ -26,7 +25,6 @@ public class BackwardMinActionWithPin extends BackwardMinActionAspect {
   
   protected static void _privk3_eval(final BackwardMinActionWithPinBackwardMinActionAspectProperties _self_, final BackwardMinAction _self) {
     BackwardMinActionWithPin.super_eval(_self);
-    InputOutput.<String>println("Setting associated pin on the board");
     Pin _associatedPin = ActionToPin.associatedPin(_self);
     Pin_EvaluableAspect.level(_associatedPin, 1);
   }

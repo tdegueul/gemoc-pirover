@@ -15,9 +15,9 @@ import rcl.BackwardMinAction
 import rcl.NumberValue
 import rcl.RoverProgram
 
-import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
-import static extension org.modelexecution.units.semantics.UnitAspect.*
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
+import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
+import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
 import static extension rover.ActionToPin.*
 
 @Aspect(className = NumberValue)
@@ -26,8 +26,11 @@ class NumberValueUnit extends NumberValueAspect {
 	
 	@OverrideAspectMethod
 	override int getIntValue() {
-		// Conversion TODO here
-		return _self.super_getIntValue
+		return
+			if (_self.unit !== null)
+				Math::round(_self.unit.toCentimeters(_self.NValue)) as int
+			else
+				_self.super_getIntValue
 	}
 	
 	@OverrideAspectMethod
@@ -55,8 +58,7 @@ class ActionToPin extends ActionAspect {
 class BackwardMinActionWithPin extends BackwardMinActionAspect {
 	@OverrideAspectMethod
 	override void eval() {
-		_self.super_eval()
-		println("Setting associated pin on the board")
+		_self.super_eval
 		_self.associatedPin.level = 1
 	}
 }

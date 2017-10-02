@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rcl:RoverProgram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rcl="http://rover.rcl/rcl/">
+<rcl:RoverProgram xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:rcl="http://gemoc.org/rover/rcl/">
   <params name="distance_to_obstacle"/>
   <block>
-    <stmts xsi:type="rcl:Assignment" name="threshold">
+    <stmts xsi:type="rcl:VarAssignment" name="threshold">
       <value xsi:type="rcl:NumberValue" nValue="3"/>
     </stmts>
     <stmts xsi:type="rcl:Conditional">
@@ -24,7 +24,9 @@
             <stmts xsi:type="rcl:StopAction"/>
           </condTrue>
           <condFalse>
-            <stmts xsi:type="rcl:BackwardMinAction" duration="10"/>
+            <stmts xsi:type="rcl:BackwardMinAction">
+              <distance xsi:type="rcl:NumberValue" nValue="10"/>
+            </stmts>
           </condFalse>
         </stmts>
       </condFalse>

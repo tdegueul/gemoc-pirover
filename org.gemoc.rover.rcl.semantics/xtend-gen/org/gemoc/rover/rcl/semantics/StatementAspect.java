@@ -14,32 +14,32 @@ public abstract class StatementAspect {
   @Abstract
   public static void eval(final Statement _self) {
     final org.gemoc.rover.rcl.semantics.StatementAspectStatementAspectProperties _self_ = org.gemoc.rover.rcl.semantics.StatementAspectStatementAspectContext.getSelf(_self);
-     if (_self instanceof rcl.ForwardMinAction){
+     if (_self instanceof rcl.Loop){
+    					org.gemoc.rover.rcl.semantics.LoopAspect.eval((rcl.Loop)_self);
+    } else  if (_self instanceof rcl.StopAction){
+    					org.gemoc.rover.rcl.semantics.StopActionAspect.eval((rcl.StopAction)_self);
+    } else  if (_self instanceof rcl.VarAssignment){
+    					org.gemoc.rover.rcl.semantics.VarAssignmentAspect.eval((rcl.VarAssignment)_self);
+    } else  if (_self instanceof rcl.RclBlock){
+    					org.gemoc.rover.rcl.semantics.RclBlockAspect.eval((rcl.RclBlock)_self);
+    } else  if (_self instanceof rcl.ForwardMinAction){
     					org.gemoc.rover.rcl.semantics.ForwardMinActionAspect.eval((rcl.ForwardMinAction)_self);
     } else  if (_self instanceof rcl.TurnAction){
     					org.gemoc.rover.rcl.semantics.TurnActionAspect.eval((rcl.TurnAction)_self);
+    } else  if (_self instanceof rcl.TurnDegAction){
+    					org.gemoc.rover.rcl.semantics.TurnDegActionAspect.eval((rcl.TurnDegAction)_self);
     } else  if (_self instanceof rcl.BackwardMinAction){
     					org.gemoc.rover.rcl.semantics.BackwardMinActionAspect.eval((rcl.BackwardMinAction)_self);
-    } else  if (_self instanceof rcl.LogAction){
-    					org.gemoc.rover.rcl.semantics.LogActionAspect.eval((rcl.LogAction)_self);
-    } else  if (_self instanceof rcl.StopAction){
-    					org.gemoc.rover.rcl.semantics.StopActionAspect.eval((rcl.StopAction)_self);
     } else  if (_self instanceof rcl.SendAction){
     					org.gemoc.rover.rcl.semantics.SendActionAspect.eval((rcl.SendAction)_self);
+    } else  if (_self instanceof rcl.LogAction){
+    					org.gemoc.rover.rcl.semantics.LogActionAspect.eval((rcl.LogAction)_self);
     } else  if (_self instanceof rcl.BackwardAction){
     					org.gemoc.rover.rcl.semantics.BackwardActionAspect.eval((rcl.BackwardAction)_self);
     } else  if (_self instanceof rcl.ForwardAction){
     					org.gemoc.rover.rcl.semantics.ForwardActionAspect.eval((rcl.ForwardAction)_self);
-    } else  if (_self instanceof rcl.TurnDegAction){
-    					org.gemoc.rover.rcl.semantics.TurnDegActionAspect.eval((rcl.TurnDegAction)_self);
-    } else  if (_self instanceof rcl.VarAssignment){
-    					org.gemoc.rover.rcl.semantics.VarAssignmentAspect.eval((rcl.VarAssignment)_self);
     } else  if (_self instanceof rcl.Conditional){
     					org.gemoc.rover.rcl.semantics.ConditionalAspect.eval((rcl.Conditional)_self);
-    } else  if (_self instanceof rcl.Loop){
-    					org.gemoc.rover.rcl.semantics.LoopAspect.eval((rcl.Loop)_self);
-    } else  if (_self instanceof rcl.RclBlock){
-    					org.gemoc.rover.rcl.semantics.RclBlockAspect.eval((rcl.RclBlock)_self);
     } else  if (_self instanceof rcl.Statement){
     					org.gemoc.rover.rcl.semantics.StatementAspect._privk3_eval(_self_, (rcl.Statement)_self);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
