@@ -6,7 +6,6 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import rover.raspirover.aspects.Block_ExecutableAspect;
 import rover.raspirover.aspects.Project_ExecutableAspectProjectAspectProperties;
-import rover.raspirover.raspirover.Block;
 import rover.raspirover.raspirover.Project;
 import rover.raspirover.raspirover.Sketch;
 
@@ -30,8 +29,7 @@ public class Project_ExecutableAspect {
     final EList<Sketch> sketches = _self.getSketches();
     while (true) {
       final Consumer<Sketch> _function = (Sketch s) -> {
-        Block _block = s.getBlock();
-        Block_ExecutableAspect.execute(_block);
+        Block_ExecutableAspect.execute(s.getBlock());
       };
       sketches.forEach(_function);
     }

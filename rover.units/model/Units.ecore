@@ -5,14 +5,54 @@
     <details key="settingDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
     <details key="validationDelegates" value="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot"/>
   </eAnnotations>
-  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true"/>
-  <eClassifiers xsi:type="ecore:EClass" name="LengthUnit" abstract="true" eSuperTypes="//Unit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Centimeter" eSuperTypes="//MetricSystemUnit //LengthUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Millimeter" eSuperTypes="//MetricSystemUnit //LengthUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Meter" eSuperTypes="//MetricSystemUnit //LengthUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Foot" eSuperTypes="//ImperialSystemUnit //LengthUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Inch" eSuperTypes="//ImperialSystemUnit //LengthUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Yard" eSuperTypes="//ImperialSystemUnit //LengthUnit"/>
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthUnit" abstract="true" eSuperTypes="//Unit">
+    <eOperations name="asCentimeters">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Centimeter" eSuperTypes="//MetricSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Millimeter" eSuperTypes="//MetricSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Meter" eSuperTypes="//MetricSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Foot" eSuperTypes="//ImperialSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Inch" eSuperTypes="//ImperialSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Yard" eSuperTypes="//ImperialSystemUnit //LengthUnit">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricSystemUnit" abstract="true" eSuperTypes="//Unit"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImperialSystemUnit" abstract="true" eSuperTypes="//Unit"/>
   <eClassifiers xsi:type="ecore:EClass" name="AngleUnit" abstract="true" eSuperTypes="//Unit"/>

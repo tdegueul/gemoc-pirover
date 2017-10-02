@@ -14,4 +14,12 @@ package rover.raspirover.raspirover;
  * @generated
  */
 public interface Foot extends ImperialSystemUnit, LengthUnit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String print();
+
 } // Foot

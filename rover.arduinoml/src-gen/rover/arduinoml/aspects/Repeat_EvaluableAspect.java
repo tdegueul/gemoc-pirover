@@ -74,6 +74,8 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.lang.Integer) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -84,15 +86,20 @@ public class Repeat_EvaluableAspect extends Control_EvaluableAspect {
   }
   
   protected static void _privk3_i(final Repeat_EvaluableAspectRepeatAspectProperties _self_, final Repeat _self, final Integer i) {
-    _self_.i = i; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setI")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, i);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.i = i;
     }
   }
 }

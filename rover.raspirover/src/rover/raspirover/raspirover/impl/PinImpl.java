@@ -24,7 +24,7 @@ import rover.raspirover.raspirover.RaspiroverPackage;
  *
  * @generated
  */
-public abstract class PinImpl extends NamedElementImpl implements Pin {
+public class PinImpl extends NamedElementImpl implements Pin {
 	/**
 	 * The default value of the '{@link #getLevel() <em>Level</em>}' attribute.
 	 * <!-- begin-user-doc -->

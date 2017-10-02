@@ -26,7 +26,6 @@ public class TemperatureQueryAspect extends NumberValueAspect {
   }
   
   protected static int _privk3_getIntValue(final TemperatureQueryAspectTemperatureQueryAspectProperties _self_, final TemperatureQuery _self) {
-    ThreadLocalRandom _current = ThreadLocalRandom.current();
-    return _current.nextInt(12, 24);
+    return ThreadLocalRandom.current().nextInt(12, 24);
   }
 }

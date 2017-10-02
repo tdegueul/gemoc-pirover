@@ -12,12 +12,12 @@ public class Control_EvaluableAspect extends Instruction_ExecutableAspect {
 	final rover.arduinoml.aspects.Control_EvaluableAspectControlAspectProperties _self_ = rover.arduinoml.aspects.Control_EvaluableAspectControlAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.arduinoml.arduino.If) {
-		result = rover.arduinoml.aspects.If_EvaluableAspect.evaluate((rover.arduinoml.arduino.If) _self);
-	} else if (_self instanceof rover.arduinoml.arduino.While) {
+	if (_self instanceof rover.arduinoml.arduino.While) {
 		result = rover.arduinoml.aspects.While_EvaluableAspect.evaluate((rover.arduinoml.arduino.While) _self);
 	} else if (_self instanceof rover.arduinoml.arduino.Repeat) {
 		result = rover.arduinoml.aspects.Repeat_EvaluableAspect.evaluate((rover.arduinoml.arduino.Repeat) _self);
+	} else if (_self instanceof rover.arduinoml.arduino.If) {
+		result = rover.arduinoml.aspects.If_EvaluableAspect.evaluate((rover.arduinoml.arduino.If) _self);
 	} else if (_self instanceof rover.arduinoml.arduino.Control) {
 		result = rover.arduinoml.aspects.Control_EvaluableAspect._privk3_evaluate(_self_,
 				(rover.arduinoml.arduino.Control) _self);

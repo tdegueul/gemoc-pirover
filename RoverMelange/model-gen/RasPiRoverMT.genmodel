@@ -1,0 +1,617 @@
+<?xml version="1.0" encoding="ASCII"?>
+<genmodel:GenModel xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:ecore="http://www.eclipse.org/emf/2002/Ecore" xmlns:genmodel="http://www.eclipse.org/emf/2002/GenModel" modelDirectory="/RoverMelange/src-gen" modelPluginID="RoverMelange" modelName="RasPiRoverMT" complianceLevel="7.0" copyrightFields="false">
+  <foreignModel>platform:/resource/RoverMelange/model-gen/RasPiRoverMT.ecore</foreignModel>
+  <genPackages prefix="Raspirover" basePackage="rover.raspirovermt" disposableProviderFactory="true">
+    <ecorePackage href="RasPiRoverMT.ecore#/"/>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RasPiRoverMT.ecore#//NumericOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/lt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/neq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/gt"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/leq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//NumericOperator/geq"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RasPiRoverMT.ecore#//StringOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//StringOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//StringOperator/neq"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genEnums typeSafeEnumCompatible="false">
+      <ecoreEnum href="RasPiRoverMT.ecore#//BooleanOperator"/>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//BooleanOperator/eq"/>
+      </genEnumLiterals>
+      <genEnumLiterals>
+        <ecoreEnumLiteral href="RasPiRoverMT.ecore#//BooleanOperator/neq"/>
+      </genEnumLiterals>
+    </genEnums>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//RasPiBoard"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//RasPiBoard/digitalPins"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//RasPiBoard/analogPins"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Board"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Board/project"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//NamedElement"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//NamedElement/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Project"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Project/boards"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Project/sketches"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Project/program"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Project/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Sketch"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Sketch/project"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Sketch/block"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Sketch/board"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Block"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Block/instructions"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Block/execute"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Instruction"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Instruction/execute"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Instruction/finalize"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//DigitalPin"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//DigitalPin/module"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Pin"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//Pin/level"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//ArduinoDigitalModule"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//ArduinoModule"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Module"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AnalogPin"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//AnalogPin/module"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//ArduinoAnalogModule"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//RoverProgram"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//RoverProgram/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//RoverProgram/params"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//RoverProgram/block"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//RoverProgram/getVar"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//RoverProgram/getVar/n"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//RoverProgram/bindVar"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//RoverProgram/bindVar/n"/>
+        </genParameters>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//RoverProgram/bindVar/v"/>
+        </genParameters>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//RoverProgram/run"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Param"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//Param/name"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Statement"/>
+      <genFeatures property="None" notify="false" createChild="false">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Statement/enclosing"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Statement/eval"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Statement/getProgram"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//VarAssignment"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//VarAssignment/name"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//VarAssignment/value"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//VarAssignment/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Conditional"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Conditional/expr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Conditional/condTrue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Conditional/condFalse"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Conditional/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Loop"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Loop/expr"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Loop/block"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Loop/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//RclBlock"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//RclBlock/stmts"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//RclBlock/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Query"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//TemperatureQuery"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//TemperatureQuery/getIntValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//HumidityQuery"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//HumidityQuery/getIntValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//MessageQuery"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//MessageQuery/getStringValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//ObstacleQuery"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//ObstacleQuery/front"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//ObstacleQuery/getBooleanValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//RoverExpression"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//RoverExpression/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//NumericExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//NumericExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//NumericExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//NumericExpression/op"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//NumericExpression/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//StringExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//StringExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//StringExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//StringExpression/op"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//StringExpression/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//BooleanExpression"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//BooleanExpression/lhs"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//BooleanExpression/rhs"/>
+      </genFeatures>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//BooleanExpression/op"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//BooleanExpression/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//RoverValue"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//NumberValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//NumberValue/nValue"/>
+      </genFeatures>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//NumberValue/unit"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//NumberValue/getIntValue"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//NumberValue/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//StringValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//StringValue/sValue"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//StringValue/getStringValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//BooleanValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//BooleanValue/bValue"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//BooleanValue/getBooleanValue"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Action"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Action/associatedPin"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//ForwardAction"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//ForwardAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//ForwardMinAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//ForwardMinAction/distance"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//ForwardMinAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//BackwardAction"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//BackwardAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//BackwardMinAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//BackwardMinAction/distance"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//BackwardMinAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//TurnAction"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//TurnAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//TurnDegAction"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//TurnDegAction/degrees"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//TurnDegAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//StopAction"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//StopAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LogAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//LogAction/message"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//LogAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//SendAction"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//SendAction/message"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//SendAction/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//VarRef"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRoverMT.ecore#//VarRef/name"/>
+      </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//VarRef/getIntValue"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//VarRef/getBooleanValue"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//VarRef/getStringValue"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//VarRef/eval"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Unit"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Unit/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthUnit"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//LengthUnit/asCentimeters"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Centimeter"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Centimeter/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Millimeter"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Millimeter/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Meter"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Meter/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Foot"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Foot/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Inch"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Inch/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Yard"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Yard/print"/>
+      </genOperations>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//MetricSystemUnit"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//ImperialSystemUnit"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleUnit"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Radian"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Degree"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Turn"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Gradian"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//Quantity"/>
+      <genFeatures property="None" children="true" createChild="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Quantity/unit"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//Quantity/value"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Length"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//Angle"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//NumericValue"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//QuantityOperation"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthAdd"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthSubtract"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthScalarMultiply"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthScalarDivide"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthEquals"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthDistinct"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthSmaller"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//LengthGreater"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleOperation"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleAdd"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleSubtract"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleScalarMultiply"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleScalarDivide"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleEquals"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleDistinct"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleSmaller"/>
+    </genClasses>
+    <genClasses>
+      <ecoreClass href="RasPiRoverMT.ecore#//AngleGreater"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//QuantityArithmeticOperation"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//QuantityComparisonOperation"/>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//QuantityHomogenousOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//QuantityHomogenousOperation/lhs"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//QuantityHomogenousOperation/rhs"/>
+      </genFeatures>
+    </genClasses>
+    <genClasses image="false">
+      <ecoreClass href="RasPiRoverMT.ecore#//QuantityScalarOperation"/>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//QuantityScalarOperation/lhs"/>
+      </genFeatures>
+      <genFeatures notify="false" createChild="false" propertySortChoices="true">
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRoverMT.ecore#//QuantityScalarOperation/rhs"/>
+      </genFeatures>
+    </genClasses>
+  </genPackages>
+  <usedGenPackages href="../../org.eclipse.emf.ecore/model/Ecore.genmodel#//ecore"/>
+</genmodel:GenModel>

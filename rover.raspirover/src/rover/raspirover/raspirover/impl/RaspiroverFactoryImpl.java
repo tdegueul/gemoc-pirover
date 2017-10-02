@@ -62,6 +62,7 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 			case RaspiroverPackage.SKETCH: return createSketch();
 			case RaspiroverPackage.BLOCK: return createBlock();
 			case RaspiroverPackage.DIGITAL_PIN: return createDigitalPin();
+			case RaspiroverPackage.PIN: return createPin();
 			case RaspiroverPackage.ANALOG_PIN: return createAnalogPin();
 			case RaspiroverPackage.ROVER_PROGRAM: return createRoverProgram();
 			case RaspiroverPackage.PARAM: return createParam();
@@ -210,6 +211,16 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 	public DigitalPin createDigitalPin() {
 		DigitalPinImpl digitalPin = new DigitalPinImpl();
 		return digitalPin;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Pin createPin() {
+		PinImpl pin = new PinImpl();
+		return pin;
 	}
 
 	/**

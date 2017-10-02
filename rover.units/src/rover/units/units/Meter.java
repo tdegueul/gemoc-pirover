@@ -14,4 +14,12 @@ package rover.units.units;
  * @generated
  */
 public interface Meter extends MetricSystemUnit, LengthUnit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String print();
+
 } // Meter

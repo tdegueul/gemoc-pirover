@@ -5,27 +5,51 @@
     <ecorePackage href="Units.ecore#/"/>
     <genClasses image="false">
       <ecoreClass href="Units.ecore#//Unit"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Unit/print"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="Units.ecore#//LengthUnit"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//LengthUnit/asCentimeters"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Centimeter"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Centimeter/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Millimeter"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Millimeter/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Meter"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Meter/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Foot"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Foot/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Inch"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Inch/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="Units.ecore#//Yard"/>
+      <genOperations>
+        <ecoreOperation href="Units.ecore#//Yard/print"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="Units.ecore#//MetricSystemUnit"/>

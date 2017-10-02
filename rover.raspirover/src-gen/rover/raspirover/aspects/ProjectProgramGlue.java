@@ -44,8 +44,7 @@ public class ProjectProgramGlue extends Project_ExecutableAspect {
   }
   
   protected static void _privk3_execute(final ProjectProgramGlueProjectAspectProperties _self_, final Project _self) {
-    RoverProgram _program = ProjectProgramGlue.program(_self);
-    RoverProgramAspect.run(_program);
+    RoverProgramAspect.run(ProjectProgramGlue.program(_self));
   }
   
   protected static RoverProgram _privk3_program(final ProjectProgramGlueProjectAspectProperties _self_, final Project _self) {
@@ -56,6 +55,8 @@ public class ProjectProgramGlue extends Project_ExecutableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (rover.raspirover.raspirover.RoverProgram) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -66,15 +67,20 @@ public class ProjectProgramGlue extends Project_ExecutableAspect {
   }
   
   protected static void _privk3_program(final ProjectProgramGlueProjectAspectProperties _self_, final Project _self, final RoverProgram program) {
-    _self_.program = program; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setProgram")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, program);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.program = program;
     }
   }
 }

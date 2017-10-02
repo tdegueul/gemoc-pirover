@@ -30,8 +30,7 @@ public class If_EvaluableAspect extends Control_EvaluableAspect {
     Boolean resCond = Boolean.valueOf(false);
     BooleanExpression _condition = _self.getCondition();
     if ((_condition instanceof BooleanExpression)) {
-      BooleanExpression _condition_1 = _self.getCondition();
-      Object _evaluate = Expression_EvaluableAspect.evaluate(_condition_1);
+      Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getCondition());
       resCond = ((Boolean) _evaluate);
     }
     return resCond;

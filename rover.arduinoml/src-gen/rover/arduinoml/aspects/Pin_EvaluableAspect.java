@@ -35,8 +35,7 @@ public class Pin_EvaluableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (int) ret;
-    				}
-    		}
+    				}		}
     	}
     } catch (Exception e) {
     	// Chut !
@@ -45,15 +44,20 @@ public class Pin_EvaluableAspect {
   }
   
   protected static void _privk3_level(final Pin_EvaluableAspectPinAspectProperties _self_, final Pin _self, final int level) {
-    _self_.level = level; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setLevel")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, level);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.level = level;
     }
   }
 }

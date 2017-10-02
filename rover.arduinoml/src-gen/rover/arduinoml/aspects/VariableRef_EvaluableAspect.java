@@ -2,14 +2,11 @@ package rover.arduinoml.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.emf.ecore.EClass;
 import rover.arduinoml.aspects.BooleanVariable_EvaluableAspect;
 import rover.arduinoml.aspects.Expression_EvaluableAspect;
 import rover.arduinoml.aspects.IntegerVariable_EvaluableAspect;
 import rover.arduinoml.aspects.VariableRef_EvaluableAspectVariableRefAspectProperties;
-import rover.arduinoml.arduino.BooleanVariable;
 import rover.arduinoml.arduino.BooleanVariableRef;
-import rover.arduinoml.arduino.IntegerVariable;
 import rover.arduinoml.arduino.IntegerVariableRef;
 import rover.arduinoml.arduino.VariableRef;
 
@@ -35,18 +32,15 @@ public class VariableRef_EvaluableAspect extends Expression_EvaluableAspect {
     boolean _matched = false;
     if (_self instanceof BooleanVariableRef) {
       _matched=true;
-      BooleanVariable _variable = ((BooleanVariableRef) _self).getVariable();
-      return BooleanVariable_EvaluableAspect.evaluate(_variable);
+      return BooleanVariable_EvaluableAspect.evaluate(((BooleanVariableRef) _self).getVariable());
     }
     if (!_matched) {
       if (_self instanceof IntegerVariableRef) {
         _matched=true;
-        IntegerVariable _variable = ((IntegerVariableRef) _self).getVariable();
-        return IntegerVariable_EvaluableAspect.evaluate(_variable);
+        return IntegerVariable_EvaluableAspect.evaluate(((IntegerVariableRef) _self).getVariable());
       }
     }
-    EClass _eClass = _self.eClass();
-    String _name = _eClass.getName();
+    String _name = _self.eClass().getName();
     String _plus = ("type not expected: " + _name);
     throw new ClassCastException(_plus);
   }

@@ -1,7 +1,6 @@
 package runrover;
 
 import java.util.Map;
-import org.eclipse.emf.common.util.EList;
 import org.eclipse.emf.common.util.URI;
 import org.eclipse.emf.ecore.EObject;
 import org.eclipse.emf.ecore.EPackage;
@@ -26,10 +25,8 @@ public class RunRover {
     _extensionToFactoryMap.put("raspirover", _xMIResourceFactoryImpl);
     EPackage.Registry.INSTANCE.put(RaspiroverPackage.eNS_URI, RaspiroverPackage.eINSTANCE);
     final ResourceSetImpl rs = new ResourceSetImpl();
-    URI _createURI = URI.createURI("My.raspirover");
-    final Resource res = rs.getResource(_createURI, true);
-    EList<EObject> _contents = res.getContents();
-    EObject _head = IterableExtensions.<EObject>head(_contents);
+    final Resource res = rs.getResource(URI.createURI("My.raspirover"), true);
+    EObject _head = IterableExtensions.<EObject>head(res.getContents());
     return ((Project) _head);
   }
 }

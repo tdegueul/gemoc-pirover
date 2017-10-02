@@ -3,7 +3,6 @@ package org.gemoc.rover.rcl.semantics;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import java.util.function.Consumer;
-import org.eclipse.emf.common.util.EList;
 import org.gemoc.rover.rcl.semantics.RclBlockAspectRclBlockAspectProperties;
 import org.gemoc.rover.rcl.semantics.StatementAspect;
 import rcl.RclBlock;
@@ -23,10 +22,9 @@ public class RclBlockAspect extends StatementAspect {
   }
   
   protected static void _privk3_eval(final RclBlockAspectRclBlockAspectProperties _self_, final RclBlock _self) {
-    EList<Statement> _stmts = _self.getStmts();
     final Consumer<Statement> _function = (Statement it) -> {
       StatementAspect.eval(it);
     };
-    _stmts.forEach(_function);
+    _self.getStmts().forEach(_function);
   }
 }

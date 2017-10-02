@@ -28,11 +28,6 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
 	if (manager != null) {
 		manager.executeStep(_self, command, "BluetoothTransceiver", "push");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -68,18 +63,15 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_push(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
-    EList<BluetoothTransceiver> _connectedTransceiver = _self.getConnectedTransceiver();
     final Consumer<BluetoothTransceiver> _function = (BluetoothTransceiver t) -> {
       final EList<Integer> l = BluetoothTransceiver_PushAspect.dataReceived(t);
-      EList<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
       final Consumer<Integer> _function_1 = (Integer i) -> {
         l.add(i);
       };
-      _dataToSend.forEach(_function_1);
+      BluetoothTransceiver_PushAspect.dataToSend(_self).forEach(_function_1);
     };
-    _connectedTransceiver.forEach(_function);
-    EList<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(_self);
-    _dataToSend.clear();
+    _self.getConnectedTransceiver().forEach(_function);
+    BluetoothTransceiver_PushAspect.dataToSend(_self).clear();
   }
   
   protected static EList<Integer> _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self) {
@@ -90,6 +82,8 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (org.eclipse.emf.common.util.EList) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -100,15 +94,20 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_dataToSend(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self, final EList<Integer> dataToSend) {
-    _self_.dataToSend = dataToSend; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setDataToSend")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, dataToSend);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.dataToSend = dataToSend;
     }
   }
   
@@ -120,6 +119,8 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (org.eclipse.emf.common.util.EList) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -130,15 +131,20 @@ public abstract class BluetoothTransceiver_PushAspect extends ArduinoCommunicati
   }
   
   protected static void _privk3_dataReceived(final BluetoothTransceiver_PushAspectBluetoothTransceiverAspectProperties _self_, final BluetoothTransceiver _self, final EList<Integer> dataReceived) {
-    _self_.dataReceived = dataReceived; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setDataReceived")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, dataReceived);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.dataReceived = dataReceived;
     }
   }
 }

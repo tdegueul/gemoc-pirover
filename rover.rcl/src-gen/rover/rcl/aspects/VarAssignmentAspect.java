@@ -5,8 +5,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import rover.rcl.aspects.RoverProgramAspect;
 import rover.rcl.aspects.StatementAspect;
 import rover.rcl.aspects.VarAssignmentAspectVarAssignmentAspectProperties;
-import rover.rcl.rcl.RoverProgram;
-import rover.rcl.rcl.RoverValue;
 import rover.rcl.rcl.VarAssignment;
 
 @Aspect(className = VarAssignment.class)
@@ -21,9 +19,6 @@ public class VarAssignmentAspect extends StatementAspect {
 }
   
   protected static void _privk3_eval(final VarAssignmentAspectVarAssignmentAspectProperties _self_, final VarAssignment _self) {
-    RoverProgram _program = StatementAspect.getProgram(_self);
-    String _name = _self.getName();
-    RoverValue _value = _self.getValue();
-    RoverProgramAspect.bindVar(_program, _name, _value);
+    RoverProgramAspect.bindVar(StatementAspect.getProgram(_self), _self.getName(), _self.getValue());
   }
 }

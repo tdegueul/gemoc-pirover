@@ -16,7 +16,7 @@ package rover.raspirover.raspirover;
  * </ul>
  *
  * @see rover.raspirover.raspirover.RaspiroverPackage#getPin()
- * @model abstract="true"
+ * @model
  * @generated
  */
 public interface Pin extends NamedElement {

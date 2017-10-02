@@ -81,4 +81,12 @@ public interface NumberValue extends RoverValue {
 	 */
 	int getIntValue();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String print();
+
 } // NumberValue

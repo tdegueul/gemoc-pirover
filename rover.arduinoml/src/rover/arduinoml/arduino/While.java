@@ -52,7 +52,7 @@ public interface While extends Control {
 	 * @model
 	 * @generated
 	 */
-	Boolean evaluate();
+	void execute();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -60,6 +60,6 @@ public interface While extends Control {
 	 * @model
 	 * @generated
 	 */
-	void execute();
+	Boolean evaluate();
 
 } // While

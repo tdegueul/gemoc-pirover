@@ -8,7 +8,6 @@ import rover.arduinoml.aspects.Control_EvaluableAspect;
 import rover.arduinoml.aspects.Control_ExecutableAspect;
 import rover.arduinoml.aspects.Instruction_ExecutableAspect;
 import rover.arduinoml.aspects.Repeat_ExecutableAspectRepeatAspectProperties;
-import rover.arduinoml.arduino.Block;
 import rover.arduinoml.arduino.Repeat;
 
 @Aspect(className = Repeat.class)
@@ -30,11 +29,6 @@ public class Repeat_ExecutableAspect extends Control_ExecutableAspect {
 	if (manager != null) {
 		manager.executeStep(_self, command, "Repeat", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -48,8 +42,7 @@ public class Repeat_ExecutableAspect extends Control_ExecutableAspect {
   
   protected static void _privk3_execute(final Repeat_ExecutableAspectRepeatAspectProperties _self_, final Repeat _self) {
     while ((Control_EvaluableAspect.evaluate(_self)).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     }
     Instruction_ExecutableAspect.finalize(_self);
   }

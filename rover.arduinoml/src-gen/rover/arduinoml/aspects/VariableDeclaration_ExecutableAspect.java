@@ -31,11 +31,6 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
 	if (manager != null) {
 		manager.executeStep(_self, command, "VariableDeclaration", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -54,16 +49,14 @@ public class VariableDeclaration_ExecutableAspect extends Instruction_Executable
       _matched=true;
       Variable _variable_1 = _self.getVariable();
       Variable _variable_2 = _self.getVariable();
-      int _initialValue = ((IntegerVariable) _variable_2).getInitialValue();
-      IntegerVariable_EvaluableAspect.value(((IntegerVariable) _variable_1), Integer.valueOf(_initialValue));
+      IntegerVariable_EvaluableAspect.value(((IntegerVariable) _variable_1), Integer.valueOf(((IntegerVariable) _variable_2).getInitialValue()));
     }
     if (!_matched) {
       if (_variable instanceof BooleanVariable) {
         _matched=true;
         Variable _variable_1 = _self.getVariable();
         Variable _variable_2 = _self.getVariable();
-        boolean _isInitialValue = ((BooleanVariable) _variable_2).isInitialValue();
-        BooleanVariable_EvaluableAspect.value(((BooleanVariable) _variable_1), Boolean.valueOf(_isInitialValue));
+        BooleanVariable_EvaluableAspect.value(((BooleanVariable) _variable_1), Boolean.valueOf(((BooleanVariable) _variable_2).isInitialValue()));
       }
     }
   }

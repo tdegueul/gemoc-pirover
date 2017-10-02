@@ -3,7 +3,6 @@ package rover.arduinoml.aspects;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import fr.inria.diverse.k3.al.annotationprocessor.Step;
-import org.eclipse.emf.common.util.EList;
 import rover.arduinoml.aspects.BluetoothTransceiver_PushAspect;
 import rover.arduinoml.aspects.Expression_EvaluableAspect;
 import rover.arduinoml.aspects.Instruction_UtilitesAspect;
@@ -37,11 +36,6 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
 	if (manager != null) {
 		manager.executeStep(_self, command, "ModuleAssignment", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -54,32 +48,27 @@ public class ModuleAssignment_ExecutableAspect extends ModuleInstruction_Executa
   }
   
   protected static void _privk3_execute(final ModuleAssignment_ExecutableAspectModuleAssignmentAspectProperties _self_, final ModuleAssignment _self) {
-    Module _module = _self.getModule();
-    final Pin pin = Instruction_UtilitesAspect.getPin(_self, _module);
+    final Pin pin = Instruction_UtilitesAspect.getPin(_self, _self.getModule());
     Expression _operand = _self.getOperand();
     if ((_operand instanceof IntegerExpression)) {
-      Expression _operand_1 = _self.getOperand();
-      Object _evaluate = Expression_EvaluableAspect.evaluate(_operand_1);
+      Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getOperand());
       Pin_EvaluableAspect.level(pin, (((Integer) _evaluate)).intValue());
     }
-    Expression _operand_2 = _self.getOperand();
-    if ((_operand_2 instanceof BooleanExpression)) {
-      Expression _operand_3 = _self.getOperand();
-      Object _evaluate_1 = Expression_EvaluableAspect.evaluate(_operand_3);
+    Expression _operand_1 = _self.getOperand();
+    if ((_operand_1 instanceof BooleanExpression)) {
+      Object _evaluate_1 = Expression_EvaluableAspect.evaluate(_self.getOperand());
       if ((((Boolean) _evaluate_1)).booleanValue()) {
         Pin_EvaluableAspect.level(pin, (Pin_EvaluableAspect.HIGH).intValue());
       } else {
         Pin_EvaluableAspect.level(pin, (Pin_EvaluableAspect.LOW).intValue());
       }
     }
-    Module _module_1 = _self.getModule();
-    if ((_module_1 instanceof BluetoothTransceiver)) {
+    Module _module = _self.getModule();
+    if ((_module instanceof BluetoothTransceiver)) {
+      Module _module_1 = _self.getModule();
+      BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_1)).add(Integer.valueOf(Pin_EvaluableAspect.level(pin)));
       Module _module_2 = _self.getModule();
-      EList<Integer> _dataToSend = BluetoothTransceiver_PushAspect.dataToSend(((BluetoothTransceiver) _module_2));
-      int _level = Pin_EvaluableAspect.level(pin);
-      _dataToSend.add(Integer.valueOf(_level));
-      Module _module_3 = _self.getModule();
-      BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_3));
+      BluetoothTransceiver_PushAspect.push(((BluetoothTransceiver) _module_2));
     }
   }
 }

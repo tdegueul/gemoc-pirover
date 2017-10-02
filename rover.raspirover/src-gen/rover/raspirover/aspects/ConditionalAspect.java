@@ -6,8 +6,6 @@ import rover.raspirover.aspects.ConditionalAspectConditionalAspectProperties;
 import rover.raspirover.aspects.RoverExpressionAspect;
 import rover.raspirover.aspects.StatementAspect;
 import rover.raspirover.raspirover.Conditional;
-import rover.raspirover.raspirover.RclBlock;
-import rover.raspirover.raspirover.RoverExpression;
 
 @Aspect(className = Conditional.class)
 @SuppressWarnings("all")
@@ -21,14 +19,11 @@ public class ConditionalAspect extends StatementAspect {
 }
   
   protected static void _privk3_eval(final ConditionalAspectConditionalAspectProperties _self_, final Conditional _self) {
-    RoverExpression _expr = _self.getExpr();
-    boolean _eval = RoverExpressionAspect.eval(_expr);
+    boolean _eval = RoverExpressionAspect.eval(_self.getExpr());
     if (_eval) {
-      RclBlock _condTrue = _self.getCondTrue();
-      StatementAspect.eval(_condTrue);
+      StatementAspect.eval(_self.getCondTrue());
     } else {
-      RclBlock _condFalse = _self.getCondFalse();
-      StatementAspect.eval(_condFalse);
+      StatementAspect.eval(_self.getCondFalse());
     }
   }
 }

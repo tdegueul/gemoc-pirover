@@ -42,8 +42,7 @@ public class Instruction_UtilitesAspect {
           project = ((Project) current);
           return project;
         }
-        EObject _eContainer = current.eContainer();
-        current = _eContainer;
+        current = current.eContainer();
       }
     }
     return project;

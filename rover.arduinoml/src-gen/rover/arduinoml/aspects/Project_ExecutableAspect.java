@@ -6,7 +6,6 @@ import java.util.function.Consumer;
 import org.eclipse.emf.common.util.EList;
 import rover.arduinoml.aspects.Block_ExecutableAspect;
 import rover.arduinoml.aspects.Project_ExecutableAspectProjectAspectProperties;
-import rover.arduinoml.arduino.Block;
 import rover.arduinoml.arduino.Project;
 import rover.arduinoml.arduino.Sketch;
 
@@ -25,8 +24,7 @@ public class Project_ExecutableAspect {
     final EList<Sketch> sketches = _self.getSketches();
     while (true) {
       final Consumer<Sketch> _function = (Sketch s) -> {
-        Block _block = s.getBlock();
-        Block_ExecutableAspect.execute(_block);
+        Block_ExecutableAspect.execute(s.getBlock());
       };
       sketches.forEach(_function);
     }

@@ -11,10 +11,10 @@ public class BooleanValueAspect {
 	final rover.rcl.aspects.BooleanValueAspectBooleanValueAspectProperties _self_ = rover.rcl.aspects.BooleanValueAspectBooleanValueAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.rcl.rcl.VarRef) {
-		result = rover.rcl.aspects.BooleanValueAspect._privk3_getBooleanValue(_self_, (rover.rcl.rcl.VarRef) _self);
-	} else if (_self instanceof rover.rcl.rcl.ObstacleQuery) {
+	if (_self instanceof rover.rcl.rcl.ObstacleQuery) {
 		result = rover.rcl.aspects.ObstacleQueryAspect.getBooleanValue((rover.rcl.rcl.ObstacleQuery) _self);
+	} else if (_self instanceof rover.rcl.rcl.VarRef) {
+		result = rover.rcl.aspects.BooleanValueAspect._privk3_getBooleanValue(_self_, (rover.rcl.rcl.VarRef) _self);
 	} else if (_self instanceof rover.rcl.rcl.BooleanValue) {
 		result = rover.rcl.aspects.BooleanValueAspect._privk3_getBooleanValue(_self_,
 				(rover.rcl.rcl.BooleanValue) _self);

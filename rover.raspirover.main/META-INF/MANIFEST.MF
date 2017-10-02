@@ -1,0 +1,7 @@
+Manifest-Version: 1.0
+Bundle-ManifestVersion: 2
+Bundle-Name: Main
+Bundle-SymbolicName: rover.raspirover.main
+Bundle-Version: 1.0.0.qualifier
+Require-Bundle: rover.raspirover;bundle-version="0.1.0",
+ org.eclipse.emf.ecore.xmi;bundle-version="2.12.0"

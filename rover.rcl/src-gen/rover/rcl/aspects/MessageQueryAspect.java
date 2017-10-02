@@ -30,8 +30,6 @@ public class MessageQueryAspect extends StringValueAspect {
   
   protected static String _privk3_getStringValue(final MessageQueryAspectMessageQueryAspectProperties _self_, final MessageQuery _self) {
     final List<String> messages = Collections.<String>unmodifiableList(CollectionLiterals.<String>newArrayList("start", "stop", "pause", "whatever"));
-    ThreadLocalRandom _current = ThreadLocalRandom.current();
-    int _nextInt = _current.nextInt(0, 4);
-    return messages.get(_nextInt);
+    return messages.get(ThreadLocalRandom.current().nextInt(0, 4));
   }
 }

@@ -2,7 +2,6 @@ package rover.arduinoml.aspects;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.emf.ecore.EClass;
 import rover.arduinoml.aspects.Constant_EvaluableAspectConstantAspectProperties;
 import rover.arduinoml.aspects.Expression_EvaluableAspect;
 import rover.arduinoml.arduino.BooleanConstant;
@@ -39,8 +38,7 @@ public class Constant_EvaluableAspect extends Expression_EvaluableAspect {
         return Integer.valueOf(((IntegerConstant) _self).getValue());
       }
     }
-    EClass _eClass = _self.eClass();
-    String _name = _eClass.getName();
+    String _name = _self.eClass().getName();
     String _plus = ("type not expected: " + _name);
     throw new ClassCastException(_plus);
   }

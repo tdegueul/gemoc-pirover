@@ -28,7 +28,6 @@ public class HumidityQueryAspect extends NumberValueAspect {
   }
   
   protected static int _privk3_getIntValue(final HumidityQueryAspectHumidityQueryAspectProperties _self_, final HumidityQuery _self) {
-    ThreadLocalRandom _current = ThreadLocalRandom.current();
-    return _current.nextInt(65, 95);
+    return ThreadLocalRandom.current().nextInt(65, 95);
   }
 }

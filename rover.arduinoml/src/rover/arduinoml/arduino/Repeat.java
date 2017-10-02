@@ -53,6 +53,14 @@ public interface Repeat extends Control {
 	 * @model
 	 * @generated
 	 */
+	void execute();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
 	Boolean evaluate();
 
 	/**
@@ -62,13 +70,5 @@ public interface Repeat extends Control {
 	 * @generated
 	 */
 	void finalize();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	void execute();
 
 } // Repeat

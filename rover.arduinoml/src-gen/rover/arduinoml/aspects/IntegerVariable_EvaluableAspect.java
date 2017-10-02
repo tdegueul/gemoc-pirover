@@ -47,6 +47,8 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.lang.Integer) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -57,15 +59,20 @@ public class IntegerVariable_EvaluableAspect extends Variable_EvaluableAspect {
   }
   
   protected static void _privk3_value(final IntegerVariable_EvaluableAspectIntegerVariableAspectProperties _self_, final IntegerVariable _self, final Integer value) {
-    _self_.value = value; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setValue")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, value);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.value = value;
     }
   }
 }

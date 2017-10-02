@@ -1070,19 +1070,35 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(unitEClass, Unit.class, "Unit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(unitEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(lengthUnitEClass, LengthUnit.class, "LengthUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(lengthUnitEClass, ecorePackage.getEInt(), "asCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(centimeterEClass, Centimeter.class, "Centimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(centimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(millimeterEClass, Millimeter.class, "Millimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(millimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(meterEClass, Meter.class, "Meter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(meterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(footEClass, Foot.class, "Foot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(footEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(inchEClass, Inch.class, "Inch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(inchEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(yardEClass, Yard.class, "Yard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(yardEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(metricSystemUnitEClass, MetricSystemUnit.class, "MetricSystemUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1164,6 +1180,8 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		// Create annotations
 		// http://www.eclipse.org/emf/2002/Ecore
 		createEcoreAnnotations();
+		// aspect
+		createAspectAnnotations();
 		// http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot
 		createPivotAnnotations();
 	}
@@ -1201,6 +1219,56 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   source, 
 		   new String[] {
 			 "constraints", "QuantityHomogenousOperationRequiresHomogenousQuantities"
+		   });
+	}
+
+	/**
+	 * Initializes the annotations for <b>aspect</b>.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	protected void createAspectAnnotations() {
+		String source = "aspect";	
+		addAnnotation
+		  (unitEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (lengthUnitEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (centimeterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (millimeterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (meterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (footEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (inchEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (yardEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
 		   });
 	}
 

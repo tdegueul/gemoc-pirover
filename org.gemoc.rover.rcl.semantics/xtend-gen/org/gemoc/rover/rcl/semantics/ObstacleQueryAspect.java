@@ -28,8 +28,7 @@ public class ObstacleQueryAspect extends BooleanValueAspect {
   }
   
   protected static boolean _privk3_getBooleanValue(final ObstacleQueryAspectObstacleQueryAspectProperties _self_, final ObstacleQuery _self) {
-    ThreadLocalRandom _current = ThreadLocalRandom.current();
-    int _nextInt = _current.nextInt(0, 2);
+    int _nextInt = ThreadLocalRandom.current().nextInt(0, 2);
     return (_nextInt == 0);
   }
 }

@@ -67,6 +67,15 @@ public interface RaspiroverFactory extends EFactory {
 	DigitalPin createDigitalPin();
 
 	/**
+	 * Returns a new object of class '<em>Pin</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Pin</em>'.
+	 * @generated
+	 */
+	Pin createPin();
+
+	/**
 	 * Returns a new object of class '<em>Analog Pin</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->

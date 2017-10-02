@@ -1237,6 +1237,8 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 
 		addEOperation(numberValueEClass, ecorePackage.getEInt(), "getIntValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(numberValueEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringValue_SValue(), ecorePackage.getEString(), "sValue", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -1421,6 +1423,11 @@ public class RclPackageImpl extends EPackageImpl implements RclPackage {
 		   });	
 		addAnnotation
 		  (numberValueEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (numberValueEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	

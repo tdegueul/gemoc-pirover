@@ -153,6 +153,10 @@ class NumberValueAspect {
 	def int getIntValue() {
 		return _self.NValue
 	}
+	
+	def String print() {
+		return _self.NValue.toString
+	}
 }
 
 @Aspect(className = BooleanValue)
@@ -245,7 +249,7 @@ class BackwardActionAspect extends ActionAspect {
 class BackwardMinActionAspect extends ActionAspect {
 	@OverrideAspectMethod
 	def void eval() {
-		println("<backward (" + _self.distance + ")>")
+		println("<backward (" + _self.distance.print + ")>")
 	}
 }
 
@@ -316,7 +320,7 @@ class VarRefAspect extends NumberValueAspect {
 	def void eval() {
 		
 	}
-
+	
 	private def RoverProgram getProgram() {
 		return _self.eResource.allContents.filter(RoverProgram).head
 	}

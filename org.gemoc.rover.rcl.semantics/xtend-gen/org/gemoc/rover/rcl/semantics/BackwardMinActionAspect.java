@@ -5,8 +5,8 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.gemoc.rover.rcl.semantics.ActionAspect;
 import org.gemoc.rover.rcl.semantics.BackwardMinActionAspectBackwardMinActionAspectProperties;
+import org.gemoc.rover.rcl.semantics.NumberValueAspect;
 import rcl.BackwardMinAction;
-import rcl.NumberValue;
 
 @Aspect(className = BackwardMinAction.class)
 @SuppressWarnings("all")
@@ -22,8 +22,8 @@ public class BackwardMinActionAspect extends ActionAspect {
   }
   
   protected static void _privk3_eval(final BackwardMinActionAspectBackwardMinActionAspectProperties _self_, final BackwardMinAction _self) {
-    NumberValue _distance = _self.getDistance();
-    String _plus = ("<backward (" + _distance);
+    String _print = NumberValueAspect.print(_self.getDistance());
+    String _plus = ("<backward (" + _print);
     String _plus_1 = (_plus + ")>");
     InputOutput.<String>println(_plus_1);
   }

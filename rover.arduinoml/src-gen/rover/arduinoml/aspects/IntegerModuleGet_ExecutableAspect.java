@@ -11,7 +11,6 @@ import rover.arduinoml.aspects.Instruction_UtilitesAspect;
 import rover.arduinoml.aspects.IntegerModuleGet_ExecutableAspectIntegerModuleGetAspectProperties;
 import rover.arduinoml.aspects.Pin_EvaluableAspect;
 import rover.arduinoml.arduino.BluetoothTransceiver;
-import rover.arduinoml.arduino.Instruction;
 import rover.arduinoml.arduino.IntegerModuleGet;
 import rover.arduinoml.arduino.Module;
 import rover.arduinoml.arduino.Pin;
@@ -48,9 +47,7 @@ public class IntegerModuleGet_ExecutableAspect extends Expression_EvaluableAspec
         return Integer.valueOf(0);
       }
     }
-    Instruction _instruction = Expression_EvaluableAspect.getInstruction(_self);
-    Module _module_2 = _self.getModule();
-    final Pin pin = Instruction_UtilitesAspect.getPin(_instruction, _module_2);
+    final Pin pin = Instruction_UtilitesAspect.getPin(Expression_EvaluableAspect.getInstruction(_self), _self.getModule());
     return Integer.valueOf(Pin_EvaluableAspect.level(pin));
   }
 }

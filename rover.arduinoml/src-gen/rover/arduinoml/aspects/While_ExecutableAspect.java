@@ -6,7 +6,6 @@ import rover.arduinoml.aspects.Block_ExecutableAspect;
 import rover.arduinoml.aspects.Control_EvaluableAspect;
 import rover.arduinoml.aspects.Control_ExecutableAspect;
 import rover.arduinoml.aspects.While_ExecutableAspectWhileAspectProperties;
-import rover.arduinoml.arduino.Block;
 import rover.arduinoml.arduino.While;
 
 @Aspect(className = While.class)
@@ -27,8 +26,7 @@ public class While_ExecutableAspect extends Control_ExecutableAspect {
   
   protected static void _privk3_execute(final While_ExecutableAspectWhileAspectProperties _self_, final While _self) {
     while ((Control_EvaluableAspect.evaluate(_self)).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     }
   }
 }

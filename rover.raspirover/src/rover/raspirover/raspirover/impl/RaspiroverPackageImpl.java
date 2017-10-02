@@ -1503,6 +1503,15 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EReference getAction_AssociatedPin() {
+		return (EReference)actionEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getForwardAction() {
 		return forwardActionEClass;
 	}
@@ -2239,6 +2248,7 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		createEAttribute(booleanValueEClass, BOOLEAN_VALUE__BVALUE);
 
 		actionEClass = createEClass(ACTION);
+		createEReference(actionEClass, ACTION__ASSOCIATED_PIN);
 
 		forwardActionEClass = createEClass(FORWARD_ACTION);
 
@@ -2530,7 +2540,7 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		initEClass(digitalPinEClass, DigitalPin.class, "DigitalPin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getDigitalPin_Module(), this.getArduinoDigitalModule(), null, "module", null, 0, 1, DigitalPin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
-		initEClass(pinEClass, Pin.class, "Pin", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEClass(pinEClass, Pin.class, "Pin", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getPin_Level(), ecorePackage.getEInt(), "level", null, 0, 1, Pin.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(arduinoDigitalModuleEClass, ArduinoDigitalModule.class, "ArduinoDigitalModule", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -2644,6 +2654,8 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 
 		addEOperation(numberValueEClass, ecorePackage.getEInt(), "getIntValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		addEOperation(numberValueEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(stringValueEClass, StringValue.class, "StringValue", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEAttribute(getStringValue_SValue(), ecorePackage.getEString(), "sValue", null, 0, 1, StringValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
@@ -2655,6 +2667,7 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		addEOperation(booleanValueEClass, ecorePackage.getEBoolean(), "getBooleanValue", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(actionEClass, Action.class, "Action", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEReference(getAction_AssociatedPin(), this.getPin(), null, "associatedPin", null, 0, 1, Action.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, !IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(forwardActionEClass, ForwardAction.class, "ForwardAction", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2710,19 +2723,35 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 
 		initEClass(unitEClass, Unit.class, "Unit", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(unitEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(lengthUnitEClass, LengthUnit.class, "LengthUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(lengthUnitEClass, ecorePackage.getEInt(), "asCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(centimeterEClass, Centimeter.class, "Centimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(centimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(millimeterEClass, Millimeter.class, "Millimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(millimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(meterEClass, Meter.class, "Meter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(meterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(footEClass, Foot.class, "Foot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(footEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(inchEClass, Inch.class, "Inch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(inchEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(yardEClass, Yard.class, "Yard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(yardEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(metricSystemUnitEClass, MetricSystemUnit.class, "MetricSystemUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -2956,6 +2985,11 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		   new String[] {
 		   });	
 		addAnnotation
+		  (numberValueEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (getNumberValue_Unit(), 
 		   source, 
 		   new String[] {
@@ -2967,6 +3001,11 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		   });	
 		addAnnotation
 		  (booleanValueEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (getAction_AssociatedPin(), 
 		   source, 
 		   new String[] {
 		   });	
@@ -3032,6 +3071,46 @@ public class RaspiroverPackageImpl extends EPackageImpl implements RaspiroverPac
 		   });	
 		addAnnotation
 		  (varRefEClass.getEOperations().get(3), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (unitEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (lengthUnitEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (centimeterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (millimeterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (meterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (footEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (inchEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (yardEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });

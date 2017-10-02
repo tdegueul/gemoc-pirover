@@ -230,6 +230,9 @@
       <genOperations>
         <ecoreOperation href="RCL.ecore#//NumberValue/getIntValue"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="RCL.ecore#//NumberValue/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RCL.ecore#//StringValue"/>

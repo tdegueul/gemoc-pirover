@@ -1298,13 +1298,22 @@ public interface RaspiroverPackage extends EPackage {
 	int ACTION__ENCLOSING = STATEMENT__ENCLOSING;
 
 	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int ACTION__ASSOCIATED_PIN = STATEMENT_FEATURE_COUNT + 0;
+
+	/**
 	 * The number of structural features of the '<em>Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int ACTION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 0;
+	int ACTION_FEATURE_COUNT = STATEMENT_FEATURE_COUNT + 1;
 
 	/**
 	 * The meta object id for the '{@link rover.raspirover.raspirover.impl.ForwardActionImpl <em>Forward Action</em>}' class.
@@ -1324,6 +1333,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORWARD_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The number of structural features of the '<em>Forward Action</em>' class.
@@ -1352,6 +1370,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int FORWARD_MIN_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int FORWARD_MIN_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Distance</b></em>' containment reference.
@@ -1391,6 +1418,15 @@ public interface RaspiroverPackage extends EPackage {
 	int BACKWARD_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKWARD_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
+
+	/**
 	 * The number of structural features of the '<em>Backward Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1417,6 +1453,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int BACKWARD_MIN_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int BACKWARD_MIN_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Distance</b></em>' containment reference.
@@ -1456,6 +1501,15 @@ public interface RaspiroverPackage extends EPackage {
 	int TURN_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
+
+	/**
 	 * The number of structural features of the '<em>Turn Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1482,6 +1536,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int TURN_DEG_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int TURN_DEG_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Degrees</b></em>' containment reference.
@@ -1521,6 +1584,15 @@ public interface RaspiroverPackage extends EPackage {
 	int STOP_ACTION__ENCLOSING = ACTION__ENCLOSING;
 
 	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int STOP_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
+
+	/**
 	 * The number of structural features of the '<em>Stop Action</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -1547,6 +1619,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int LOG_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int LOG_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -1584,6 +1665,15 @@ public interface RaspiroverPackage extends EPackage {
 	 * @ordered
 	 */
 	int SEND_ACTION__ENCLOSING = ACTION__ENCLOSING;
+
+	/**
+	 * The feature id for the '<em><b>Associated Pin</b></em>' reference.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int SEND_ACTION__ASSOCIATED_PIN = ACTION__ASSOCIATED_PIN;
 
 	/**
 	 * The feature id for the '<em><b>Message</b></em>' attribute.
@@ -3685,6 +3775,17 @@ public interface RaspiroverPackage extends EPackage {
 	EClass getAction();
 
 	/**
+	 * Returns the meta object for the reference '{@link rover.raspirover.raspirover.Action#getAssociatedPin <em>Associated Pin</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the reference '<em>Associated Pin</em>'.
+	 * @see rover.raspirover.raspirover.Action#getAssociatedPin()
+	 * @see #getAction()
+	 * @generated
+	 */
+	EReference getAction_AssociatedPin();
+
+	/**
 	 * Returns the meta object for class '{@link rover.raspirover.raspirover.ForwardAction <em>Forward Action</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -5065,6 +5166,14 @@ public interface RaspiroverPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ACTION = eINSTANCE.getAction();
+
+		/**
+		 * The meta object literal for the '<em><b>Associated Pin</b></em>' reference feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EReference ACTION__ASSOCIATED_PIN = eINSTANCE.getAction_AssociatedPin();
 
 		/**
 		 * The meta object literal for the '{@link rover.raspirover.raspirover.impl.ForwardActionImpl <em>Forward Action</em>}' class.

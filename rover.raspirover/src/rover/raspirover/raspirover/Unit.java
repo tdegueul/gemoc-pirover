@@ -15,4 +15,12 @@ import org.eclipse.emf.ecore.EObject;
  * @generated
  */
 public interface Unit extends EObject {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String print();
+
 } // Unit

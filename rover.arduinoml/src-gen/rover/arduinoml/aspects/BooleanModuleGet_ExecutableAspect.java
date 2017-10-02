@@ -7,8 +7,6 @@ import rover.arduinoml.aspects.Expression_EvaluableAspect;
 import rover.arduinoml.aspects.Instruction_UtilitesAspect;
 import rover.arduinoml.aspects.Pin_EvaluableAspect;
 import rover.arduinoml.arduino.BooleanModuleGet;
-import rover.arduinoml.arduino.Instruction;
-import rover.arduinoml.arduino.Module;
 import rover.arduinoml.arduino.Pin;
 
 @Aspect(className = BooleanModuleGet.class)
@@ -30,9 +28,7 @@ public class BooleanModuleGet_ExecutableAspect extends Expression_EvaluableAspec
   }
   
   protected static Object _privk3_evaluate(final BooleanModuleGet_ExecutableAspectBooleanModuleGetAspectProperties _self_, final BooleanModuleGet _self) {
-    Instruction _instruction = Expression_EvaluableAspect.getInstruction(_self);
-    Module _module = _self.getModule();
-    final Pin pin = Instruction_UtilitesAspect.getPin(_instruction, _module);
+    final Pin pin = Instruction_UtilitesAspect.getPin(Expression_EvaluableAspect.getInstruction(_self), _self.getModule());
     int _level = Pin_EvaluableAspect.level(pin);
     boolean _equals = (_level == 0);
     if (_equals) {

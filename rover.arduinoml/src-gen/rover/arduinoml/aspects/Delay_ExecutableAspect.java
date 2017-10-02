@@ -27,11 +27,6 @@ public class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
 	if (manager != null) {
 		manager.executeStep(_self, command, "Delay", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -45,8 +40,7 @@ public class Delay_ExecutableAspect extends Utilities_ExecutableAspect {
   
   protected static void _privk3_execute(final Delay_ExecutableAspectDelayAspectProperties _self_, final Delay _self) {
     try {
-      int _value = _self.getValue();
-      Thread.sleep(_value);
+      Thread.sleep(_self.getValue());
     } catch (final Throwable _t) {
       if (_t instanceof InterruptedException) {
         final InterruptedException e = (InterruptedException)_t;

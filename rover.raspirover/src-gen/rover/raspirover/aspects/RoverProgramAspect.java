@@ -4,12 +4,9 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.Main;
 import java.util.Map;
 import java.util.function.Consumer;
-import org.eclipse.emf.common.util.EList;
 import rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties;
 import rover.raspirover.aspects.StatementAspect;
-import rover.raspirover.raspirover.NumberValue;
 import rover.raspirover.raspirover.Param;
-import rover.raspirover.raspirover.RclBlock;
 import rover.raspirover.raspirover.RaspiroverFactory;
 import rover.raspirover.raspirover.RoverProgram;
 import rover.raspirover.raspirover.RoverValue;
@@ -54,25 +51,19 @@ public class RoverProgramAspect {
   }
   
   protected static RoverValue _privk3_getVar(final RoverProgramAspectRoverProgramAspectProperties _self_, final RoverProgram _self, final String n) {
-    Map<String, RoverValue> _vars = RoverProgramAspect.vars(_self);
-    return _vars.get(n);
+    return RoverProgramAspect.vars(_self).get(n);
   }
   
   protected static void _privk3_bindVar(final RoverProgramAspectRoverProgramAspectProperties _self_, final RoverProgram _self, final String n, final RoverValue v) {
-    Map<String, RoverValue> _vars = RoverProgramAspect.vars(_self);
-    _vars.put(n, v);
+    RoverProgramAspect.vars(_self).put(n, v);
   }
   
   protected static void _privk3_run(final RoverProgramAspectRoverProgramAspectProperties _self_, final RoverProgram _self) {
-    EList<Param> _params = _self.getParams();
     final Consumer<Param> _function = (Param it) -> {
-      String _name = it.getName();
-      NumberValue _createNumberValue = RaspiroverFactory.eINSTANCE.createNumberValue();
-      RoverProgramAspect.bindVar(_self, _name, _createNumberValue);
+      RoverProgramAspect.bindVar(_self, it.getName(), RaspiroverFactory.eINSTANCE.createNumberValue());
     };
-    _params.forEach(_function);
-    RclBlock _block = _self.getBlock();
-    StatementAspect.eval(_block);
+    _self.getParams().forEach(_function);
+    StatementAspect.eval(_self.getBlock());
   }
   
   protected static Map<String, RoverValue> _privk3_vars(final RoverProgramAspectRoverProgramAspectProperties _self_, final RoverProgram _self) {
@@ -83,6 +74,8 @@ public class RoverProgramAspect {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.util.Map) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -93,15 +86,20 @@ public class RoverProgramAspect {
   }
   
   protected static void _privk3_vars(final RoverProgramAspectRoverProgramAspectProperties _self_, final RoverProgram _self, final Map<String, RoverValue> vars) {
-    _self_.vars = vars; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setVars")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, vars);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.vars = vars;
     }
   }
 }

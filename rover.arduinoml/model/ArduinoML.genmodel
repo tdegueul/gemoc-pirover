@@ -174,10 +174,10 @@
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoML.ecore#//Control/block"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="ArduinoML.ecore#//Control/evaluate"/>
+        <ecoreOperation href="ArduinoML.ecore#//Control/execute"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="ArduinoML.ecore#//Control/execute"/>
+        <ecoreOperation href="ArduinoML.ecore#//Control/evaluate"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">
@@ -210,13 +210,13 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="ArduinoML.ecore#//Repeat/iteration"/>
       </genFeatures>
       <genOperations>
+        <ecoreOperation href="ArduinoML.ecore#//Repeat/execute"/>
+      </genOperations>
+      <genOperations>
         <ecoreOperation href="ArduinoML.ecore#//Repeat/evaluate"/>
       </genOperations>
       <genOperations>
         <ecoreOperation href="ArduinoML.ecore#//Repeat/finalize"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="ArduinoML.ecore#//Repeat/execute"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">
@@ -231,10 +231,10 @@
         <ecoreFeature xsi:type="ecore:EReference" href="ArduinoML.ecore#//While/condition"/>
       </genFeatures>
       <genOperations>
-        <ecoreOperation href="ArduinoML.ecore#//While/evaluate"/>
+        <ecoreOperation href="ArduinoML.ecore#//While/execute"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="ArduinoML.ecore#//While/execute"/>
+        <ecoreOperation href="ArduinoML.ecore#//While/evaluate"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">

@@ -14,4 +14,12 @@ package rover.raspirover.raspirover;
  * @generated
  */
 public interface LengthUnit extends Unit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	int asCentimeters();
+
 } // LengthUnit

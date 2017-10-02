@@ -8,7 +8,6 @@ import rover.rcl.aspects.StringExpressionASpectStringExpressionAspectProperties;
 import rover.rcl.aspects.StringValueAspect;
 import rover.rcl.rcl.StringExpression;
 import rover.rcl.rcl.StringOperator;
-import rover.rcl.rcl.StringValue;
 
 @Aspect(className = StringExpression.class)
 @SuppressWarnings("all")
@@ -29,17 +28,13 @@ public class StringExpressionASpect extends RoverExpressionAspect {
     if (_op != null) {
       switch (_op) {
         case EQ:
-          StringValue _lhs = _self.getLhs();
-          String _stringValue = StringValueAspect.getStringValue(_lhs);
-          StringValue _rhs = _self.getRhs();
-          String _stringValue_1 = StringValueAspect.getStringValue(_rhs);
+          String _stringValue = StringValueAspect.getStringValue(_self.getLhs());
+          String _stringValue_1 = StringValueAspect.getStringValue(_self.getRhs());
           _switchResult = Objects.equal(_stringValue, _stringValue_1);
           break;
         case NEQ:
-          StringValue _lhs_1 = _self.getLhs();
-          String _stringValue_2 = StringValueAspect.getStringValue(_lhs_1);
-          StringValue _rhs_1 = _self.getRhs();
-          String _stringValue_3 = StringValueAspect.getStringValue(_rhs_1);
+          String _stringValue_2 = StringValueAspect.getStringValue(_self.getLhs());
+          String _stringValue_3 = StringValueAspect.getStringValue(_self.getRhs());
           _switchResult = (!Objects.equal(_stringValue_2, _stringValue_3));
           break;
         default:

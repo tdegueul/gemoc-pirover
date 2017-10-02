@@ -5,7 +5,6 @@ import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import rover.arduinoml.aspects.Control_EvaluableAspect;
 import rover.arduinoml.aspects.Expression_EvaluableAspect;
 import rover.arduinoml.aspects.While_EvaluableAspectWhileAspectProperties;
-import rover.arduinoml.arduino.BooleanExpression;
 import rover.arduinoml.arduino.While;
 
 @Aspect(className = While.class)
@@ -27,8 +26,7 @@ public class While_EvaluableAspect extends Control_EvaluableAspect {
   }
   
   protected static Boolean _privk3_evaluate(final While_EvaluableAspectWhileAspectProperties _self_, final While _self) {
-    BooleanExpression _condition = _self.getCondition();
-    Object _evaluate = Expression_EvaluableAspect.evaluate(_condition);
+    Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getCondition());
     Boolean resCond = ((Boolean) _evaluate);
     return resCond;
   }

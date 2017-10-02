@@ -30,11 +30,6 @@ public class If_ExecutableAspect extends Control_ExecutableAspect {
 	if (manager != null) {
 		manager.executeStep(_self, command, "If", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -49,14 +44,12 @@ public class If_ExecutableAspect extends Control_ExecutableAspect {
   protected static void _privk3_execute(final If_ExecutableAspectIfAspectProperties _self_, final If _self) {
     Boolean _evaluate = If_EvaluableAspect.evaluate(_self);
     if ((_evaluate).booleanValue()) {
-      Block _block = _self.getBlock();
-      Block_ExecutableAspect.execute(_block);
+      Block_ExecutableAspect.execute(_self.getBlock());
     } else {
       Block _elseBlock = _self.getElseBlock();
       boolean _notEquals = (!Objects.equal(_elseBlock, null));
       if (_notEquals) {
-        Block _elseBlock_1 = _self.getElseBlock();
-        Block_ExecutableAspect.execute(_elseBlock_1);
+        Block_ExecutableAspect.execute(_self.getElseBlock());
       }
     }
   }

@@ -36,15 +36,13 @@ public class BinaryIntegerExpression_EvaluableAspect extends Expression_Evaluabl
     boolean _matched = false;
     if (_left instanceof BooleanExpression) {
       _matched=true;
-      Expression _left_1 = _self.getLeft();
-      Object _evaluate = Expression_EvaluableAspect.evaluate(_left_1);
+      Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getLeft());
       bLeft = (((Boolean) _evaluate)).booleanValue();
     }
     if (!_matched) {
       if (_left instanceof IntegerExpression) {
         _matched=true;
-        Expression _left_1 = _self.getLeft();
-        Object _evaluate = Expression_EvaluableAspect.evaluate(_left_1);
+        Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getLeft());
         iLeft = (((Integer) _evaluate)).intValue();
       }
     }
@@ -54,15 +52,13 @@ public class BinaryIntegerExpression_EvaluableAspect extends Expression_Evaluabl
     boolean _matched_1 = false;
     if (_right instanceof BooleanExpression) {
       _matched_1=true;
-      Expression _right_1 = _self.getRight();
-      Object _evaluate = Expression_EvaluableAspect.evaluate(_right_1);
+      Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getRight());
       bRight = (((Boolean) _evaluate)).booleanValue();
     }
     if (!_matched_1) {
       if (_right instanceof IntegerExpression) {
         _matched_1=true;
-        Expression _right_1 = _self.getRight();
-        Object _evaluate = Expression_EvaluableAspect.evaluate(_right_1);
+        Object _evaluate = Expression_EvaluableAspect.evaluate(_self.getRight());
         iRight = (((Integer) _evaluate)).intValue();
       }
     }
@@ -73,12 +69,10 @@ public class BinaryIntegerExpression_EvaluableAspect extends Expression_Evaluabl
           res = Integer.valueOf((iLeft / iRight));
           break;
         case MAX:
-          int _max = Math.max(iLeft, iRight);
-          res = Integer.valueOf(_max);
+          res = Integer.valueOf(Math.max(iLeft, iRight));
           break;
         case MIN:
-          int _min = Math.min(iLeft, iRight);
-          res = Integer.valueOf(_min);
+          res = Integer.valueOf(Math.min(iLeft, iRight));
           break;
         case MINUS:
           res = Integer.valueOf((iLeft - iRight));

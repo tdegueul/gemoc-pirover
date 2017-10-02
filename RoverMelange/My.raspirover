@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<raspirover:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:raspirover="http://rover.raspirover/raspirover/">
+  <boards xsi:type="raspirover:RasPiBoard">
+    <digitalPins name="pin1"/>
+    <analogPins name="pin2"/>
+  </boards>
+  <program name="dummy">
+    <params name="distance_to_obstacle"/>
+    <block>
+    <stmts xsi:type="raspirover:VarAssignment" name="threshold">
+      <value xsi:type="raspirover:NumberValue" nValue="3"/>
+    </stmts>
+    <stmts xsi:type="raspirover:Conditional">
+      <expr xsi:type="raspirover:NumericExpression" op="LEQ">
+        <lhs xsi:type="raspirover:VarRef" name="distance_to_obstacle"/>
+        <rhs xsi:type="raspirover:VarRef" name="threshold"/>
+      </expr>
+      <condTrue>
+        <stmts xsi:type="raspirover:ForwardAction"/>
+        <stmts xsi:type="raspirover:LogAction" message="found obstacle"/>
+      </condTrue>
+      <condFalse>
+        <stmts xsi:type="raspirover:Conditional">
+          <expr xsi:type="raspirover:StringExpression" op="NEQ">
+            <lhs xsi:type="raspirover:MessageQuery"/>
+            <rhs sValue="danger"/>
+          </expr>
+          <condTrue>
+            <stmts xsi:type="raspirover:StopAction"/>
+          </condTrue>
+          <condFalse>
+            <stmts xsi:type="raspirover:BackwardMinAction"/>
+          </condFalse>
+        </stmts>
+      </condFalse>
+    </stmts>
+    </block>
+  </program>
+</raspirover:Project>

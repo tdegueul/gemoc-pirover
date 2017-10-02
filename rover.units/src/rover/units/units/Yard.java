@@ -14,4 +14,12 @@ package rover.units.units;
  * @generated
  */
 public interface Yard extends ImperialSystemUnit, LengthUnit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	String print();
+
 } // Yard

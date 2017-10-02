@@ -9,7 +9,6 @@ import rover.arduinoml.aspects.Instruction_ExecutableAspect;
 import rover.arduinoml.aspects.IntegerVariable_EvaluableAspect;
 import rover.arduinoml.aspects.VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties;
 import rover.arduinoml.arduino.BooleanVariable;
-import rover.arduinoml.arduino.Expression;
 import rover.arduinoml.arduino.IntegerVariable;
 import rover.arduinoml.arduino.Variable;
 import rover.arduinoml.arduino.VariableAssignment;
@@ -33,11 +32,6 @@ public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableA
 	if (manager != null) {
 		manager.executeStep(_self, command, "VariableAssignment", "execute");
 	} else {
-		fr.inria.diverse.k3.al.annotationprocessor.stepmanager.IEventManager eventManager = fr.inria.diverse.k3.al.annotationprocessor.stepmanager.EventManagerRegistry
-				.getInstance().findEventManager(null);
-		if (eventManager != null) {
-			eventManager.manageEvents();
-		}
 		command.execute();
 	}
 	;
@@ -51,8 +45,7 @@ public class VariableAssignment_ExecutableAspect extends Instruction_ExecutableA
   
   protected static void _privk3_execute(final VariableAssignment_ExecutableAspectVariableAssignmentAspectProperties _self_, final VariableAssignment _self) {
     final Variable variable = _self.getVariable();
-    Expression _operand = _self.getOperand();
-    final Object value = Expression_EvaluableAspect.evaluate(_operand);
+    final Object value = Expression_EvaluableAspect.evaluate(_self.getOperand());
     if ((variable instanceof IntegerVariable)) {
       IntegerVariable_EvaluableAspect.value(((IntegerVariable)variable), ((Integer) value));
     }

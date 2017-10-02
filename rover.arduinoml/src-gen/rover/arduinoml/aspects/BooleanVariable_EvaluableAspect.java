@@ -42,11 +42,13 @@ public class BooleanVariable_EvaluableAspect extends Variable_EvaluableAspect {
   protected static Boolean _privk3_value(final BooleanVariable_EvaluableAspectBooleanVariableAspectProperties _self_, final BooleanVariable _self) {
     try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
-    		if (m.getName().equals("getValue") &&
+    		if (m.getName().equals("isValue") &&
     			m.getParameterTypes().length == 0) {
     				Object ret = m.invoke(_self);
     				if (ret != null) {
     					return (java.lang.Boolean) ret;
+    				} else {
+    					return null;
     				}
     		}
     	}
@@ -57,15 +59,20 @@ public class BooleanVariable_EvaluableAspect extends Variable_EvaluableAspect {
   }
   
   protected static void _privk3_value(final BooleanVariable_EvaluableAspectBooleanVariableAspectProperties _self_, final BooleanVariable _self, final Boolean value) {
-    _self_.value = value; try {
+    boolean setterCalled = false;
+    try {
     	for (java.lang.reflect.Method m : _self.getClass().getMethods()) {
     		if (m.getName().equals("setValue")
     				&& m.getParameterTypes().length == 1) {
     			m.invoke(_self, value);
+    			setterCalled = true;
     		}
     	}
     } catch (Exception e) {
     	// Chut !
+    }
+    if (!setterCalled) {
+    	_self_.value = value;
     }
   }
 }

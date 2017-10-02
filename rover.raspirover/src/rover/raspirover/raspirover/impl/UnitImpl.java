@@ -36,4 +36,15 @@ public class UnitImpl extends EObjectImpl implements Unit {
 		return RaspiroverPackage.Literals.UNIT;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String print() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //UnitImpl

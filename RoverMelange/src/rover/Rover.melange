@@ -7,6 +7,7 @@ language RCL {
 
 language Units {
 	syntax "platform:/resource/org.modelexecution.units/model/units.ecore"
+	with org.modelexecution.units.semantics.*
 }
 
 language ArduinoML {
@@ -20,4 +21,6 @@ language RasPiRover {
 	merge Units renaming { "units" to "raspirover" }
 	with rover.NumberValueUnit
 	with rover.ProjectProgramGlue
+	with rover.ActionToPin
+	with rover.BackwardMinActionWithPin
 }

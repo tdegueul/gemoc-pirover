@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://rover.raspirover/raspirover/">
+  <boards xsi:type="arduino:RasPiBoard">
+    <digitalPins name="pin1"/>
+    <analogPins name="pin2"/>
+  </boards>
+  <program name="dummy">
+    <params name="distance_to_obstacle"/>
+    <block>
+      <stmts xsi:type="arduino:VarAssignment" name="threshold">
+        <value xsi:type="arduino:NumberValue" nValue="3"/>
+      </stmts>
+      <stmts xsi:type="arduino:Conditional">
+        <expr xsi:type="arduino:NumericExpression" op="GEQ">
+          <lhs xsi:type="arduino:VarRef" name="distance_to_obstacle"/>
+          <rhs xsi:type="arduino:VarRef" name="threshold"/>
+        </expr>
+        <condTrue>
+          <stmts xsi:type="arduino:ForwardAction"/>
+          <stmts xsi:type="arduino:LogAction" message="found obstacle"/>
+        </condTrue>
+        <condFalse>
+          <stmts xsi:type="arduino:Conditional">
+            <expr xsi:type="arduino:StringExpression" op="EQ">
+              <lhs xsi:type="arduino:MessageQuery"/>
+              <rhs sValue="danger"/>
+            </expr>
+            <condTrue>
+              <stmts xsi:type="arduino:StopAction"/>
+            </condTrue>
+            <condFalse>
+              <stmts xsi:type="arduino:BackwardMinAction">
+                <distance nValue="3">
+                  <unit xsi:type="arduino:Meter"/>
+                </distance>
+              </stmts>
+            </condFalse>
+          </stmts>
+        </condFalse>
+      </stmts>
+    </block>
+  </program>
+</arduino:Project>
