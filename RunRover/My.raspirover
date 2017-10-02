@@ -9,7 +9,7 @@
     <block>
       <stmts xsi:type="arduino:VarAssignment" name="step">
         <value xsi:type="arduino:NumberValue" nValue="3">
-          <unit xsi:type="arduino:Centimeter"/>
+          <unit xsi:type="arduino:Inch"/>
         </value>
       </stmts>
       <stmts xsi:type="arduino:Loop">
@@ -19,6 +19,11 @@
         </expr>
         <block>
           <stmts xsi:type="arduino:LogAction" message="Inside loop"/>
+          <stmts xsi:type="arduino:BackwardMinAction">
+          	<distance xsi:type="arduino:NumberValue" nValue="3">
+          	  <unit xsi:type="arduino:Inch"/>
+          	</distance>
+          </stmts>
         </block>
       </stmts>
       <stmts xsi:type="arduino:LogAction" message="Outside loop"/>

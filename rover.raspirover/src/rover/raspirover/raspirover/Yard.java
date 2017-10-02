@@ -22,4 +22,12 @@ public interface Yard extends ImperialSystemUnit, LengthUnit {
 	 */
 	String print();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	double toCentimeters(double value);
+
 } // Yard

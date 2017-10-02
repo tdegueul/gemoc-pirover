@@ -15,36 +15,36 @@ public abstract class StatementAspect {
   public static void eval(final Statement _self) {
 	final rover.raspirover.aspects.StatementAspectStatementAspectProperties _self_ = rover.raspirover.aspects.StatementAspectStatementAspectContext
 			.getSelf(_self);
-	if (_self instanceof rover.raspirover.raspirover.VarRef) {
+	if (_self instanceof rover.raspirover.raspirover.ForwardMinAction) {
+		rover.raspirover.aspects.ForwardMinActionAspect.eval((rover.raspirover.raspirover.ForwardMinAction) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
 		rover.raspirover.aspects.StatementAspect._privk3_eval(_self_, (rover.raspirover.raspirover.VarRef) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.TurnDegAction) {
-		rover.raspirover.aspects.TurnDegActionAspect.eval((rover.raspirover.raspirover.TurnDegAction) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.ForwardAction) {
-		rover.raspirover.aspects.ForwardActionAspect.eval((rover.raspirover.raspirover.ForwardAction) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.VarAssignment) {
 		rover.raspirover.aspects.VarAssignmentAspect.eval((rover.raspirover.raspirover.VarAssignment) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.StopAction) {
 		rover.raspirover.aspects.StopActionAspect.eval((rover.raspirover.raspirover.StopAction) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Conditional) {
+		rover.raspirover.aspects.ConditionalAspect.eval((rover.raspirover.raspirover.Conditional) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.BackwardAction) {
 		rover.raspirover.aspects.BackwardActionAspect.eval((rover.raspirover.raspirover.BackwardAction) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.ForwardMinAction) {
-		rover.raspirover.aspects.ForwardMinActionAspect.eval((rover.raspirover.raspirover.ForwardMinAction) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Loop) {
+		rover.raspirover.aspects.LoopAspect.eval((rover.raspirover.raspirover.Loop) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.RclBlock) {
+		rover.raspirover.aspects.RclBlockAspect.eval((rover.raspirover.raspirover.RclBlock) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.TurnAction) {
+		rover.raspirover.aspects.TurnActionAspect.eval((rover.raspirover.raspirover.TurnAction) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.ForwardAction) {
+		rover.raspirover.aspects.ForwardActionAspect.eval((rover.raspirover.raspirover.ForwardAction) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.BackwardMinAction) {
 		rover.raspirover.aspects.BackwardMinActionWithPin.eval((rover.raspirover.raspirover.BackwardMinAction) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.LogAction) {
 		rover.raspirover.aspects.LogActionAspect.eval((rover.raspirover.raspirover.LogAction) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.TurnAction) {
-		rover.raspirover.aspects.TurnActionAspect.eval((rover.raspirover.raspirover.TurnAction) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.TurnDegAction) {
+		rover.raspirover.aspects.TurnDegActionAspect.eval((rover.raspirover.raspirover.TurnDegAction) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.SendAction) {
 		rover.raspirover.aspects.SendActionAspect.eval((rover.raspirover.raspirover.SendAction) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Action) {
 		rover.raspirover.aspects.StatementAspect._privk3_eval(_self_, (rover.raspirover.raspirover.Action) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Loop) {
-		rover.raspirover.aspects.LoopAspect.eval((rover.raspirover.raspirover.Loop) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Conditional) {
-		rover.raspirover.aspects.ConditionalAspect.eval((rover.raspirover.raspirover.Conditional) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.RclBlock) {
-		rover.raspirover.aspects.RclBlockAspect.eval((rover.raspirover.raspirover.RclBlock) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Statement) {
 		rover.raspirover.aspects.StatementAspect._privk3_eval(_self_, (rover.raspirover.raspirover.Statement) _self);
 	} else {

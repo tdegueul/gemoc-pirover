@@ -14,11 +14,11 @@ public class NumberValueAspect {
 	if (_self instanceof rover.raspirover.raspirover.TemperatureQuery) {
 		result = rover.raspirover.aspects.TemperatureQueryAspect
 				.getIntValue((rover.raspirover.raspirover.TemperatureQuery) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
-		result = rover.raspirover.aspects.VarRefAspect.getIntValue((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.HumidityQuery) {
 		result = rover.raspirover.aspects.HumidityQueryAspect
 				.getIntValue((rover.raspirover.raspirover.HumidityQuery) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
+		result = rover.raspirover.aspects.VarRefAspect.getIntValue((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.NumberValue) {
 		result = rover.raspirover.aspects.NumberValueUnit.getIntValue((rover.raspirover.raspirover.NumberValue) _self);
 	} else {
@@ -35,10 +35,10 @@ public class NumberValueAspect {
 	Object result = null;
 	if (_self instanceof rover.raspirover.raspirover.TemperatureQuery) {
 		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.TemperatureQuery) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
-		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.HumidityQuery) {
 		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.HumidityQuery) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
+		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.NumberValue) {
 		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.NumberValue) _self);
 	} else {

@@ -19,25 +19,7 @@ import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
 import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
 import static extension rover.ActionToPin.*
-
-@Aspect(className = NumberValue)
-class NumberValueUnit extends NumberValueAspect {
-	@Containment public Unit unit
-	
-	@OverrideAspectMethod
-	override int getIntValue() {
-		return
-			if (_self.unit !== null)
-				Math::round(_self.unit.toCentimeters(_self.NValue)) as int
-			else
-				_self.super_getIntValue
-	}
-	
-	@OverrideAspectMethod
-	override String print() {
-		return _self.super_print + _self.unit.print
-	}
-}
+import static extension rover.NumberValueUnit.*
 
 @Aspect(className = Project)
 class ProjectProgramGlue extends Project_ExecutableAspect {
@@ -58,7 +40,26 @@ class ActionToPin extends ActionAspect {
 class BackwardMinActionWithPin extends BackwardMinActionAspect {
 	@OverrideAspectMethod
 	override void eval() {
-		_self.super_eval
+		println('''<backward («_self.distance.print» = «_self.distance.intValue»cm)>"''')
 		_self.associatedPin.level = 1
+	}
+}
+
+@Aspect(className = NumberValue)
+class NumberValueUnit extends NumberValueAspect {
+	@Containment public Unit unit
+	
+	@OverrideAspectMethod
+	override int getIntValue() {
+		return
+			if (_self.unit !== null)
+				Math::round(_self.unit.toCentimeters(_self.NValue)) as int
+			else
+				_self.super_getIntValue
+	}
+	
+	@OverrideAspectMethod
+	override String print() {
+		return _self.super_print + _self.unit.print
 	}
 }

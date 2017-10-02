@@ -23,4 +23,12 @@ public interface Unit extends EObject {
 	 */
 	String print();
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	double toCentimeters(double value);
+
 } // Unit

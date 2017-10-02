@@ -34,15 +34,4 @@ public class YardImpl extends ImperialSystemUnitImpl implements Yard {
 		return RaspiroverPackage.Literals.YARD;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int asCentimeters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 } //YardImpl

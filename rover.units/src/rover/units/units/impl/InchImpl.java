@@ -34,15 +34,4 @@ public class InchImpl extends ImperialSystemUnitImpl implements Inch {
 		return UnitsPackage.Literals.INCH;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int asCentimeters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 } //InchImpl

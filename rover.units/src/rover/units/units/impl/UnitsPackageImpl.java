@@ -3,6 +3,7 @@
 package rover.units.units.impl;
 
 import org.eclipse.emf.ecore.EClass;
+import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
 import org.eclipse.emf.ecore.EValidator;
@@ -1072,33 +1073,52 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		addEOperation(unitEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		initEClass(lengthUnitEClass, LengthUnit.class, "LengthUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		EOperation op = addEOperation(unitEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		addEOperation(lengthUnitEClass, ecorePackage.getEInt(), "asCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		initEClass(lengthUnitEClass, LengthUnit.class, "LengthUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(centimeterEClass, Centimeter.class, "Centimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(centimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(centimeterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(millimeterEClass, Millimeter.class, "Millimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(millimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(millimeterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(meterEClass, Meter.class, "Meter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(meterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(meterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(footEClass, Foot.class, "Foot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(footEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(footEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(inchEClass, Inch.class, "Inch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(inchEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
+		op = addEOperation(inchEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(yardEClass, Yard.class, "Yard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		addEOperation(yardEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(yardEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(metricSystemUnitEClass, MetricSystemUnit.class, "MetricSystemUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1236,7 +1256,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (lengthUnitEClass.getEOperations().get(0), 
+		  (unitEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1246,7 +1266,17 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (centimeterEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (millimeterEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (millimeterEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1256,7 +1286,17 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (meterEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (footEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (footEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1266,7 +1306,17 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
+		  (inchEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
 		  (yardEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (yardEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });

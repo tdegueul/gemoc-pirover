@@ -15,10 +15,10 @@ public abstract class RoverExpressionAspect {
 	Object result = null;
 	if (_self instanceof rover.rcl.rcl.NumericExpression) {
 		result = rover.rcl.aspects.NumericExpressionASpect.eval((rover.rcl.rcl.NumericExpression) _self);
-	} else if (_self instanceof rover.rcl.rcl.StringExpression) {
-		result = rover.rcl.aspects.StringExpressionASpect.eval((rover.rcl.rcl.StringExpression) _self);
 	} else if (_self instanceof rover.rcl.rcl.BooleanExpression) {
 		result = rover.rcl.aspects.BooleanExpressionASpect.eval((rover.rcl.rcl.BooleanExpression) _self);
+	} else if (_self instanceof rover.rcl.rcl.StringExpression) {
+		result = rover.rcl.aspects.StringExpressionASpect.eval((rover.rcl.rcl.StringExpression) _self);
 	} else if (_self instanceof rover.rcl.rcl.RoverExpression) {
 		result = rover.rcl.aspects.RoverExpressionAspect._privk3_eval(_self_, (rover.rcl.rcl.RoverExpression) _self);
 	} else {

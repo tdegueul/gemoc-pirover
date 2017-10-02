@@ -449,17 +449,26 @@
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Unit/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Unit/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Unit/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="RasPiRoverMT.ecore#//LengthUnit"/>
-      <genOperations>
-        <ecoreOperation href="RasPiRoverMT.ecore#//LengthUnit/asCentimeters"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRoverMT.ecore#//Centimeter"/>
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Centimeter/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Centimeter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Centimeter/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -467,11 +476,23 @@
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Millimeter/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Millimeter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Millimeter/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRoverMT.ecore#//Meter"/>
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Meter/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Meter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Meter/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -479,17 +500,35 @@
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Foot/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Foot/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Foot/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRoverMT.ecore#//Inch"/>
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Inch/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Inch/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Inch/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRoverMT.ecore#//Yard"/>
       <genOperations>
         <ecoreOperation href="RasPiRoverMT.ecore#//Yard/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRoverMT.ecore#//Yard/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRoverMT.ecore#//Yard/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses image="false">

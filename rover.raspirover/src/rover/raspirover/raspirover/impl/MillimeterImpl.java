@@ -34,15 +34,4 @@ public class MillimeterImpl extends MetricSystemUnitImpl implements Millimeter {
 		return RaspiroverPackage.Literals.MILLIMETER;
 	}
 
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public int asCentimeters() {
-		// TODO: implement this method
-		// Ensure that you remove @generated or mark it @generated NOT
-		throw new UnsupportedOperationException();
-	}
-
 } //MillimeterImpl

@@ -8,17 +8,26 @@
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Unit/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Unit/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Unit/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="UnitsMT.ecore#//LengthUnit"/>
-      <genOperations>
-        <ecoreOperation href="UnitsMT.ecore#//LengthUnit/asCentimeters"/>
-      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="UnitsMT.ecore#//Centimeter"/>
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Centimeter/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Centimeter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Centimeter/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -26,11 +35,23 @@
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Millimeter/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Millimeter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Millimeter/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="UnitsMT.ecore#//Meter"/>
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Meter/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Meter/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Meter/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
@@ -38,17 +59,35 @@
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Foot/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Foot/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Foot/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="UnitsMT.ecore#//Inch"/>
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Inch/print"/>
       </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Inch/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Inch/toCentimeters/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="UnitsMT.ecore#//Yard"/>
       <genOperations>
         <ecoreOperation href="UnitsMT.ecore#//Yard/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="UnitsMT.ecore#//Yard/toCentimeters"/>
+        <genParameters>
+          <ecoreParameter href="UnitsMT.ecore#//Yard/toCentimeters/value"/>
+        </genParameters>
       </genOperations>
     </genClasses>
     <genClasses image="false">

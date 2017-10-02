@@ -47,4 +47,15 @@ public class UnitImpl extends EObjectImpl implements Unit {
 		throw new UnsupportedOperationException();
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double toCentimeters(double value) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //UnitImpl
