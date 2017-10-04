@@ -17,7 +17,7 @@ public class Project_ExecutableAspect {
 	final rover.raspirover.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = rover.raspirover.aspects.Project_ExecutableAspectProjectAspectContext
 			.getSelf(_self);
 	if (_self instanceof rover.raspirover.raspirover.Project) {
-		rover.raspirover.aspects.ProjectProgramGlue.execute((rover.raspirover.raspirover.Project) _self);
+		rover.raspirover.aspects.OverriddenProjectInterpreter.execute((rover.raspirover.raspirover.Project) _self);
 	} else {
 		throw new IllegalArgumentException(
 				"Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString());

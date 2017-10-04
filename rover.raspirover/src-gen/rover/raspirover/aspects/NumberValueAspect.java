@@ -20,7 +20,8 @@ public class NumberValueAspect {
 	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
 		result = rover.raspirover.aspects.VarRefAspect.getIntValue((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.NumberValue) {
-		result = rover.raspirover.aspects.NumberValueUnit.getIntValue((rover.raspirover.raspirover.NumberValue) _self);
+		result = rover.raspirover.aspects.OverriddenNumberInterpreter
+				.getIntValue((rover.raspirover.raspirover.NumberValue) _self);
 	} else {
 		throw new IllegalArgumentException(
 				"Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString());
@@ -34,13 +35,16 @@ public class NumberValueAspect {
 			.getSelf(_self);
 	Object result = null;
 	if (_self instanceof rover.raspirover.raspirover.TemperatureQuery) {
-		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.TemperatureQuery) _self);
+		result = rover.raspirover.aspects.OverriddenNumberInterpreter
+				.print((rover.raspirover.raspirover.TemperatureQuery) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.HumidityQuery) {
-		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.HumidityQuery) _self);
+		result = rover.raspirover.aspects.OverriddenNumberInterpreter
+				.print((rover.raspirover.raspirover.HumidityQuery) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
-		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.VarRef) _self);
+		result = rover.raspirover.aspects.OverriddenNumberInterpreter.print((rover.raspirover.raspirover.VarRef) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.NumberValue) {
-		result = rover.raspirover.aspects.NumberValueUnit.print((rover.raspirover.raspirover.NumberValue) _self);
+		result = rover.raspirover.aspects.OverriddenNumberInterpreter
+				.print((rover.raspirover.raspirover.NumberValue) _self);
 	} else {
 		throw new IllegalArgumentException(
 				"Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString());

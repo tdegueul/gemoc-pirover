@@ -16,7 +16,8 @@ public class BackwardMinActionAspect extends ActionAspect {
 	final rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectContext
 			.getSelf(_self);
 	if (_self instanceof rover.raspirover.raspirover.BackwardMinAction) {
-		rover.raspirover.aspects.BackwardMinActionWithPin.eval((rover.raspirover.raspirover.BackwardMinAction) _self);
+		rover.raspirover.aspects.OverriddenBackwardMinActionInterpreter
+				.eval((rover.raspirover.raspirover.BackwardMinAction) _self);
 	} else {
 		throw new IllegalArgumentException(
 				"Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString());

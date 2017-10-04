@@ -15,8 +15,30 @@ public abstract class LengthUnitAspect {
 	Object result = null;
 	if (_self instanceof rover.raspirover.raspirover.Millimeter) {
 		result = rover.raspirover.aspects.MillimeterAspect.print((rover.raspirover.raspirover.Millimeter) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Meter) {
+		result = rover.raspirover.aspects.MeterAspect.print((rover.raspirover.raspirover.Meter) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Radian) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.Radian) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Inch) {
 		result = rover.raspirover.aspects.InchAspect.print((rover.raspirover.raspirover.Inch) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Gradian) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.Gradian) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Degree) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.Degree) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Turn) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.Turn) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.AngleUnit) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.AngleUnit) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.Centimeter) {
+		result = rover.raspirover.aspects.CentimeterAspect.print((rover.raspirover.raspirover.Centimeter) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.MetricSystemUnit) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
+				(rover.raspirover.raspirover.MetricSystemUnit) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Yard) {
 		result = rover.raspirover.aspects.YardAspect.print((rover.raspirover.raspirover.Yard) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Foot) {
@@ -24,31 +46,9 @@ public abstract class LengthUnitAspect {
 	} else if (_self instanceof rover.raspirover.raspirover.ImperialSystemUnit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
 				(rover.raspirover.raspirover.ImperialSystemUnit) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Gradian) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.Gradian) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Meter) {
-		result = rover.raspirover.aspects.MeterAspect.print((rover.raspirover.raspirover.Meter) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Radian) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.Radian) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Centimeter) {
-		result = rover.raspirover.aspects.CentimeterAspect.print((rover.raspirover.raspirover.Centimeter) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.LengthUnit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
 				(rover.raspirover.raspirover.LengthUnit) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Turn) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.Turn) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.Degree) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.Degree) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.AngleUnit) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.AngleUnit) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.MetricSystemUnit) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
-				(rover.raspirover.raspirover.MetricSystemUnit) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.Unit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_print(_self_,
 				(rover.raspirover.raspirover.Unit) _self);
@@ -68,8 +68,31 @@ public abstract class LengthUnitAspect {
 	if (_self instanceof rover.raspirover.raspirover.Millimeter) {
 		result = rover.raspirover.aspects.MillimeterAspect.toCentimeters((rover.raspirover.raspirover.Millimeter) _self,
 				value);
+	} else if (_self instanceof rover.raspirover.raspirover.Meter) {
+		result = rover.raspirover.aspects.MeterAspect.toCentimeters((rover.raspirover.raspirover.Meter) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.Radian) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.Radian) _self, value);
 	} else if (_self instanceof rover.raspirover.raspirover.Inch) {
 		result = rover.raspirover.aspects.InchAspect.toCentimeters((rover.raspirover.raspirover.Inch) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.Gradian) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.Gradian) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.Degree) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.Degree) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.Turn) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.Turn) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.AngleUnit) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.AngleUnit) _self, value);
+	} else if (_self instanceof rover.raspirover.raspirover.Centimeter) {
+		result = rover.raspirover.aspects.CentimeterAspect.toCentimeters((rover.raspirover.raspirover.Centimeter) _self,
+				value);
+	} else if (_self instanceof rover.raspirover.raspirover.MetricSystemUnit) {
+		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
+				(rover.raspirover.raspirover.MetricSystemUnit) _self, value);
 	} else if (_self instanceof rover.raspirover.raspirover.Yard) {
 		result = rover.raspirover.aspects.YardAspect.toCentimeters((rover.raspirover.raspirover.Yard) _self, value);
 	} else if (_self instanceof rover.raspirover.raspirover.Foot) {
@@ -77,32 +100,9 @@ public abstract class LengthUnitAspect {
 	} else if (_self instanceof rover.raspirover.raspirover.ImperialSystemUnit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
 				(rover.raspirover.raspirover.ImperialSystemUnit) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Gradian) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.Gradian) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Meter) {
-		result = rover.raspirover.aspects.MeterAspect.toCentimeters((rover.raspirover.raspirover.Meter) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Radian) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.Radian) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Centimeter) {
-		result = rover.raspirover.aspects.CentimeterAspect.toCentimeters((rover.raspirover.raspirover.Centimeter) _self,
-				value);
 	} else if (_self instanceof rover.raspirover.raspirover.LengthUnit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
 				(rover.raspirover.raspirover.LengthUnit) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Turn) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.Turn) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.Degree) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.Degree) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.AngleUnit) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.AngleUnit) _self, value);
-	} else if (_self instanceof rover.raspirover.raspirover.MetricSystemUnit) {
-		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
-				(rover.raspirover.raspirover.MetricSystemUnit) _self, value);
 	} else if (_self instanceof rover.raspirover.raspirover.Unit) {
 		result = rover.raspirover.aspects.LengthUnitAspect._privk3_toCentimeters(_self_,
 				(rover.raspirover.raspirover.Unit) _self, value);

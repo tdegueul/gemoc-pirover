@@ -18,13 +18,17 @@ import rcl.RoverProgram
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
 import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
-import static extension rover.ActionToPin.*
-import static extension rover.NumberValueUnit.*
+import static extension rover.ActionToPinGlue.*
+import static extension rover.NumberToUnitGlue.*
+import static extension rover.ProjectToProgramGlue.*
 
 @Aspect(className = Project)
-class ProjectProgramGlue extends Project_ExecutableAspect {
+class ProjectToProgramGlue extends Project_ExecutableAspect {
 	@Containment public RoverProgram program
+}
 
+@Aspect(className = Project)
+class OverriddenProjectInterpreter extends Project_ExecutableAspect {
 	@OverrideAspectMethod
 	override void execute() {
 		_self.program.run
@@ -32,12 +36,12 @@ class ProjectProgramGlue extends Project_ExecutableAspect {
 }
 
 @Aspect(className = Action)
-class ActionToPin extends ActionAspect {
+class ActionToPinGlue extends ActionAspect {
 	public Pin associatedPin
 }
 
 @Aspect(className = BackwardMinAction)
-class BackwardMinActionWithPin extends BackwardMinActionAspect {
+class OverriddenBackwardMinActionInterpreter extends BackwardMinActionAspect {
 	@OverrideAspectMethod
 	override void eval() {
 		println('''<backward («_self.distance.print» = «_self.distance.intValue»cm)>"''')
@@ -46,9 +50,12 @@ class BackwardMinActionWithPin extends BackwardMinActionAspect {
 }
 
 @Aspect(className = NumberValue)
-class NumberValueUnit extends NumberValueAspect {
+class NumberToUnitGlue extends NumberValueAspect {
 	@Containment public Unit unit
-	
+}
+
+@Aspect(className = NumberValue)
+class OverriddenNumberInterpreter extends NumberValueAspect {	
 	@OverrideAspectMethod
 	override int getIntValue() {
 		return

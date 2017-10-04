@@ -7,7 +7,7 @@ import org.eclipse.emf.ecore.resource.ResourceSet;
 import org.eclipse.emf.ecore.resource.impl.ResourceSetImpl;
 import org.eclipse.emf.ecore.xmi.impl.XMIResourceFactoryImpl;
 
-import rover.raspirover.aspects.ProjectProgramGlue;
+import rover.raspirover.aspects.OverriddenProjectInterpreter;
 import rover.raspirover.raspirover.Project;
 import rover.raspirover.raspirover.RaspiroverPackage;
 
@@ -20,6 +20,6 @@ public class Main {
 		Resource res = rs.getResource(URI.createURI("My.raspirover"), true);
 		Project project = (Project) res.getContents().get(0);
 
-		ProjectProgramGlue.execute(project);
+		OverriddenProjectInterpreter.execute(project);
 	}
 }

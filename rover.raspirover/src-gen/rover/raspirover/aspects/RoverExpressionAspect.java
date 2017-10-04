@@ -13,12 +13,12 @@ public abstract class RoverExpressionAspect {
 	final rover.raspirover.aspects.RoverExpressionAspectRoverExpressionAspectProperties _self_ = rover.raspirover.aspects.RoverExpressionAspectRoverExpressionAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.raspirover.raspirover.NumericExpression) {
-		result = rover.raspirover.aspects.NumericExpressionASpect
-				.eval((rover.raspirover.raspirover.NumericExpression) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.BooleanExpression) {
+	if (_self instanceof rover.raspirover.raspirover.BooleanExpression) {
 		result = rover.raspirover.aspects.BooleanExpressionASpect
 				.eval((rover.raspirover.raspirover.BooleanExpression) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.NumericExpression) {
+		result = rover.raspirover.aspects.NumericExpressionASpect
+				.eval((rover.raspirover.raspirover.NumericExpression) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.StringExpression) {
 		result = rover.raspirover.aspects.StringExpressionASpect
 				.eval((rover.raspirover.raspirover.StringExpression) _self);

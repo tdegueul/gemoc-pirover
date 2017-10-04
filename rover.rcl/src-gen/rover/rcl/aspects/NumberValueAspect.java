@@ -11,10 +11,10 @@ public class NumberValueAspect {
 	final rover.rcl.aspects.NumberValueAspectNumberValueAspectProperties _self_ = rover.rcl.aspects.NumberValueAspectNumberValueAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.rcl.rcl.TemperatureQuery) {
-		result = rover.rcl.aspects.TemperatureQueryAspect.getIntValue((rover.rcl.rcl.TemperatureQuery) _self);
-	} else if (_self instanceof rover.rcl.rcl.VarRef) {
+	if (_self instanceof rover.rcl.rcl.VarRef) {
 		result = rover.rcl.aspects.VarRefAspect.getIntValue((rover.rcl.rcl.VarRef) _self);
+	} else if (_self instanceof rover.rcl.rcl.TemperatureQuery) {
+		result = rover.rcl.aspects.TemperatureQueryAspect.getIntValue((rover.rcl.rcl.TemperatureQuery) _self);
 	} else if (_self instanceof rover.rcl.rcl.HumidityQuery) {
 		result = rover.rcl.aspects.HumidityQueryAspect.getIntValue((rover.rcl.rcl.HumidityQuery) _self);
 	} else if (_self instanceof rover.rcl.rcl.NumberValue) {
