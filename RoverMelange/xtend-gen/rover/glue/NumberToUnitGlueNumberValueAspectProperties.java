@@ -1,4 +1,4 @@
-package rover;
+package rover.glue;
 
 import org.modelexecution.units.Unit;
 

@@ -1,8 +1,8 @@
-package rover;
+package rover.glue;
 
 import java.util.Map;
 import rcl.NumberValue;
-import rover.NumberToUnitGlueNumberValueAspectProperties;
+import rover.glue.NumberToUnitGlueNumberValueAspectProperties;
 
 @SuppressWarnings("all")
 public class NumberToUnitGlueNumberValueAspectContext {
@@ -10,11 +10,11 @@ public class NumberToUnitGlueNumberValueAspectContext {
   
   public static NumberToUnitGlueNumberValueAspectProperties getSelf(final NumberValue _self) {
     		if (!INSTANCE.map.containsKey(_self))
-    			INSTANCE.map.put(_self, new rover.NumberToUnitGlueNumberValueAspectProperties());
+    			INSTANCE.map.put(_self, new rover.glue.NumberToUnitGlueNumberValueAspectProperties());
     		return INSTANCE.map.get(_self);
   }
   
-  private Map<NumberValue, NumberToUnitGlueNumberValueAspectProperties> map = new java.util.WeakHashMap<rcl.NumberValue, rover.NumberToUnitGlueNumberValueAspectProperties>();
+  private Map<NumberValue, NumberToUnitGlueNumberValueAspectProperties> map = new java.util.WeakHashMap<rcl.NumberValue, rover.glue.NumberToUnitGlueNumberValueAspectProperties>();
   
   public Map<NumberValue, NumberToUnitGlueNumberValueAspectProperties> getMap() {
     return map;

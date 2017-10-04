@@ -1,4 +1,4 @@
-package rover;
+package rover.glue;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
@@ -9,15 +9,15 @@ import org.gemoc.rover.rcl.semantics.BackwardMinActionAspect;
 import org.gemoc.rover.rcl.semantics.NumberValueAspect;
 import org.gemoc.sequential.model.arduino.Pin;
 import rcl.BackwardMinAction;
-import rover.ActionToPinGlue;
-import rover.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties;
+import rover.glue.ActionToPinGlue;
+import rover.glue.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties;
 
 @Aspect(className = BackwardMinAction.class)
 @SuppressWarnings("all")
 public class OverriddenBackwardMinActionInterpreter extends BackwardMinActionAspect {
   @OverrideAspectMethod
   public static void eval(final BackwardMinAction _self) {
-    final rover.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties _self_ = rover.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectContext.getSelf(_self);
+    final rover.glue.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties _self_ = rover.glue.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectContext.getSelf(_self);
     _privk3_eval(_self_, _self);;
   }
   

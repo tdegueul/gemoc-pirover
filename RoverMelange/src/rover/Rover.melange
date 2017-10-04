@@ -19,10 +19,5 @@ language RasPiRover {
 	slice ArduinoML on ["ArduinoBoard"] renaming { "arduino" to "raspirover" { "ArduinoBoard" to "RasPiBoard" }}
 	merge RCL renaming { "rcl" to "raspirover" }
 	merge Units renaming { "units" to "raspirover" }
-	with rover.ProjectToProgramGlue
-	with rover.NumberToUnitGlue
-	with rover.ActionToPinGlue
-	with rover.OverriddenProjectInterpreter
-	with rover.OverriddenNumberInterpreter
-	with rover.OverriddenBackwardMinActionInterpreter
+	with rover.glue.*
 }

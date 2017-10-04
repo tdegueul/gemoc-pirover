@@ -1,19 +1,19 @@
-package rover;
+package rover.glue;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.gemoc.arduino.sequential.k3dsa.Project_ExecutableAspect;
 import org.gemoc.rover.rcl.semantics.RoverProgramAspect;
 import org.gemoc.sequential.model.arduino.Project;
-import rover.OverriddenProjectInterpreterProjectAspectProperties;
-import rover.ProjectToProgramGlue;
+import rover.glue.OverriddenProjectInterpreterProjectAspectProperties;
+import rover.glue.ProjectToProgramGlue;
 
 @Aspect(className = Project.class)
 @SuppressWarnings("all")
 public class OverriddenProjectInterpreter extends Project_ExecutableAspect {
   @OverrideAspectMethod
   public static void execute(final Project _self) {
-    final rover.OverriddenProjectInterpreterProjectAspectProperties _self_ = rover.OverriddenProjectInterpreterProjectAspectContext.getSelf(_self);
+    final rover.glue.OverriddenProjectInterpreterProjectAspectProperties _self_ = rover.glue.OverriddenProjectInterpreterProjectAspectContext.getSelf(_self);
     _privk3_execute(_self_, _self);;
   }
   

@@ -13,12 +13,12 @@ public class Control_ExecutableAspect extends Instruction_ExecutableAspect {
   public static void execute(final Control _self) {
 	final rover.arduinoml.aspects.Control_ExecutableAspectControlAspectProperties _self_ = rover.arduinoml.aspects.Control_ExecutableAspectControlAspectContext
 			.getSelf(_self);
-	if (_self instanceof rover.arduinoml.arduino.Repeat) {
-		rover.arduinoml.aspects.Repeat_ExecutableAspect.execute((rover.arduinoml.arduino.Repeat) _self);
+	if (_self instanceof rover.arduinoml.arduino.While) {
+		rover.arduinoml.aspects.While_ExecutableAspect.execute((rover.arduinoml.arduino.While) _self);
 	} else if (_self instanceof rover.arduinoml.arduino.If) {
 		rover.arduinoml.aspects.If_ExecutableAspect.execute((rover.arduinoml.arduino.If) _self);
-	} else if (_self instanceof rover.arduinoml.arduino.While) {
-		rover.arduinoml.aspects.While_ExecutableAspect.execute((rover.arduinoml.arduino.While) _self);
+	} else if (_self instanceof rover.arduinoml.arduino.Repeat) {
+		rover.arduinoml.aspects.Repeat_ExecutableAspect.execute((rover.arduinoml.arduino.Repeat) _self);
 	} else if (_self instanceof rover.arduinoml.arduino.Control) {
 		rover.arduinoml.aspects.Control_ExecutableAspect._privk3_execute(_self_,
 				(rover.arduinoml.arduino.Control) _self);

@@ -11,12 +11,12 @@ public class BooleanValueAspect {
 	final rover.raspirover.aspects.BooleanValueAspectBooleanValueAspectProperties _self_ = rover.raspirover.aspects.BooleanValueAspectBooleanValueAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.raspirover.raspirover.ObstacleQuery) {
-		result = rover.raspirover.aspects.ObstacleQueryAspect
-				.getBooleanValue((rover.raspirover.raspirover.ObstacleQuery) _self);
-	} else if (_self instanceof rover.raspirover.raspirover.VarRef) {
+	if (_self instanceof rover.raspirover.raspirover.VarRef) {
 		result = rover.raspirover.aspects.BooleanValueAspect._privk3_getBooleanValue(_self_,
 				(rover.raspirover.raspirover.VarRef) _self);
+	} else if (_self instanceof rover.raspirover.raspirover.ObstacleQuery) {
+		result = rover.raspirover.aspects.ObstacleQueryAspect
+				.getBooleanValue((rover.raspirover.raspirover.ObstacleQuery) _self);
 	} else if (_self instanceof rover.raspirover.raspirover.BooleanValue) {
 		result = rover.raspirover.aspects.BooleanValueAspect._privk3_getBooleanValue(_self_,
 				(rover.raspirover.raspirover.BooleanValue) _self);

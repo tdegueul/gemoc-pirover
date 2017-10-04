@@ -1,23 +1,23 @@
-package rover;
+package rover.glue;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import org.gemoc.rover.rcl.semantics.ActionAspect;
 import org.gemoc.sequential.model.arduino.Pin;
 import rcl.Action;
-import rover.ActionToPinGlueActionAspectProperties;
+import rover.glue.ActionToPinGlueActionAspectProperties;
 
 @Aspect(className = Action.class)
 @SuppressWarnings("all")
 public class ActionToPinGlue extends ActionAspect {
   public static Pin associatedPin(final Action _self) {
-    final rover.ActionToPinGlueActionAspectProperties _self_ = rover.ActionToPinGlueActionAspectContext.getSelf(_self);
+    final rover.glue.ActionToPinGlueActionAspectProperties _self_ = rover.glue.ActionToPinGlueActionAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_associatedPin(_self_, _self);;
     return (org.gemoc.sequential.model.arduino.Pin)result;
   }
   
   public static void associatedPin(final Action _self, final Pin associatedPin) {
-    final rover.ActionToPinGlueActionAspectProperties _self_ = rover.ActionToPinGlueActionAspectContext.getSelf(_self);
+    final rover.glue.ActionToPinGlueActionAspectProperties _self_ = rover.glue.ActionToPinGlueActionAspectContext.getSelf(_self);
     _privk3_associatedPin(_self_, _self,associatedPin);;
   }
   

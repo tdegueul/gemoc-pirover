@@ -1,4 +1,4 @@
-package rover
+package rover.glue
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
@@ -13,9 +13,9 @@ import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import static extension org.gemoc.rover.rcl.semantics.NumberValueAspect.*
 import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
 import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
-import static extension rover.ActionToPinGlue.*
-import static extension rover.NumberToUnitGlue.*
-import static extension rover.ProjectToProgramGlue.*
+import static extension rover.glue.ActionToPinGlue.*
+import static extension rover.glue.NumberToUnitGlue.*
+import static extension rover.glue.ProjectToProgramGlue.*
 
 @Aspect(className = Project)
 class OverriddenProjectInterpreter extends Project_ExecutableAspect {

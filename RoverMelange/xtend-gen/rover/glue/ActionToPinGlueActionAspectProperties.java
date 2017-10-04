@@ -1,4 +1,4 @@
-package rover;
+package rover.glue;
 
 import org.gemoc.sequential.model.arduino.Pin;
 

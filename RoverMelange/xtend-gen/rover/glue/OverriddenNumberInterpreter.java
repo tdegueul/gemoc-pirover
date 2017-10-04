@@ -1,4 +1,4 @@
-package rover;
+package rover.glue;
 
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
@@ -6,15 +6,15 @@ import org.gemoc.rover.rcl.semantics.NumberValueAspect;
 import org.modelexecution.units.Unit;
 import org.modelexecution.units.semantics.LengthUnitAspect;
 import rcl.NumberValue;
-import rover.NumberToUnitGlue;
-import rover.OverriddenNumberInterpreterNumberValueAspectProperties;
+import rover.glue.NumberToUnitGlue;
+import rover.glue.OverriddenNumberInterpreterNumberValueAspectProperties;
 
 @Aspect(className = NumberValue.class)
 @SuppressWarnings("all")
 public class OverriddenNumberInterpreter extends NumberValueAspect {
   @OverrideAspectMethod
   public static int getIntValue(final NumberValue _self) {
-    final rover.OverriddenNumberInterpreterNumberValueAspectProperties _self_ = rover.OverriddenNumberInterpreterNumberValueAspectContext.getSelf(_self);
+    final rover.glue.OverriddenNumberInterpreterNumberValueAspectProperties _self_ = rover.glue.OverriddenNumberInterpreterNumberValueAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_getIntValue(_self_, _self);;
     return (int)result;
@@ -22,7 +22,7 @@ public class OverriddenNumberInterpreter extends NumberValueAspect {
   
   @OverrideAspectMethod
   public static String print(final NumberValue _self) {
-    final rover.OverriddenNumberInterpreterNumberValueAspectProperties _self_ = rover.OverriddenNumberInterpreterNumberValueAspectContext.getSelf(_self);
+    final rover.glue.OverriddenNumberInterpreterNumberValueAspectProperties _self_ = rover.glue.OverriddenNumberInterpreterNumberValueAspectContext.getSelf(_self);
     Object result = null;
     result = _privk3_print(_self_, _self);;
     return (java.lang.String)result;

@@ -27,5 +27,17 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: rover
+Export-Package: rover.glue,
+ rover.rclmt.rcl.impl,
+ rover.rclmt.rcl,
+ rover.rclmt.rcl.util,
+ rover.unitsmt.units,
+ rover.unitsmt.units.impl,
+ rover.unitsmt.units.util,
+ rover.arduinomlmt.arduino.util,
+ rover.arduinomlmt.arduino.impl,
+ rover.arduinomlmt.arduino,
+ rover.raspirovermt.raspirover,
+ rover.raspirovermt.raspirover.util,
+ rover.raspirovermt.raspirover.impl
 
