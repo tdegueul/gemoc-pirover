@@ -11,10 +11,10 @@ public class StringValueAspect {
 	final rover.rcl.aspects.StringValueAspectStringValueAspectProperties _self_ = rover.rcl.aspects.StringValueAspectStringValueAspectContext
 			.getSelf(_self);
 	Object result = null;
-	if (_self instanceof rover.rcl.rcl.VarRef) {
-		result = rover.rcl.aspects.StringValueAspect._privk3_getStringValue(_self_, (rover.rcl.rcl.VarRef) _self);
-	} else if (_self instanceof rover.rcl.rcl.MessageQuery) {
+	if (_self instanceof rover.rcl.rcl.MessageQuery) {
 		result = rover.rcl.aspects.MessageQueryAspect.getStringValue((rover.rcl.rcl.MessageQuery) _self);
+	} else if (_self instanceof rover.rcl.rcl.VarRef) {
+		result = rover.rcl.aspects.StringValueAspect._privk3_getStringValue(_self_, (rover.rcl.rcl.VarRef) _self);
 	} else if (_self instanceof rover.rcl.rcl.StringValue) {
 		result = rover.rcl.aspects.StringValueAspect._privk3_getStringValue(_self_, (rover.rcl.rcl.StringValue) _self);
 	} else {

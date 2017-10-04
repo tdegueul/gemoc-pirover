@@ -1,27 +1,38 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <?eclipse version="3.4"?><plugin>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated RCLMT -->
-    <package class="rover.rclmt.rcl.RclPackage" genModel="model-gen/RCLMT.genmodel" uri="http://rover.rclmt/rcl/"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated UnitsMT -->
-    <package class="rover.unitsmt.units.UnitsPackage" genModel="model-gen/UnitsMT.genmodel" uri="http://rover.unitsmt/units/"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated ArduinoMLMT -->
-    <package class="rover.arduinomlmt.arduino.ArduinoPackage" genModel="model-gen/ArduinoMLMT.genmodel" uri="http://rover.arduinomlmt/arduino/"/>
-  </extension>
-  <extension point="org.eclipse.emf.ecore.generated_package">
-    <!-- @generated RasPiRoverMT -->
-    <package class="rover.raspirovermt.raspirover.RaspiroverPackage" genModel="model-gen/RasPiRoverMT.genmodel" uri="http://rover.raspirovermt/raspirover/"/>
-  </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RCLMT -->
+      <package
+            uri="http://rover.rclmt/rcl/"
+            class="rover.rclmt.rcl.RclPackage"
+            genModel="model-gen/RCLMT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated UnitsMT -->
+      <package
+            uri="http://rover.unitsmt/units/"
+            class="rover.unitsmt.units.UnitsPackage"
+            genModel="model-gen/UnitsMT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated ArduinoMLMT -->
+      <package
+            uri="http://rover.arduinomlmt/arduino/"
+            class="rover.arduinomlmt.arduino.ArduinoPackage"
+            genModel="model-gen/ArduinoMLMT.genmodel"/>
+   </extension>
+   <extension point="org.eclipse.emf.ecore.generated_package">
+      <!-- @generated RasPiRoverMT -->
+      <package
+            uri="http://rover.raspirovermt/raspirover/"
+            class="rover.raspirovermt.raspirover.RaspiroverPackage"
+            genModel="model-gen/RasPiRoverMT.genmodel"/>
+   </extension>
   <extension point="org.eclipse.emf.ecore.generated_package">
     <!-- @generated SlicedArduinoMT -->
     <package class="rover.slicedarduinomt.raspirover.RaspiroverPackage" genModel="model-gen/SlicedArduinoMT.genmodel" uri="http://rover.slicedarduinomt/raspirover/"/>
   </extension>
-  
-<extension point="fr.inria.diverse.melange.modeltype">
+  <extension point="fr.inria.diverse.melange.modeltype">
     <modeltype id="rover.RCLMT" uri="http://rover.rclmt/"/>
     <modeltype id="rover.UnitsMT" uri="http://rover.unitsmt/"/>
     <modeltype id="rover.ArduinoMLMT" uri="http://rover.arduinomlmt/"/>

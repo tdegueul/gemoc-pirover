@@ -27,25 +27,5 @@ Require-Bundle: org.eclipse.xtend.lib;bundle-version="2.7.0";visibility:=private
 Bundle-ManifestVersion: 2
 Bundle-RequiredExecutionEnvironment: JavaSE-1.7
 Bundle-ActivationPolicy: lazy
-Export-Package: rover.rclmt.rcl.impl,
- rover.rclmt.rcl,
- rover.rclmt.rcl.util,
- rover.unitsmt.units,
- rover.unitsmt.units.impl,
- rover.unitsmt.units.util,
- rover.arduinomlmt.arduino.util,
- rover.arduinomlmt.arduino.impl,
- rover.arduinomlmt.arduino,
- rover.raspirovermt.raspirover,
- rover.raspirovermt.raspirover.util,
- rover.raspirovermt.raspirover.impl,
- rover.rcl.adapters.rclmt.rcl,
- rover.units.adapters.unitsmt,
- rover.raspirover.adapters.raspirovermt.raspirover,
- rover.rcl.adapters.rclmt,
- rover.raspirover.adapters.raspirovermt,
- rover.arduinoml.adapters.arduinomlmt.arduino,
- rover.arduinoml.adapters.arduinomlmt,
- rover,
- rover.units.adapters.unitsmt.units
+Export-Package: rover
 
