@@ -34,8 +34,16 @@ public class OverriddenNumberInterpreter extends NumberValueAspect {
   }
   
   protected static int _privk3_getIntValue(final OverriddenNumberInterpreterNumberValueAspectProperties _self_, final NumberValue _self) {
-    throw new Error("Unresolved compilation problems:"
-      + "\nThe method toCentimeters(int) is undefined for the type Quantity");
+    int _xifexpression = (int) 0;
+    Quantity _quantity = NumberToQuantityGlue.quantity(_self);
+    boolean _tripleNotEquals = (_quantity != null);
+    if (_tripleNotEquals) {
+      double _normalized = QuantityAspect.getNormalized(NumberToQuantityGlue.quantity(_self));
+      _xifexpression = ((int) _normalized);
+    } else {
+      _xifexpression = OverriddenNumberInterpreter.super_getIntValue(_self);
+    }
+    return _xifexpression;
   }
   
   private static String super_print(final NumberValue _self) {

@@ -28,6 +28,13 @@ import static extension org.modelexecution.units.semantics.UnitAspect.*
 @Aspect(className = Quantity)
 abstract class QuantityAspect {
 	abstract def String print()
+	def double getNormalized() {
+		return switch (_self.unit) {
+			AngleUnit: (_self.unit as AngleUnit).toRad(_self.value.value)
+			LengthUnit: (_self.unit as LengthUnit).toCm(_self.value.value)
+			default: 0
+		}
+	}
 }
 
 @Aspect(className = Unit)
