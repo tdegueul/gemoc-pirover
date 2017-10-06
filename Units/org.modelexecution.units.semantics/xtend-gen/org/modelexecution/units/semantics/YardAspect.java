@@ -10,34 +10,34 @@ import org.modelexecution.units.semantics.YardAspectYardAspectProperties;
 @SuppressWarnings("all")
 public class YardAspect extends LengthUnitAspect {
   @OverrideAspectMethod
-  public static String print(final Yard _self) {
+  public static String getSymbol(final Yard _self) {
     final org.modelexecution.units.semantics.YardAspectYardAspectProperties _self_ = org.modelexecution.units.semantics.YardAspectYardAspectContext.getSelf(_self);
     Object result = null;
      if (_self instanceof org.modelexecution.units.Yard){
-    					result = org.modelexecution.units.semantics.YardAspect._privk3_print(_self_, (org.modelexecution.units.Yard)_self);
+    					result = org.modelexecution.units.semantics.YardAspect._privk3_getSymbol(_self_, (org.modelexecution.units.Yard)_self);
     } else  if (_self instanceof org.modelexecution.units.Unit){
-    					result = org.modelexecution.units.semantics.LengthUnitAspect.print((org.modelexecution.units.Unit)_self);
+    					result = org.modelexecution.units.semantics.UnitAspect.getSymbol((org.modelexecution.units.Unit)_self);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (java.lang.String)result;
   }
   
   @OverrideAspectMethod
-  public static double toCentimeters(final Yard _self, final double value) {
+  public static double toCm(final Yard _self, final double value) {
     final org.modelexecution.units.semantics.YardAspectYardAspectProperties _self_ = org.modelexecution.units.semantics.YardAspectYardAspectContext.getSelf(_self);
     Object result = null;
      if (_self instanceof org.modelexecution.units.Yard){
-    					result = org.modelexecution.units.semantics.YardAspect._privk3_toCentimeters(_self_, (org.modelexecution.units.Yard)_self,value);
-    } else  if (_self instanceof org.modelexecution.units.Unit){
-    					result = org.modelexecution.units.semantics.LengthUnitAspect.toCentimeters((org.modelexecution.units.Unit)_self,value);
+    					result = org.modelexecution.units.semantics.YardAspect._privk3_toCm(_self_, (org.modelexecution.units.Yard)_self,value);
+    } else  if (_self instanceof org.modelexecution.units.LengthUnit){
+    					result = org.modelexecution.units.semantics.LengthUnitAspect.toCm((org.modelexecution.units.LengthUnit)_self,value);
     } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
     return (double)result;
   }
   
-  protected static String _privk3_print(final YardAspectYardAspectProperties _self_, final Yard _self) {
+  protected static String _privk3_getSymbol(final YardAspectYardAspectProperties _self_, final Yard _self) {
     return "yd";
   }
   
-  protected static double _privk3_toCentimeters(final YardAspectYardAspectProperties _self_, final Yard _self, final double value) {
+  protected static double _privk3_toCm(final YardAspectYardAspectProperties _self_, final Yard _self, final double value) {
     return (value * 91.44);
   }
 }

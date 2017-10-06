@@ -9,6 +9,7 @@
  */
 package org.modelexecution.units.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -635,6 +636,15 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
+	public EAttribute getNumericValue_Value() {
+		return (EAttribute)numericValueEClass.getEStructuralFeatures().get(0);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
 	public EClass getQuantityOperation() {
 		return quantityOperationEClass;
 	}
@@ -940,6 +950,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		angleEClass = createEClass(ANGLE);
 
 		numericValueEClass = createEClass(NUMERIC_VALUE);
+		createEAttribute(numericValueEClass, NUMERIC_VALUE__VALUE);
 
 		quantityOperationEClass = createEClass(QUANTITY_OPERATION);
 
@@ -1121,6 +1132,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		initEClass(angleEClass, Angle.class, "Angle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(numericValueEClass, NumericValue.class, "NumericValue", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		initEAttribute(getNumericValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, NumericValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(quantityOperationEClass, QuantityOperation.class, "QuantityOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 

@@ -40,7 +40,11 @@
       <details key="AngleRequiresAngleUnit" value="self.unit.oclIsKindOf(AngleUnit)"/>
     </eAnnotations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NumericValue" abstract="true" interface="true"/>
+  <eClassifiers xsi:type="ecore:EClass" name="NumericValue" abstract="true" interface="true">
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
+  </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuantityOperation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LengthOperation" abstract="true" eSuperTypes="//QuantityOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="LengthAdd" eSuperTypes="//LengthOperation //QuantityHomogenousOperation">

@@ -65,6 +65,9 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="units.ecore#//NumericValue"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="units.ecore#//NumericValue/value"/>
+      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="units.ecore#//QuantityOperation"/>

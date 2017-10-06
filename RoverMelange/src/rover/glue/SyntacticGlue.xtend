@@ -7,7 +7,7 @@ import org.gemoc.rover.rcl.semantics.ActionAspect
 import org.gemoc.rover.rcl.semantics.NumberValueAspect
 import org.gemoc.sequential.model.arduino.Pin
 import org.gemoc.sequential.model.arduino.Project
-import org.modelexecution.units.Unit
+import org.modelexecution.units.Quantity
 import rcl.Action
 import rcl.NumberValue
 import rcl.RoverProgram
@@ -23,6 +23,6 @@ class ActionToPinGlue extends ActionAspect {
 }
 
 @Aspect(className = NumberValue)
-class NumberToUnitGlue extends NumberValueAspect {
-	@Containment public Unit unit
+class NumberToQuantityGlue extends NumberValueAspect {
+	@Containment public Quantity quantity
 }

@@ -12,9 +12,9 @@ import rcl.NumberValue
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
 import static extension org.gemoc.rover.rcl.semantics.NumberValueAspect.*
 import static extension org.gemoc.rover.rcl.semantics.RoverProgramAspect.*
-import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
+import static extension org.modelexecution.units.semantics.LengthAspect.*
 import static extension rover.glue.ActionToPinGlue.*
-import static extension rover.glue.NumberToUnitGlue.*
+import static extension rover.glue.NumberToQuantityGlue.*
 import static extension rover.glue.ProjectToProgramGlue.*
 
 @Aspect(className = Project)
@@ -39,14 +39,18 @@ class OverriddenNumberInterpreter extends NumberValueAspect {
 	@OverrideAspectMethod
 	override int getIntValue() {
 		return
-			if (_self.unit !== null)
-				Math::round(_self.unit.toCentimeters(_self.NValue)) as int
+			if (_self.quantity !== null)
+				Math::round(_self.quantity.toCentimeters(_self.NValue)) as int
 			else
 				_self.super_getIntValue
 	}
 	
 	@OverrideAspectMethod
 	override String print() {
-		return _self.super_print + _self.unit.print
+		return
+			if (_self.quantity !== null)
+				_self.quantity.print
+			else
+				_self.super_print
 	}
 }

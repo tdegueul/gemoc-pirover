@@ -3,10 +3,10 @@ package rover.glue;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
 import org.gemoc.rover.rcl.semantics.NumberValueAspect;
-import org.modelexecution.units.Unit;
-import org.modelexecution.units.semantics.LengthUnitAspect;
+import org.modelexecution.units.Quantity;
+import org.modelexecution.units.semantics.QuantityAspect;
 import rcl.NumberValue;
-import rover.glue.NumberToUnitGlue;
+import rover.glue.NumberToQuantityGlue;
 import rover.glue.OverriddenNumberInterpreterNumberValueAspectProperties;
 
 @Aspect(className = NumberValue.class)
@@ -34,16 +34,8 @@ public class OverriddenNumberInterpreter extends NumberValueAspect {
   }
   
   protected static int _privk3_getIntValue(final OverriddenNumberInterpreterNumberValueAspectProperties _self_, final NumberValue _self) {
-    int _xifexpression = (int) 0;
-    Unit _unit = NumberToUnitGlue.unit(_self);
-    boolean _tripleNotEquals = (_unit != null);
-    if (_tripleNotEquals) {
-      long _round = Math.round(LengthUnitAspect.toCentimeters(NumberToUnitGlue.unit(_self), _self.getNValue()));
-      _xifexpression = ((int) _round);
-    } else {
-      _xifexpression = OverriddenNumberInterpreter.super_getIntValue(_self);
-    }
-    return _xifexpression;
+    throw new Error("Unresolved compilation problems:"
+      + "\nThe method toCentimeters(int) is undefined for the type Quantity");
   }
   
   private static String super_print(final NumberValue _self) {
@@ -52,8 +44,14 @@ public class OverriddenNumberInterpreter extends NumberValueAspect {
   }
   
   protected static String _privk3_print(final OverriddenNumberInterpreterNumberValueAspectProperties _self_, final NumberValue _self) {
-    String _super_print = OverriddenNumberInterpreter.super_print(_self);
-    String _print = LengthUnitAspect.print(NumberToUnitGlue.unit(_self));
-    return (_super_print + _print);
+    String _xifexpression = null;
+    Quantity _quantity = NumberToQuantityGlue.quantity(_self);
+    boolean _tripleNotEquals = (_quantity != null);
+    if (_tripleNotEquals) {
+      _xifexpression = QuantityAspect.print(NumberToQuantityGlue.quantity(_self));
+    } else {
+      _xifexpression = OverriddenNumberInterpreter.super_print(_self);
+    }
+    return _xifexpression;
   }
 }

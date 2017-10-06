@@ -9,6 +9,7 @@
  */
 package org.modelexecution.units;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -639,13 +640,22 @@ public interface UnitsPackage extends EPackage {
 	int NUMERIC_VALUE = 18;
 
 	/**
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 * @ordered
+	 */
+	int NUMERIC_VALUE__VALUE = 0;
+
+	/**
 	 * The number of structural features of the '<em>Numeric Value</em>' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMERIC_VALUE_FEATURE_COUNT = 0;
+	int NUMERIC_VALUE_FEATURE_COUNT = 1;
 
 	/**
 	 * The number of operations of the '<em>Numeric Value</em>' class.
@@ -1838,6 +1848,17 @@ public interface UnitsPackage extends EPackage {
 	EClass getNumericValue();
 
 	/**
+	 * Returns the meta object for the attribute '{@link org.modelexecution.units.NumericValue#getValue <em>Value</em>}'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return the meta object for the attribute '<em>Value</em>'.
+	 * @see org.modelexecution.units.NumericValue#getValue()
+	 * @see #getNumericValue()
+	 * @generated
+	 */
+	EAttribute getNumericValue_Value();
+
+	/**
 	 * Returns the meta object for class '{@link org.modelexecution.units.QuantityOperation <em>Quantity Operation</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2339,6 +2360,14 @@ public interface UnitsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass NUMERIC_VALUE = eINSTANCE.getNumericValue();
+
+		/**
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
+		 * <!-- begin-user-doc -->
+		 * <!-- end-user-doc -->
+		 * @generated
+		 */
+		EAttribute NUMERIC_VALUE__VALUE = eINSTANCE.getNumericValue_Value();
 
 		/**
 		 * The meta object literal for the '{@link org.modelexecution.units.impl.QuantityOperationImpl <em>Quantity Operation</em>}' class.
