@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<arduino:Project xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:arduino="http://rover.raspirover/raspirover/">
+  <program name="dummy">
+    <block>
+      <stmts xsi:type="arduino:VarAssignment" name="a">
+        <value xsi:type="arduino:NumberValue" nValue="90">
+          <unit xsi:type="arduino:Centimeter"/>
+        </value>
+      </stmts>
+      <stmts xsi:type="arduino:VarAssignment" name="b">
+        <value xsi:type="arduino:NumberValue" nValue="1">
+          <unit xsi:type="arduino:Yard"/>
+        </value>
+      </stmts>
+      <stmts xsi:type="arduino:VarAssignment" name="c">
+        <value xsi:type="arduino:VarRef" name="a"/>
+      </stmts>
+      <stmts xsi:type="arduino:Conditional">
+        <expr xsi:type="arduino:NumericExpression">
+          <lhs xsi:type="arduino:VarRef" name="c"/>
+          <rhs xsi:type="arduino:VarRef" name="b"/>
+        </expr>
+        <condTrue>
+          <stmts xsi:type="arduino:LogAction" message="True"/>
+        </condTrue>
+        <condFalse>
+          <stmts xsi:type="arduino:LogAction" message="False"/>
+        </condFalse>
+      </stmts>
+    </block>
+  </program>
+</arduino:Project>
