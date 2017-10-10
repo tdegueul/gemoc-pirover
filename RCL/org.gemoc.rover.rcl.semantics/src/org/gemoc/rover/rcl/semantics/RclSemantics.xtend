@@ -298,21 +298,18 @@ class VarRefAspect extends NumberValueAspect {
 	@OverrideAspectMethod
 	def int getIntValue() {
 		val v = _self.program.getVar(_self.name) as NumberValue
-		println(_self.name + " == " + v.intValue)
 		return v.intValue
 	}
 
 	@OverrideAspectMethod
 	def boolean getBooleanValue() {
 		val v = _self.program.getVar(_self.name) as BooleanValue
-		println(_self.name + " == " + v.booleanValue)
 		return v.booleanValue
 	}
 
 	@OverrideAspectMethod
 	def String getStringValue() {
 		val v = _self.program.getVar(_self.name) as StringValue
-		println(_self.name + " == " + v.stringValue)
 		return v.stringValue
 	}
 	
