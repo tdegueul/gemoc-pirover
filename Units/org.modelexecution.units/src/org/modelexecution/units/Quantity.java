@@ -63,29 +63,29 @@ public interface Quantity extends EObject {
 	void setUnit(Unit value);
 
 	/**
-	 * Returns the value of the '<em><b>Value</b></em>' reference.
+	 * Returns the value of the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Value</em>' reference isn't clear,
+	 * If the meaning of the '<em>Value</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Value</em>' reference.
-	 * @see #setValue(NumericValue)
+	 * @return the value of the '<em>Value</em>' attribute.
+	 * @see #setValue(double)
 	 * @see org.modelexecution.units.UnitsPackage#getQuantity_Value()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	NumericValue getValue();
+	double getValue();
 
 	/**
-	 * Sets the value of the '{@link org.modelexecution.units.Quantity#getValue <em>Value</em>}' reference.
+	 * Sets the value of the '{@link org.modelexecution.units.Quantity#getValue <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Value</em>' reference.
+	 * @param value the new value of the '<em>Value</em>' attribute.
 	 * @see #getValue()
 	 * @generated
 	 */
-	void setValue(NumericValue value);
+	void setValue(double value);
 
 } // Quantity

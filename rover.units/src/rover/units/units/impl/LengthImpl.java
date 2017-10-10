@@ -34,4 +34,15 @@ public class LengthImpl extends QuantityImpl implements Length {
 		return UnitsPackage.Literals.LENGTH;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double toCm() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //LengthImpl

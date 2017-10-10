@@ -13,7 +13,7 @@ package rover.raspirover.raspirover;
  * </p>
  * <ul>
  *   <li>{@link rover.raspirover.raspirover.NumberValue#getNValue <em>NValue</em>}</li>
- *   <li>{@link rover.raspirover.raspirover.NumberValue#getUnit <em>Unit</em>}</li>
+ *   <li>{@link rover.raspirover.raspirover.NumberValue#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @see rover.raspirover.raspirover.RaspiroverPackage#getNumberValue()
@@ -48,30 +48,30 @@ public interface NumberValue extends RoverValue {
 	void setNValue(int value);
 
 	/**
-	 * Returns the value of the '<em><b>Unit</b></em>' containment reference.
+	 * Returns the value of the '<em><b>Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Unit</em>' containment reference isn't clear,
+	 * If the meaning of the '<em>Quantity</em>' containment reference isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Unit</em>' containment reference.
-	 * @see #setUnit(Unit)
-	 * @see rover.raspirover.raspirover.RaspiroverPackage#getNumberValue_Unit()
+	 * @return the value of the '<em>Quantity</em>' containment reference.
+	 * @see #setQuantity(Quantity)
+	 * @see rover.raspirover.raspirover.RaspiroverPackage#getNumberValue_Quantity()
 	 * @model containment="true"
 	 * @generated
 	 */
-	Unit getUnit();
+	Quantity getQuantity();
 
 	/**
-	 * Sets the value of the '{@link rover.raspirover.raspirover.NumberValue#getUnit <em>Unit</em>}' containment reference.
+	 * Sets the value of the '{@link rover.raspirover.raspirover.NumberValue#getQuantity <em>Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Unit</em>' containment reference.
-	 * @see #getUnit()
+	 * @param value the new value of the '<em>Quantity</em>' containment reference.
+	 * @see #getQuantity()
 	 * @generated
 	 */
-	void setUnit(Unit value);
+	void setQuantity(Quantity value);
 
 	/**
 	 * <!-- begin-user-doc -->

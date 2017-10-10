@@ -10,7 +10,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import rover.raspirover.raspirover.LengthScalarMultiply;
-import rover.raspirover.raspirover.NumericValue;
 import rover.raspirover.raspirover.Quantity;
 import rover.raspirover.raspirover.QuantityScalarOperation;
 import rover.raspirover.raspirover.RaspiroverPackage;
@@ -41,14 +40,24 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 	protected Quantity lhs;
 
 	/**
-	 * The cached value of the '{@link #getRhs() <em>Rhs</em>}' reference.
+	 * The default value of the '{@link #getRhs() <em>Rhs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRhs()
 	 * @generated
 	 * @ordered
 	 */
-	protected NumericValue rhs;
+	protected static final double RHS_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getRhs() <em>Rhs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRhs()
+	 * @generated
+	 * @ordered
+	 */
+	protected double rhs = RHS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -112,15 +121,7 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue getRhs() {
-		if (rhs != null && rhs.eIsProxy()) {
-			InternalEObject oldRhs = (InternalEObject)rhs;
-			rhs = (NumericValue)eResolveProxy(oldRhs);
-			if (rhs != oldRhs) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS, oldRhs, rhs));
-			}
-		}
+	public double getRhs() {
 		return rhs;
 	}
 
@@ -129,17 +130,8 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue basicGetRhs() {
-		return rhs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRhs(NumericValue newRhs) {
-		NumericValue oldRhs = rhs;
+	public void setRhs(double newRhs) {
+		double oldRhs = rhs;
 		rhs = newRhs;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS, oldRhs, rhs));
@@ -157,8 +149,7 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 				if (resolve) return getLhs();
 				return basicGetLhs();
 			case RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS:
-				if (resolve) return getRhs();
-				return basicGetRhs();
+				return getRhs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -175,7 +166,7 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 				setLhs((Quantity)newValue);
 				return;
 			case RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS:
-				setRhs((NumericValue)newValue);
+				setRhs((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -193,7 +184,7 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 				setLhs((Quantity)null);
 				return;
 			case RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS:
-				setRhs((NumericValue)null);
+				setRhs(RHS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -210,7 +201,7 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 			case RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__LHS:
 				return lhs != null;
 			case RaspiroverPackage.LENGTH_SCALAR_MULTIPLY__RHS:
-				return rhs != null;
+				return rhs != RHS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -247,6 +238,22 @@ public class LengthScalarMultiplyImpl extends LengthOperationImpl implements Len
 			}
 		}
 		return super.eDerivedStructuralFeatureID(baseFeatureID, baseClass);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (rhs: ");
+		result.append(rhs);
+		result.append(')');
+		return result.toString();
 	}
 
 } //LengthScalarMultiplyImpl

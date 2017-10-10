@@ -13,13 +13,15 @@ import rover.raspirover.raspirover.NumericOperator;
 public class NumericExpressionASpect extends RoverExpressionAspect {
   @OverrideAspectMethod
   public static boolean eval(final NumericExpression _self) {
-	final rover.raspirover.aspects.NumericExpressionASpectNumericExpressionAspectProperties _self_ = rover.raspirover.aspects.NumericExpressionASpectNumericExpressionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_eval(_self_, _self);
-	;
-	return (boolean) result;
-}
+    final rover.raspirover.aspects.NumericExpressionASpectNumericExpressionAspectProperties _self_ = rover.raspirover.aspects.NumericExpressionASpectNumericExpressionAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.NumericExpression){
+    					result = rover.raspirover.aspects.NumericExpressionASpect._privk3_eval(_self_, (rover.raspirover.raspirover.NumericExpression)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.RoverExpression){
+    					result = rover.raspirover.aspects.RoverExpressionAspect.eval((rover.raspirover.raspirover.RoverExpression)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (boolean)result;
+  }
   
   protected static boolean _privk3_eval(final NumericExpressionASpectNumericExpressionAspectProperties _self_, final NumericExpression _self) {
     boolean _switchResult = false;

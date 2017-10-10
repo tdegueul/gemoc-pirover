@@ -13,13 +13,15 @@ import rover.raspirover.raspirover.BooleanOperator;
 public class BooleanExpressionASpect extends RoverExpressionAspect {
   @OverrideAspectMethod
   public static boolean eval(final BooleanExpression _self) {
-	final rover.raspirover.aspects.BooleanExpressionASpectBooleanExpressionAspectProperties _self_ = rover.raspirover.aspects.BooleanExpressionASpectBooleanExpressionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_eval(_self_, _self);
-	;
-	return (boolean) result;
-}
+    final rover.raspirover.aspects.BooleanExpressionASpectBooleanExpressionAspectProperties _self_ = rover.raspirover.aspects.BooleanExpressionASpectBooleanExpressionAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.BooleanExpression){
+    					result = rover.raspirover.aspects.BooleanExpressionASpect._privk3_eval(_self_, (rover.raspirover.raspirover.BooleanExpression)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.RoverExpression){
+    					result = rover.raspirover.aspects.RoverExpressionAspect.eval((rover.raspirover.raspirover.RoverExpression)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (boolean)result;
+  }
   
   protected static boolean _privk3_eval(final BooleanExpressionASpectBooleanExpressionAspectProperties _self_, final BooleanExpression _self) {
     boolean _switchResult = false;

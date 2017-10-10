@@ -14,4 +14,20 @@ package rover.units.units;
  * @generated
  */
 public interface Degree extends AngleUnit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model kind="operation"
+	 * @generated
+	 */
+	String getSymbol();
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	double toRad(double value);
+
 } // Degree

@@ -54,7 +54,7 @@
         <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//Quantity/unit"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//Quantity/value"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="units.ecore#//Quantity/value"/>
       </genFeatures>
     </genClasses>
     <genClasses>
@@ -62,12 +62,6 @@
     </genClasses>
     <genClasses>
       <ecoreClass href="units.ecore#//Angle"/>
-    </genClasses>
-    <genClasses>
-      <ecoreClass href="units.ecore#//NumericValue"/>
-      <genFeatures createChild="false">
-        <ecoreFeature xsi:type="ecore:EAttribute" href="units.ecore#//NumericValue/value"/>
-      </genFeatures>
     </genClasses>
     <genClasses>
       <ecoreClass href="units.ecore#//QuantityOperation"/>
@@ -147,7 +141,7 @@
         <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityScalarOperation/lhs"/>
       </genFeatures>
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="units.ecore#//QuantityScalarOperation/rhs"/>
+        <ecoreFeature xsi:type="ecore:EAttribute" href="units.ecore#//QuantityScalarOperation/rhs"/>
       </genFeatures>
     </genClasses>
   </genPackages>

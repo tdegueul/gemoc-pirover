@@ -13,11 +13,13 @@ import rover.raspirover.raspirover.Statement;
 public class RclBlockAspect extends StatementAspect {
   @OverrideAspectMethod
   public static void eval(final RclBlock _self) {
-	final rover.raspirover.aspects.RclBlockAspectRclBlockAspectProperties _self_ = rover.raspirover.aspects.RclBlockAspectRclBlockAspectContext
-			.getSelf(_self);
-	_privk3_eval(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.RclBlockAspectRclBlockAspectProperties _self_ = rover.raspirover.aspects.RclBlockAspectRclBlockAspectContext.getSelf(_self);
+     if (_self instanceof rover.raspirover.raspirover.RclBlock){
+    					rover.raspirover.aspects.RclBlockAspect._privk3_eval(_self_, (rover.raspirover.raspirover.RclBlock)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.Statement){
+    					rover.raspirover.aspects.StatementAspect.eval((rover.raspirover.raspirover.Statement)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+  }
   
   protected static void _privk3_eval(final RclBlockAspectRclBlockAspectProperties _self_, final RclBlock _self) {
     final Consumer<Statement> _function = (Statement it) -> {

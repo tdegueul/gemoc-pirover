@@ -15,36 +15,36 @@ public abstract class StatementAspect {
   public static void eval(final Statement _self) {
 	final rover.rcl.aspects.StatementAspectStatementAspectProperties _self_ = rover.rcl.aspects.StatementAspectStatementAspectContext
 			.getSelf(_self);
-	if (_self instanceof rover.rcl.rcl.Loop) {
-		rover.rcl.aspects.LoopAspect.eval((rover.rcl.rcl.Loop) _self);
-	} else if (_self instanceof rover.rcl.rcl.VarAssignment) {
-		rover.rcl.aspects.VarAssignmentAspect.eval((rover.rcl.rcl.VarAssignment) _self);
-	} else if (_self instanceof rover.rcl.rcl.ForwardMinAction) {
-		rover.rcl.aspects.ForwardMinActionAspect.eval((rover.rcl.rcl.ForwardMinAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.TurnDegAction) {
-		rover.rcl.aspects.TurnDegActionAspect.eval((rover.rcl.rcl.TurnDegAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.SendAction) {
-		rover.rcl.aspects.SendActionAspect.eval((rover.rcl.rcl.SendAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.ForwardAction) {
+	if (_self instanceof rover.rcl.rcl.ForwardAction) {
 		rover.rcl.aspects.ForwardActionAspect.eval((rover.rcl.rcl.ForwardAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.BackwardAction) {
-		rover.rcl.aspects.BackwardActionAspect.eval((rover.rcl.rcl.BackwardAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.StopAction) {
-		rover.rcl.aspects.StopActionAspect.eval((rover.rcl.rcl.StopAction) _self);
-	} else if (_self instanceof rover.rcl.rcl.TurnAction) {
-		rover.rcl.aspects.TurnActionAspect.eval((rover.rcl.rcl.TurnAction) _self);
 	} else if (_self instanceof rover.rcl.rcl.BackwardMinAction) {
 		rover.rcl.aspects.BackwardMinActionAspect.eval((rover.rcl.rcl.BackwardMinAction) _self);
 	} else if (_self instanceof rover.rcl.rcl.LogAction) {
 		rover.rcl.aspects.LogActionAspect.eval((rover.rcl.rcl.LogAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.SendAction) {
+		rover.rcl.aspects.SendActionAspect.eval((rover.rcl.rcl.SendAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.ForwardMinAction) {
+		rover.rcl.aspects.ForwardMinActionAspect.eval((rover.rcl.rcl.ForwardMinAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.StopAction) {
+		rover.rcl.aspects.StopActionAspect.eval((rover.rcl.rcl.StopAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.BackwardAction) {
+		rover.rcl.aspects.BackwardActionAspect.eval((rover.rcl.rcl.BackwardAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.TurnAction) {
+		rover.rcl.aspects.TurnActionAspect.eval((rover.rcl.rcl.TurnAction) _self);
+	} else if (_self instanceof rover.rcl.rcl.TurnDegAction) {
+		rover.rcl.aspects.TurnDegActionAspect.eval((rover.rcl.rcl.TurnDegAction) _self);
 	} else if (_self instanceof rover.rcl.rcl.Action) {
 		rover.rcl.aspects.StatementAspect._privk3_eval(_self_, (rover.rcl.rcl.Action) _self);
+	} else if (_self instanceof rover.rcl.rcl.VarAssignment) {
+		rover.rcl.aspects.VarAssignmentAspect.eval((rover.rcl.rcl.VarAssignment) _self);
 	} else if (_self instanceof rover.rcl.rcl.RclBlock) {
 		rover.rcl.aspects.RclBlockAspect.eval((rover.rcl.rcl.RclBlock) _self);
-	} else if (_self instanceof rover.rcl.rcl.VarRef) {
-		rover.rcl.aspects.StatementAspect._privk3_eval(_self_, (rover.rcl.rcl.VarRef) _self);
+	} else if (_self instanceof rover.rcl.rcl.Loop) {
+		rover.rcl.aspects.LoopAspect.eval((rover.rcl.rcl.Loop) _self);
 	} else if (_self instanceof rover.rcl.rcl.Conditional) {
 		rover.rcl.aspects.ConditionalAspect.eval((rover.rcl.rcl.Conditional) _self);
+	} else if (_self instanceof rover.rcl.rcl.VarRef) {
+		rover.rcl.aspects.StatementAspect._privk3_eval(_self_, (rover.rcl.rcl.VarRef) _self);
 	} else if (_self instanceof rover.rcl.rcl.Statement) {
 		rover.rcl.aspects.StatementAspect._privk3_eval(_self_, (rover.rcl.rcl.Statement) _self);
 	} else {

@@ -13,11 +13,9 @@ import rover.raspirover.aspects.ProjectToProgramGlue;
 public class OverriddenProjectInterpreter extends Project_ExecutableAspect {
   @OverrideAspectMethod
   public static void execute(final Project _self) {
-	final rover.raspirover.aspects.OverriddenProjectInterpreterProjectAspectProperties _self_ = rover.raspirover.aspects.OverriddenProjectInterpreterProjectAspectContext
-			.getSelf(_self);
-	_privk3_execute(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.OverriddenProjectInterpreterProjectAspectProperties _self_ = rover.raspirover.aspects.OverriddenProjectInterpreterProjectAspectContext.getSelf(_self);
+    _privk3_execute(_self_, _self);;
+  }
   
   private static void super_execute(final Project _self) {
     final rover.raspirover.aspects.Project_ExecutableAspectProjectAspectProperties _self_ = rover.raspirover.aspects.Project_ExecutableAspectProjectAspectContext.getSelf(_self);

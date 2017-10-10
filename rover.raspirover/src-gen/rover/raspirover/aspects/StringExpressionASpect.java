@@ -14,13 +14,15 @@ import rover.raspirover.raspirover.StringOperator;
 public class StringExpressionASpect extends RoverExpressionAspect {
   @OverrideAspectMethod
   public static boolean eval(final StringExpression _self) {
-	final rover.raspirover.aspects.StringExpressionASpectStringExpressionAspectProperties _self_ = rover.raspirover.aspects.StringExpressionASpectStringExpressionAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_eval(_self_, _self);
-	;
-	return (boolean) result;
-}
+    final rover.raspirover.aspects.StringExpressionASpectStringExpressionAspectProperties _self_ = rover.raspirover.aspects.StringExpressionASpectStringExpressionAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.StringExpression){
+    					result = rover.raspirover.aspects.StringExpressionASpect._privk3_eval(_self_, (rover.raspirover.raspirover.StringExpression)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.RoverExpression){
+    					result = rover.raspirover.aspects.RoverExpressionAspect.eval((rover.raspirover.raspirover.RoverExpression)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (boolean)result;
+  }
   
   protected static boolean _privk3_eval(final StringExpressionASpectStringExpressionAspectProperties _self_, final StringExpression _self) {
     boolean _switchResult = false;

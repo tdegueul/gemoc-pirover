@@ -3,7 +3,6 @@ package rover.raspirover.aspects;
 import com.google.common.collect.Iterators;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import rover.raspirover.aspects.BooleanValueAspect;
 import rover.raspirover.aspects.NumberValueAspect;
@@ -23,41 +22,37 @@ import rover.raspirover.raspirover.VarRef;
 public class VarRefAspect extends NumberValueAspect {
   @OverrideAspectMethod
   public static int getIntValue(final VarRef _self) {
-	final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getIntValue(_self_, _self);
-	;
-	return (int) result;
-}
+    final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.VarRef){
+    					result = rover.raspirover.aspects.VarRefAspect._privk3_getIntValue(_self_, (rover.raspirover.raspirover.VarRef)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.NumberValue){
+    					result = rover.raspirover.aspects.NumberValueAspect.getIntValue((rover.raspirover.raspirover.NumberValue)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (int)result;
+  }
   
   @OverrideAspectMethod
   public static boolean getBooleanValue(final VarRef _self) {
-	final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getBooleanValue(_self_, _self);
-	;
-	return (boolean) result;
-}
+    final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getBooleanValue(_self_, _self);;
+    return (boolean)result;
+  }
   
   @OverrideAspectMethod
   public static String getStringValue(final VarRef _self) {
-	final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getStringValue(_self_, _self);
-	;
-	return (java.lang.String) result;
-}
+    final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getStringValue(_self_, _self);;
+    return (java.lang.String)result;
+  }
   
   @OverrideAspectMethod
   public static void eval(final VarRef _self) {
-	final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext
-			.getSelf(_self);
-	_privk3_eval(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext.getSelf(_self);
+    _privk3_eval(_self_, _self);;
+  }
   
   private static RoverProgram getProgram(final VarRef _self) {
     final rover.raspirover.aspects.VarRefAspectVarRefAspectProperties _self_ = rover.raspirover.aspects.VarRefAspectVarRefAspectContext.getSelf(_self);
@@ -74,11 +69,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static int _privk3_getIntValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final NumberValue v = ((NumberValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    int _intValue = NumberValueAspect.getIntValue(v);
-    String _plus_1 = (_plus + Integer.valueOf(_intValue));
-    InputOutput.<String>println(_plus_1);
     return NumberValueAspect.getIntValue(v);
   }
   
@@ -90,11 +80,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static boolean _privk3_getBooleanValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final BooleanValue v = ((BooleanValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    boolean _booleanValue = BooleanValueAspect.getBooleanValue(v);
-    String _plus_1 = (_plus + Boolean.valueOf(_booleanValue));
-    InputOutput.<String>println(_plus_1);
     return BooleanValueAspect.getBooleanValue(v);
   }
   
@@ -106,11 +91,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static String _privk3_getStringValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final StringValue v = ((StringValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    String _stringValue = StringValueAspect.getStringValue(v);
-    String _plus_1 = (_plus + _stringValue);
-    InputOutput.<String>println(_plus_1);
     return StringValueAspect.getStringValue(v);
   }
   

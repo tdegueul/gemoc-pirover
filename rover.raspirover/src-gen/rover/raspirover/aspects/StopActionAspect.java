@@ -12,11 +12,13 @@ import rover.raspirover.raspirover.StopAction;
 public class StopActionAspect extends ActionAspect {
   @OverrideAspectMethod
   public static void eval(final StopAction _self) {
-	final rover.raspirover.aspects.StopActionAspectStopActionAspectProperties _self_ = rover.raspirover.aspects.StopActionAspectStopActionAspectContext
-			.getSelf(_self);
-	_privk3_eval(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.StopActionAspectStopActionAspectProperties _self_ = rover.raspirover.aspects.StopActionAspectStopActionAspectContext.getSelf(_self);
+     if (_self instanceof rover.raspirover.raspirover.StopAction){
+    					rover.raspirover.aspects.StopActionAspect._privk3_eval(_self_, (rover.raspirover.raspirover.StopAction)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.Statement){
+    					rover.raspirover.aspects.StatementAspect.eval((rover.raspirover.raspirover.Statement)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+  }
   
   protected static void _privk3_eval(final StopActionAspectStopActionAspectProperties _self_, final StopAction _self) {
     InputOutput.<String>println("<stop>");

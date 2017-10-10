@@ -12,13 +12,15 @@ import rover.raspirover.raspirover.TemperatureQuery;
 public class TemperatureQueryAspect extends NumberValueAspect {
   @OverrideAspectMethod
   public static int getIntValue(final TemperatureQuery _self) {
-	final rover.raspirover.aspects.TemperatureQueryAspectTemperatureQueryAspectProperties _self_ = rover.raspirover.aspects.TemperatureQueryAspectTemperatureQueryAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getIntValue(_self_, _self);
-	;
-	return (int) result;
-}
+    final rover.raspirover.aspects.TemperatureQueryAspectTemperatureQueryAspectProperties _self_ = rover.raspirover.aspects.TemperatureQueryAspectTemperatureQueryAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.TemperatureQuery){
+    					result = rover.raspirover.aspects.TemperatureQueryAspect._privk3_getIntValue(_self_, (rover.raspirover.raspirover.TemperatureQuery)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.NumberValue){
+    					result = rover.raspirover.aspects.NumberValueAspect.getIntValue((rover.raspirover.raspirover.NumberValue)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (int)result;
+  }
   
   private static int super_getIntValue(final TemperatureQuery _self) {
     final rover.raspirover.aspects.NumberValueAspectNumberValueAspectProperties _self_ = rover.raspirover.aspects.NumberValueAspectNumberValueAspectContext.getSelf(_self);

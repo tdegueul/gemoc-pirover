@@ -8,7 +8,6 @@ import org.modelexecution.units.AngleUnit;
 import org.modelexecution.units.Unit;
 import org.modelexecution.units.semantics.AngleAspectAngleAspectProperties;
 import org.modelexecution.units.semantics.AngleUnitAspect;
-import org.modelexecution.units.semantics.NumericValueAspect;
 import org.modelexecution.units.semantics.QuantityAspect;
 import org.modelexecution.units.semantics.UnitAspect;
 
@@ -36,13 +35,13 @@ public class AngleAspect extends QuantityAspect {
   
   protected static double _privk3_toRad(final AngleAspectAngleAspectProperties _self_, final Angle _self) {
     Unit _unit = _self.getUnit();
-    return AngleUnitAspect.toRad(((AngleUnit) _unit), _self.getValue().getValue());
+    return AngleUnitAspect.toRad(((AngleUnit) _unit), _self.getValue());
   }
   
   protected static String _privk3_print(final AngleAspectAngleAspectProperties _self_, final Angle _self) {
     StringConcatenation _builder = new StringConcatenation();
-    String _print = NumericValueAspect.print(_self.getValue());
-    _builder.append(_print);
+    double _value = _self.getValue();
+    _builder.append(_value);
     String _symbol = UnitAspect.getSymbol(_self.getUnit());
     _builder.append(_symbol);
     _builder.append(" [");

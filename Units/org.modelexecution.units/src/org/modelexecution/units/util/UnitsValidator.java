@@ -136,8 +136,6 @@ public class UnitsValidator extends EObjectValidator {
 				return validateLength((Length)value, diagnostics, context);
 			case UnitsPackage.ANGLE:
 				return validateAngle((Angle)value, diagnostics, context);
-			case UnitsPackage.NUMERIC_VALUE:
-				return validateNumericValue((NumericValue)value, diagnostics, context);
 			case UnitsPackage.QUANTITY_OPERATION:
 				return validateQuantityOperation((QuantityOperation)value, diagnostics, context);
 			case UnitsPackage.LENGTH_OPERATION:
@@ -427,15 +425,6 @@ public class UnitsValidator extends EObjectValidator {
 				 Diagnostic.ERROR,
 				 DIAGNOSTIC_SOURCE,
 				 0);
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNumericValue(NumericValue numericValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(numericValue, diagnostics, context);
 	}
 
 	/**

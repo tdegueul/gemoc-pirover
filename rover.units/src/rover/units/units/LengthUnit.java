@@ -14,4 +14,12 @@ package rover.units.units;
  * @generated
  */
 public interface LengthUnit extends Unit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	double toCm(double value);
+
 } // LengthUnit

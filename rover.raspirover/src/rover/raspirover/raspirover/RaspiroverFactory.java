@@ -328,15 +328,6 @@ public interface RaspiroverFactory extends EFactory {
 	VarRef createVarRef();
 
 	/**
-	 * Returns a new object of class '<em>Unit</em>'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return a new object of class '<em>Unit</em>'.
-	 * @generated
-	 */
-	Unit createUnit();
-
-	/**
 	 * Returns a new object of class '<em>Centimeter</em>'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -425,6 +416,15 @@ public interface RaspiroverFactory extends EFactory {
 	 * @generated
 	 */
 	Gradian createGradian();
+
+	/**
+	 * Returns a new object of class '<em>Quantity</em>'.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @return a new object of class '<em>Quantity</em>'.
+	 * @generated
+	 */
+	Quantity createQuantity();
 
 	/**
 	 * Returns a new object of class '<em>Length</em>'.

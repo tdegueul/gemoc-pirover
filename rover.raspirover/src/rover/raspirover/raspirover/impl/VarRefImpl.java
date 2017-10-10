@@ -13,12 +13,12 @@ import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.util.EcoreUtil;
 
 import rover.raspirover.raspirover.NumberValue;
+import rover.raspirover.raspirover.Quantity;
 import rover.raspirover.raspirover.RaspiroverPackage;
 import rover.raspirover.raspirover.RclBlock;
 import rover.raspirover.raspirover.RoverProgram;
 import rover.raspirover.raspirover.Statement;
 import rover.raspirover.raspirover.StringValue;
-import rover.raspirover.raspirover.Unit;
 import rover.raspirover.raspirover.VarRef;
 
 /**
@@ -30,7 +30,7 @@ import rover.raspirover.raspirover.VarRef;
  * </p>
  * <ul>
  *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getNValue <em>NValue</em>}</li>
- *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getUnit <em>Unit</em>}</li>
+ *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getQuantity <em>Quantity</em>}</li>
  *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getSValue <em>SValue</em>}</li>
  *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getEnclosing <em>Enclosing</em>}</li>
  *   <li>{@link rover.raspirover.raspirover.impl.VarRefImpl#getName <em>Name</em>}</li>
@@ -60,14 +60,14 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	protected int nValue = NVALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' containment reference.
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnit()
+	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
 	 */
-	protected Unit unit;
+	protected Quantity quantity;
 
 	/**
 	 * The default value of the '{@link #getSValue() <em>SValue</em>}' attribute.
@@ -154,8 +154,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit getUnit() {
-		return unit;
+	public Quantity getQuantity() {
+		return quantity;
 	}
 
 	/**
@@ -163,11 +163,11 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUnit(Unit newUnit, NotificationChain msgs) {
-		Unit oldUnit = unit;
-		unit = newUnit;
+	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
+		Quantity oldQuantity = quantity;
+		quantity = newQuantity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RaspiroverPackage.VAR_REF__UNIT, oldUnit, newUnit);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RaspiroverPackage.VAR_REF__QUANTITY, oldQuantity, newQuantity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -178,18 +178,18 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUnit(Unit newUnit) {
-		if (newUnit != unit) {
+	public void setQuantity(Quantity newQuantity) {
+		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
-			if (unit != null)
-				msgs = ((InternalEObject)unit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.VAR_REF__UNIT, null, msgs);
-			if (newUnit != null)
-				msgs = ((InternalEObject)newUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.VAR_REF__UNIT, null, msgs);
-			msgs = basicSetUnit(newUnit, msgs);
+			if (quantity != null)
+				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.VAR_REF__QUANTITY, null, msgs);
+			if (newQuantity != null)
+				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.VAR_REF__QUANTITY, null, msgs);
+			msgs = basicSetQuantity(newQuantity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RaspiroverPackage.VAR_REF__UNIT, newUnit, newUnit));
+			eNotify(new ENotificationImpl(this, Notification.SET, RaspiroverPackage.VAR_REF__QUANTITY, newQuantity, newQuantity));
 	}
 
 	/**
@@ -354,8 +354,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RaspiroverPackage.VAR_REF__UNIT:
-				return basicSetUnit(null, msgs);
+			case RaspiroverPackage.VAR_REF__QUANTITY:
+				return basicSetQuantity(null, msgs);
 			case RaspiroverPackage.VAR_REF__ENCLOSING:
 				return basicSetEnclosing(null, msgs);
 		}
@@ -386,8 +386,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 		switch (featureID) {
 			case RaspiroverPackage.VAR_REF__NVALUE:
 				return getNValue();
-			case RaspiroverPackage.VAR_REF__UNIT:
-				return getUnit();
+			case RaspiroverPackage.VAR_REF__QUANTITY:
+				return getQuantity();
 			case RaspiroverPackage.VAR_REF__SVALUE:
 				return getSValue();
 			case RaspiroverPackage.VAR_REF__ENCLOSING:
@@ -409,8 +409,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 			case RaspiroverPackage.VAR_REF__NVALUE:
 				setNValue((Integer)newValue);
 				return;
-			case RaspiroverPackage.VAR_REF__UNIT:
-				setUnit((Unit)newValue);
+			case RaspiroverPackage.VAR_REF__QUANTITY:
+				setQuantity((Quantity)newValue);
 				return;
 			case RaspiroverPackage.VAR_REF__SVALUE:
 				setSValue((String)newValue);
@@ -436,8 +436,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 			case RaspiroverPackage.VAR_REF__NVALUE:
 				setNValue(NVALUE_EDEFAULT);
 				return;
-			case RaspiroverPackage.VAR_REF__UNIT:
-				setUnit((Unit)null);
+			case RaspiroverPackage.VAR_REF__QUANTITY:
+				setQuantity((Quantity)null);
 				return;
 			case RaspiroverPackage.VAR_REF__SVALUE:
 				setSValue(SVALUE_EDEFAULT);
@@ -462,8 +462,8 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 		switch (featureID) {
 			case RaspiroverPackage.VAR_REF__NVALUE:
 				return nValue != NVALUE_EDEFAULT;
-			case RaspiroverPackage.VAR_REF__UNIT:
-				return unit != null;
+			case RaspiroverPackage.VAR_REF__QUANTITY:
+				return quantity != null;
 			case RaspiroverPackage.VAR_REF__SVALUE:
 				return SVALUE_EDEFAULT == null ? sValue != null : !SVALUE_EDEFAULT.equals(sValue);
 			case RaspiroverPackage.VAR_REF__ENCLOSING:
@@ -484,7 +484,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 		if (baseClass == NumberValue.class) {
 			switch (derivedFeatureID) {
 				case RaspiroverPackage.VAR_REF__NVALUE: return RaspiroverPackage.NUMBER_VALUE__NVALUE;
-				case RaspiroverPackage.VAR_REF__UNIT: return RaspiroverPackage.NUMBER_VALUE__UNIT;
+				case RaspiroverPackage.VAR_REF__QUANTITY: return RaspiroverPackage.NUMBER_VALUE__QUANTITY;
 				default: return -1;
 			}
 		}
@@ -513,7 +513,7 @@ public class VarRefImpl extends BooleanValueImpl implements VarRef {
 		if (baseClass == NumberValue.class) {
 			switch (baseFeatureID) {
 				case RaspiroverPackage.NUMBER_VALUE__NVALUE: return RaspiroverPackage.VAR_REF__NVALUE;
-				case RaspiroverPackage.NUMBER_VALUE__UNIT: return RaspiroverPackage.VAR_REF__UNIT;
+				case RaspiroverPackage.NUMBER_VALUE__QUANTITY: return RaspiroverPackage.VAR_REF__QUANTITY;
 				default: return -1;
 			}
 		}

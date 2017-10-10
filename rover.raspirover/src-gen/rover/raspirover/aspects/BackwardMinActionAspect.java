@@ -13,17 +13,13 @@ import rover.raspirover.raspirover.BackwardMinAction;
 public class BackwardMinActionAspect extends ActionAspect {
   @OverrideAspectMethod
   public static void eval(final BackwardMinAction _self) {
-	final rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectContext
-			.getSelf(_self);
-	if (_self instanceof rover.raspirover.raspirover.BackwardMinAction) {
-		rover.raspirover.aspects.OverriddenBackwardMinActionInterpreter
-				.eval((rover.raspirover.raspirover.BackwardMinAction) _self);
-	} else {
-		throw new IllegalArgumentException(
-				"Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString());
-	}
-	;
-}
+    final rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectContext.getSelf(_self);
+     if (_self instanceof rover.raspirover.raspirover.BackwardMinAction){
+    					rover.raspirover.aspects.BackwardMinActionAspect._privk3_eval(_self_, (rover.raspirover.raspirover.BackwardMinAction)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.Statement){
+    					rover.raspirover.aspects.StatementAspect.eval((rover.raspirover.raspirover.Statement)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+  }
   
   protected static void _privk3_eval(final BackwardMinActionAspectBackwardMinActionAspectProperties _self_, final BackwardMinAction _self) {
     String _print = NumberValueAspect.print(_self.getDistance());

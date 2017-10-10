@@ -4,9 +4,12 @@ import fr.inria.diverse.k3.al.annotationprocessor.Aspect
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod
 import org.gemoc.arduino.sequential.k3dsa.Project_ExecutableAspect
 import org.gemoc.rover.rcl.semantics.BackwardMinActionAspect
+import org.gemoc.rover.rcl.semantics.LogActionAspect
 import org.gemoc.rover.rcl.semantics.NumberValueAspect
+import org.gemoc.sequential.model.arduino.ArduinoBoard
 import org.gemoc.sequential.model.arduino.Project
 import rcl.BackwardMinAction
+import rcl.LogAction
 import rcl.NumberValue
 
 import static extension org.gemoc.arduino.sequential.k3dsa.Pin_EvaluableAspect.*
@@ -52,5 +55,18 @@ class OverriddenNumberInterpreter extends NumberValueAspect {
 				_self.quantity.print
 			else
 				_self.super_print
+	}
+}
+
+@Aspect(className = LogAction)
+class DebugLogAction extends LogActionAspect {
+	@OverrideAspectMethod
+	override void eval() {
+		_self.super_eval
+		println("Pins: " + _self.board.analogPins.map[level] + " || " + _self.board.digitalPins.map[level])
+	}
+
+	private def ArduinoBoard getBoard() {
+		return (_self.eResource.contents.head as Project).boards.head as ArduinoBoard
 	}
 }

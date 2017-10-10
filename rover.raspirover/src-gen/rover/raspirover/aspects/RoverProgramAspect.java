@@ -15,28 +15,22 @@ import rover.raspirover.raspirover.RoverValue;
 @SuppressWarnings("all")
 public class RoverProgramAspect {
   public static RoverValue getVar(final RoverProgram _self, final String n) {
-	final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getVar(_self_, _self, n);
-	;
-	return (rover.raspirover.raspirover.RoverValue) result;
-}
+    final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_getVar(_self_, _self,n);;
+    return (rover.raspirover.raspirover.RoverValue)result;
+  }
   
   public static void bindVar(final RoverProgram _self, final String n, final RoverValue v) {
-	final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext
-			.getSelf(_self);
-	_privk3_bindVar(_self_, _self, n, v);
-	;
-}
+    final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext.getSelf(_self);
+    _privk3_bindVar(_self_, _self,n,v);;
+  }
   
   @Main
   public static void run(final RoverProgram _self) {
-	final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext
-			.getSelf(_self);
-	_privk3_run(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext.getSelf(_self);
+    _privk3_run(_self_, _self);;
+  }
   
   private static Map<String, RoverValue> vars(final RoverProgram _self) {
     final rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectProperties _self_ = rover.raspirover.aspects.RoverProgramAspectRoverProgramAspectContext.getSelf(_self);

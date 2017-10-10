@@ -13,7 +13,6 @@ import org.modelexecution.units.Length
 import org.modelexecution.units.LengthUnit
 import org.modelexecution.units.Meter
 import org.modelexecution.units.Millimeter
-import org.modelexecution.units.NumericValue
 import org.modelexecution.units.Quantity
 import org.modelexecution.units.Radian
 import org.modelexecution.units.Turn
@@ -22,7 +21,6 @@ import org.modelexecution.units.Yard
 
 import static extension org.modelexecution.units.semantics.AngleUnitAspect.*
 import static extension org.modelexecution.units.semantics.LengthUnitAspect.*
-import static extension org.modelexecution.units.semantics.NumericValueAspect.*
 import static extension org.modelexecution.units.semantics.UnitAspect.*
 
 @Aspect(className = Quantity)
@@ -30,8 +28,8 @@ abstract class QuantityAspect {
 	abstract def String print()
 	def double getNormalized() {
 		return switch (_self.unit) {
-			AngleUnit: (_self.unit as AngleUnit).toRad(_self.value.value)
-			LengthUnit: (_self.unit as LengthUnit).toCm(_self.value.value)
+			AngleUnit: (_self.unit as AngleUnit).toRad(_self.value)
+			LengthUnit: (_self.unit as LengthUnit).toCm(_self.value)
 			default: 0
 		}
 	}
@@ -52,22 +50,15 @@ abstract class LengthUnitAspect extends UnitAspect {
 	abstract def double toCm(double value)
 }
 
-@Aspect(className = NumericValue)
-class NumericValueAspect {
-	def String print() {
-		return Double::toString(_self.value)
-	}
-}
-
 @Aspect(className = Angle)
 class AngleAspect extends QuantityAspect {
 	def double toRad() {
-		return (_self.unit as AngleUnit).toRad(_self.value.value)
+		return (_self.unit as AngleUnit).toRad(_self.value)
 	}
 
 	@OverrideAspectMethod
 	def String print() {
-		return '''«_self.value.print»«_self.unit.symbol» [«_self.toRad»rad]'''
+		return '''«_self.value»«_self.unit.symbol» [«_self.toRad»rad]'''
 	}
 }
 
@@ -110,11 +101,11 @@ class GradianAspect extends AngleUnitAspect {
 @Aspect(className = Length)
 class LengthAspect extends QuantityAspect {
 	def double toCm() {
-		return (_self.unit as LengthUnit).toCm(_self.value.value)
+		return (_self.unit as LengthUnit).toCm(_self.value)
 	}
 
 	def String print() {
-		return '''«_self.value.print»«_self.unit.symbol» [«_self.toCm»cm]'''
+		return '''«_self.value»«_self.unit.symbol» [«_self.toCm»cm]'''
 	}
 }
 

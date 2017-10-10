@@ -17,11 +17,9 @@ import rover.raspirover.aspects.OverriddenBackwardMinActionInterpreterBackwardMi
 public class OverriddenBackwardMinActionInterpreter extends BackwardMinActionAspect {
   @OverrideAspectMethod
   public static void eval(final BackwardMinAction _self) {
-	final rover.raspirover.aspects.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectContext
-			.getSelf(_self);
-	_privk3_eval(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.OverriddenBackwardMinActionInterpreterBackwardMinActionAspectContext.getSelf(_self);
+    _privk3_eval(_self_, _self);;
+  }
   
   private static void super_eval(final BackwardMinAction _self) {
     final rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectProperties _self_ = rover.raspirover.aspects.BackwardMinActionAspectBackwardMinActionAspectContext.getSelf(_self);

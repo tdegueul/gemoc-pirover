@@ -15,13 +15,15 @@ import rover.raspirover.raspirover.MessageQuery;
 public class MessageQueryAspect extends StringValueAspect {
   @OverrideAspectMethod
   public static String getStringValue(final MessageQuery _self) {
-	final rover.raspirover.aspects.MessageQueryAspectMessageQueryAspectProperties _self_ = rover.raspirover.aspects.MessageQueryAspectMessageQueryAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_getStringValue(_self_, _self);
-	;
-	return (java.lang.String) result;
-}
+    final rover.raspirover.aspects.MessageQueryAspectMessageQueryAspectProperties _self_ = rover.raspirover.aspects.MessageQueryAspectMessageQueryAspectContext.getSelf(_self);
+    Object result = null;
+     if (_self instanceof rover.raspirover.raspirover.MessageQuery){
+    					result = rover.raspirover.aspects.MessageQueryAspect._privk3_getStringValue(_self_, (rover.raspirover.raspirover.MessageQuery)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.StringValue){
+    					result = rover.raspirover.aspects.StringValueAspect.getStringValue((rover.raspirover.raspirover.StringValue)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+    return (java.lang.String)result;
+  }
   
   private static String super_getStringValue(final MessageQuery _self) {
     final rover.raspirover.aspects.StringValueAspectStringValueAspectProperties _self_ = rover.raspirover.aspects.StringValueAspectStringValueAspectContext.getSelf(_self);

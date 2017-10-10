@@ -2,6 +2,7 @@
  */
 package rover.units.units.impl;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EOperation;
 import org.eclipse.emf.ecore.EPackage;
@@ -41,7 +42,6 @@ import rover.units.units.LengthUnit;
 import rover.units.units.Meter;
 import rover.units.units.MetricSystemUnit;
 import rover.units.units.Millimeter;
-import rover.units.units.NumericValue;
 import rover.units.units.Quantity;
 import rover.units.units.QuantityArithmeticOperation;
 import rover.units.units.QuantityComparisonOperation;
@@ -189,13 +189,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * @generated
 	 */
 	private EClass angleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass numericValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -586,8 +579,8 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuantity_Value() {
-		return (EReference)quantityEClass.getEStructuralFeatures().get(1);
+	public EAttribute getQuantity_Value() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -606,15 +599,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 */
 	public EClass getAngle() {
 		return angleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNumericValue() {
-		return numericValueEClass;
 	}
 
 	/**
@@ -856,8 +840,8 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuantityScalarOperation_Rhs() {
-		return (EReference)quantityScalarOperationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getQuantityScalarOperation_Rhs() {
+		return (EAttribute)quantityScalarOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -920,13 +904,11 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		quantityEClass = createEClass(QUANTITY);
 		createEReference(quantityEClass, QUANTITY__UNIT);
-		createEReference(quantityEClass, QUANTITY__VALUE);
+		createEAttribute(quantityEClass, QUANTITY__VALUE);
 
 		lengthEClass = createEClass(LENGTH);
 
 		angleEClass = createEClass(ANGLE);
-
-		numericValueEClass = createEClass(NUMERIC_VALUE);
 
 		quantityOperationEClass = createEClass(QUANTITY_OPERATION);
 
@@ -976,7 +958,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		quantityScalarOperationEClass = createEClass(QUANTITY_SCALAR_OPERATION);
 		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__LHS);
-		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__RHS);
+		createEAttribute(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__RHS);
 	}
 
 	/**
@@ -1071,53 +1053,53 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		// Initialize classes and features; add operations and parameters
 		initEClass(unitEClass, Unit.class, "Unit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(unitEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
-
-		EOperation op = addEOperation(unitEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
-		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(unitEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(lengthUnitEClass, LengthUnit.class, "LengthUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		EOperation op = addEOperation(lengthUnitEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(centimeterEClass, Centimeter.class, "Centimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(centimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(centimeterEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(centimeterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(centimeterEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(millimeterEClass, Millimeter.class, "Millimeter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(millimeterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(millimeterEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(millimeterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(millimeterEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(meterEClass, Meter.class, "Meter", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(meterEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(meterEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(meterEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(meterEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(footEClass, Foot.class, "Foot", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(footEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(footEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(footEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(footEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(inchEClass, Inch.class, "Inch", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(inchEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(inchEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(inchEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(inchEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(yardEClass, Yard.class, "Yard", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		addEOperation(yardEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEOperation(yardEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
 
-		op = addEOperation(yardEClass, ecorePackage.getEDouble(), "toCentimeters", 0, 1, IS_UNIQUE, IS_ORDERED);
+		op = addEOperation(yardEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
 		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(metricSystemUnitEClass, MetricSystemUnit.class, "MetricSystemUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
@@ -1126,23 +1108,56 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		initEClass(angleUnitEClass, AngleUnit.class, "AngleUnit", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		op = addEOperation(angleUnitEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(radianEClass, Radian.class, "Radian", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(radianEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(radianEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(degreeEClass, Degree.class, "Degree", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(degreeEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(degreeEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(turnEClass, Turn.class, "Turn", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+
+		addEOperation(turnEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(turnEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(gradianEClass, Gradian.class, "Gradian", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(gradianEClass, ecorePackage.getEString(), "getSymbol", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		op = addEOperation(gradianEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+		addEParameter(op, ecorePackage.getEDouble(), "value", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(quantityEClass, Quantity.class, "Quantity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuantity_Unit(), this.getUnit(), null, "unit", null, 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuantity_Value(), this.getNumericValue(), null, "value", null, 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuantity_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+
+		addEOperation(quantityEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(quantityEClass, ecorePackage.getEDouble(), "getNormalized", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(lengthEClass, Length.class, "Length", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
+		addEOperation(lengthEClass, ecorePackage.getEDouble(), "toCm", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(lengthEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
+
 		initEClass(angleEClass, Angle.class, "Angle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
-		initEClass(numericValueEClass, NumericValue.class, "NumericValue", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
+		addEOperation(angleEClass, ecorePackage.getEDouble(), "toRad", 0, 1, IS_UNIQUE, IS_ORDERED);
+
+		addEOperation(angleEClass, ecorePackage.getEString(), "print", 0, 1, IS_UNIQUE, IS_ORDERED);
 
 		initEClass(quantityOperationEClass, QuantityOperation.class, "QuantityOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1192,7 +1207,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		initEClass(quantityScalarOperationEClass, QuantityScalarOperation.class, "QuantityScalarOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuantityScalarOperation_Lhs(), this.getQuantity(), null, "lhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuantityScalarOperation_Rhs(), this.getNumericValue(), null, "rhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuantityScalarOperation_Rhs(), ecorePackage.getEDouble(), "rhs", null, 0, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);
@@ -1256,7 +1271,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   new String[] {
 		   });	
 		addAnnotation
-		  (unitEClass.getEOperations().get(1), 
+		  (lengthUnitEClass.getEOperations().get(0), 
 		   source, 
 		   new String[] {
 		   });	
@@ -1317,6 +1332,81 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 		   });	
 		addAnnotation
 		  (yardEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (angleUnitEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (radianEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (radianEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (degreeEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (degreeEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (turnEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (turnEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (gradianEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (gradianEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (quantityEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (quantityEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (lengthEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (lengthEClass.getEOperations().get(1), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (angleEClass.getEOperations().get(0), 
+		   source, 
+		   new String[] {
+		   });	
+		addAnnotation
+		  (angleEClass.getEOperations().get(1), 
 		   source, 
 		   new String[] {
 		   });

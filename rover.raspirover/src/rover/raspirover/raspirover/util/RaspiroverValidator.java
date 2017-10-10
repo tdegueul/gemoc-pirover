@@ -212,8 +212,6 @@ public class RaspiroverValidator extends EObjectValidator {
 				return validateLength((Length)value, diagnostics, context);
 			case RaspiroverPackage.ANGLE:
 				return validateAngle((Angle)value, diagnostics, context);
-			case RaspiroverPackage.NUMERIC_VALUE:
-				return validateNumericValue((NumericValue)value, diagnostics, context);
 			case RaspiroverPackage.QUANTITY_OPERATION:
 				return validateQuantityOperation((QuantityOperation)value, diagnostics, context);
 			case RaspiroverPackage.LENGTH_OPERATION:
@@ -912,15 +910,6 @@ public class RaspiroverValidator extends EObjectValidator {
 			return false;
 		}
 		return true;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public boolean validateNumericValue(NumericValue numericValue, DiagnosticChain diagnostics, Map<Object, Object> context) {
-		return validate_EveryDefaultConstraint(numericValue, diagnostics, context);
 	}
 
 	/**

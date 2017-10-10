@@ -14,4 +14,12 @@ package rover.units.units;
  * @generated
  */
 public interface AngleUnit extends Unit {
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @model
+	 * @generated
+	 */
+	double toRad(double value);
+
 } // AngleUnit

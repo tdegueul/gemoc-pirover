@@ -2,6 +2,7 @@
  */
 package rover.units.units;
 
+import org.eclipse.emf.ecore.EAttribute;
 import org.eclipse.emf.ecore.EClass;
 import org.eclipse.emf.ecore.EPackage;
 import org.eclipse.emf.ecore.EReference;
@@ -360,7 +361,7 @@ public interface UnitsPackage extends EPackage {
 	int QUANTITY__UNIT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -397,7 +398,7 @@ public interface UnitsPackage extends EPackage {
 	int LENGTH__UNIT = QUANTITY__UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -434,7 +435,7 @@ public interface UnitsPackage extends EPackage {
 	int ANGLE__UNIT = QUANTITY__UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -452,25 +453,6 @@ public interface UnitsPackage extends EPackage {
 	int ANGLE_FEATURE_COUNT = QUANTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link rover.units.units.NumericValue <em>Numeric Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see rover.units.units.NumericValue
-	 * @see rover.units.units.impl.UnitsPackageImpl#getNumericValue()
-	 * @generated
-	 */
-	int NUMERIC_VALUE = 18;
-
-	/**
-	 * The number of structural features of the '<em>Numeric Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_VALUE_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link rover.units.units.impl.QuantityOperationImpl <em>Quantity Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -478,7 +460,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getQuantityOperation()
 	 * @generated
 	 */
-	int QUANTITY_OPERATION = 19;
+	int QUANTITY_OPERATION = 18;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Operation</em>' class.
@@ -497,7 +479,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthOperation()
 	 * @generated
 	 */
-	int LENGTH_OPERATION = 20;
+	int LENGTH_OPERATION = 19;
 
 	/**
 	 * The number of structural features of the '<em>Length Operation</em>' class.
@@ -516,7 +498,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthAdd()
 	 * @generated
 	 */
-	int LENGTH_ADD = 21;
+	int LENGTH_ADD = 20;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -553,7 +535,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthSubtract()
 	 * @generated
 	 */
-	int LENGTH_SUBTRACT = 22;
+	int LENGTH_SUBTRACT = 21;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -590,7 +572,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthScalarMultiply()
 	 * @generated
 	 */
-	int LENGTH_SCALAR_MULTIPLY = 23;
+	int LENGTH_SCALAR_MULTIPLY = 22;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -602,7 +584,7 @@ public interface UnitsPackage extends EPackage {
 	int LENGTH_SCALAR_MULTIPLY__LHS = LENGTH_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -627,7 +609,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthScalarDivide()
 	 * @generated
 	 */
-	int LENGTH_SCALAR_DIVIDE = 24;
+	int LENGTH_SCALAR_DIVIDE = 23;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -639,7 +621,7 @@ public interface UnitsPackage extends EPackage {
 	int LENGTH_SCALAR_DIVIDE__LHS = LENGTH_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -664,7 +646,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthEquals()
 	 * @generated
 	 */
-	int LENGTH_EQUALS = 25;
+	int LENGTH_EQUALS = 24;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -701,7 +683,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthDistinct()
 	 * @generated
 	 */
-	int LENGTH_DISTINCT = 26;
+	int LENGTH_DISTINCT = 25;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -738,7 +720,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthSmaller()
 	 * @generated
 	 */
-	int LENGTH_SMALLER = 27;
+	int LENGTH_SMALLER = 26;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -775,7 +757,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getLengthGreater()
 	 * @generated
 	 */
-	int LENGTH_GREATER = 28;
+	int LENGTH_GREATER = 27;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -812,7 +794,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleOperation()
 	 * @generated
 	 */
-	int ANGLE_OPERATION = 29;
+	int ANGLE_OPERATION = 28;
 
 	/**
 	 * The number of structural features of the '<em>Angle Operation</em>' class.
@@ -831,7 +813,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleAdd()
 	 * @generated
 	 */
-	int ANGLE_ADD = 30;
+	int ANGLE_ADD = 29;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -868,7 +850,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleSubtract()
 	 * @generated
 	 */
-	int ANGLE_SUBTRACT = 31;
+	int ANGLE_SUBTRACT = 30;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -905,7 +887,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleScalarMultiply()
 	 * @generated
 	 */
-	int ANGLE_SCALAR_MULTIPLY = 32;
+	int ANGLE_SCALAR_MULTIPLY = 31;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -917,7 +899,7 @@ public interface UnitsPackage extends EPackage {
 	int ANGLE_SCALAR_MULTIPLY__LHS = ANGLE_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -942,7 +924,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleScalarDivide()
 	 * @generated
 	 */
-	int ANGLE_SCALAR_DIVIDE = 33;
+	int ANGLE_SCALAR_DIVIDE = 32;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -954,7 +936,7 @@ public interface UnitsPackage extends EPackage {
 	int ANGLE_SCALAR_DIVIDE__LHS = ANGLE_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -979,7 +961,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleEquals()
 	 * @generated
 	 */
-	int ANGLE_EQUALS = 34;
+	int ANGLE_EQUALS = 33;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1016,7 +998,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleDistinct()
 	 * @generated
 	 */
-	int ANGLE_DISTINCT = 35;
+	int ANGLE_DISTINCT = 34;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1053,7 +1035,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleSmaller()
 	 * @generated
 	 */
-	int ANGLE_SMALLER = 36;
+	int ANGLE_SMALLER = 35;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1090,7 +1072,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getAngleGreater()
 	 * @generated
 	 */
-	int ANGLE_GREATER = 37;
+	int ANGLE_GREATER = 36;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1127,7 +1109,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getQuantityArithmeticOperation()
 	 * @generated
 	 */
-	int QUANTITY_ARITHMETIC_OPERATION = 38;
+	int QUANTITY_ARITHMETIC_OPERATION = 37;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Arithmetic Operation</em>' class.
@@ -1146,7 +1128,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getQuantityComparisonOperation()
 	 * @generated
 	 */
-	int QUANTITY_COMPARISON_OPERATION = 39;
+	int QUANTITY_COMPARISON_OPERATION = 38;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Comparison Operation</em>' class.
@@ -1165,7 +1147,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getQuantityHomogenousOperation()
 	 * @generated
 	 */
-	int QUANTITY_HOMOGENOUS_OPERATION = 40;
+	int QUANTITY_HOMOGENOUS_OPERATION = 39;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1202,7 +1184,7 @@ public interface UnitsPackage extends EPackage {
 	 * @see rover.units.units.impl.UnitsPackageImpl#getQuantityScalarOperation()
 	 * @generated
 	 */
-	int QUANTITY_SCALAR_OPERATION = 41;
+	int QUANTITY_SCALAR_OPERATION = 40;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -1214,7 +1196,7 @@ public interface UnitsPackage extends EPackage {
 	int QUANTITY_SCALAR_OPERATION__LHS = QUANTITY_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -1404,15 +1386,15 @@ public interface UnitsPackage extends EPackage {
 	EReference getQuantity_Unit();
 
 	/**
-	 * Returns the meta object for the reference '{@link rover.units.units.Quantity#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link rover.units.units.Quantity#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see rover.units.units.Quantity#getValue()
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	EReference getQuantity_Value();
+	EAttribute getQuantity_Value();
 
 	/**
 	 * Returns the meta object for class '{@link rover.units.units.Length <em>Length</em>}'.
@@ -1433,16 +1415,6 @@ public interface UnitsPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAngle();
-
-	/**
-	 * Returns the meta object for class '{@link rover.units.units.NumericValue <em>Numeric Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Numeric Value</em>'.
-	 * @see rover.units.units.NumericValue
-	 * @generated
-	 */
-	EClass getNumericValue();
 
 	/**
 	 * Returns the meta object for class '{@link rover.units.units.QuantityOperation <em>Quantity Operation</em>}'.
@@ -1708,15 +1680,15 @@ public interface UnitsPackage extends EPackage {
 	EReference getQuantityScalarOperation_Lhs();
 
 	/**
-	 * Returns the meta object for the reference '{@link rover.units.units.QuantityScalarOperation#getRhs <em>Rhs</em>}'.
+	 * Returns the meta object for the attribute '{@link rover.units.units.QuantityScalarOperation#getRhs <em>Rhs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Rhs</em>'.
+	 * @return the meta object for the attribute '<em>Rhs</em>'.
 	 * @see rover.units.units.QuantityScalarOperation#getRhs()
 	 * @see #getQuantityScalarOperation()
 	 * @generated
 	 */
-	EReference getQuantityScalarOperation_Rhs();
+	EAttribute getQuantityScalarOperation_Rhs();
 
 	/**
 	 * Returns the factory that creates the instances of the model.
@@ -1909,12 +1881,12 @@ public interface UnitsPackage extends EPackage {
 		EReference QUANTITY__UNIT = eINSTANCE.getQuantity_Unit();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUANTITY__VALUE = eINSTANCE.getQuantity_Value();
+		EAttribute QUANTITY__VALUE = eINSTANCE.getQuantity_Value();
 
 		/**
 		 * The meta object literal for the '{@link rover.units.units.impl.LengthImpl <em>Length</em>}' class.
@@ -1935,16 +1907,6 @@ public interface UnitsPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANGLE = eINSTANCE.getAngle();
-
-		/**
-		 * The meta object literal for the '{@link rover.units.units.NumericValue <em>Numeric Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see rover.units.units.NumericValue
-		 * @see rover.units.units.impl.UnitsPackageImpl#getNumericValue()
-		 * @generated
-		 */
-		EClass NUMERIC_VALUE = eINSTANCE.getNumericValue();
 
 		/**
 		 * The meta object literal for the '{@link rover.units.units.impl.QuantityOperationImpl <em>Quantity Operation</em>}' class.
@@ -2201,12 +2163,12 @@ public interface UnitsPackage extends EPackage {
 		EReference QUANTITY_SCALAR_OPERATION__LHS = eINSTANCE.getQuantityScalarOperation_Lhs();
 
 		/**
-		 * The meta object literal for the '<em><b>Rhs</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Rhs</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUANTITY_SCALAR_OPERATION__RHS = eINSTANCE.getQuantityScalarOperation_Rhs();
+		EAttribute QUANTITY_SCALAR_OPERATION__RHS = eINSTANCE.getQuantityScalarOperation_Rhs();
 
 	}
 

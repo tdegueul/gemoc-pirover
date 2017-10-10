@@ -11,24 +11,16 @@ import org.eclipse.emf.ecore.EObject;
  *
  *
  * @see rover.raspirover.raspirover.RaspiroverPackage#getUnit()
- * @model
+ * @model abstract="true"
  * @generated
  */
 public interface Unit extends EObject {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model kind="operation"
 	 * @generated
 	 */
-	String print();
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @model
-	 * @generated
-	 */
-	double toCentimeters(double value);
+	String getSymbol();
 
 } // Unit

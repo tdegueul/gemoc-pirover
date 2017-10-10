@@ -324,7 +324,7 @@
         <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRover.ecore#//NumberValue/nValue"/>
       </genFeatures>
       <genFeatures property="None" children="true" createChild="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//NumberValue/unit"/>
+        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//NumberValue/quantity"/>
       </genFeatures>
       <genOperations>
         <ecoreOperation href="RasPiRover.ecore#//NumberValue/getIntValue"/>
@@ -444,90 +444,90 @@
         <ecoreOperation href="RasPiRover.ecore#//VarRef/eval"/>
       </genOperations>
     </genClasses>
-    <genClasses>
+    <genClasses image="false">
       <ecoreClass href="RasPiRover.ecore#//Unit"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Unit/print"/>
-      </genOperations>
-      <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Unit/toCentimeters"/>
-        <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Unit/toCentimeters/value"/>
-        </genParameters>
+        <ecoreOperation href="RasPiRover.ecore#//Unit/getSymbol"/>
       </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="RasPiRover.ecore#//LengthUnit"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//LengthUnit/toCm"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//LengthUnit/toCm/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Centimeter"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Centimeter/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Centimeter/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Centimeter/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Centimeter/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Centimeter/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Centimeter/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Millimeter"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Millimeter/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Millimeter/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Millimeter/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Millimeter/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Millimeter/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Millimeter/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Meter"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Meter/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Meter/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Meter/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Meter/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Meter/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Meter/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Foot"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Foot/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Foot/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Foot/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Foot/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Foot/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Foot/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Inch"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Inch/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Inch/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Inch/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Inch/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Inch/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Inch/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Yard"/>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Yard/print"/>
+        <ecoreOperation href="RasPiRover.ecore#//Yard/getSymbol"/>
       </genOperations>
       <genOperations>
-        <ecoreOperation href="RasPiRover.ecore#//Yard/toCentimeters"/>
+        <ecoreOperation href="RasPiRover.ecore#//Yard/toCm"/>
         <genParameters>
-          <ecoreParameter href="RasPiRover.ecore#//Yard/toCentimeters/value"/>
+          <ecoreParameter href="RasPiRover.ecore#//Yard/toCm/value"/>
         </genParameters>
       </genOperations>
     </genClasses>
@@ -539,36 +539,93 @@
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="RasPiRover.ecore#//AngleUnit"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//AngleUnit/toRad"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//AngleUnit/toRad/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Radian"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Radian/getSymbol"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Radian/toRad"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//Radian/toRad/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Degree"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Degree/getSymbol"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Degree/toRad"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//Degree/toRad/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Turn"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Turn/getSymbol"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Turn/toRad"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//Turn/toRad/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Gradian"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Gradian/getSymbol"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Gradian/toRad"/>
+        <genParameters>
+          <ecoreParameter href="RasPiRover.ecore#//Gradian/toRad/value"/>
+        </genParameters>
+      </genOperations>
     </genClasses>
-    <genClasses image="false">
+    <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Quantity"/>
       <genFeatures property="None" children="true" createChild="true">
         <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//Quantity/unit"/>
       </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//Quantity/value"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRover.ecore#//Quantity/value"/>
       </genFeatures>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Quantity/print"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Quantity/getNormalized"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Length"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Length/toCm"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Length/print"/>
+      </genOperations>
     </genClasses>
     <genClasses>
       <ecoreClass href="RasPiRover.ecore#//Angle"/>
-    </genClasses>
-    <genClasses image="false">
-      <ecoreClass href="RasPiRover.ecore#//NumericValue"/>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Angle/toRad"/>
+      </genOperations>
+      <genOperations>
+        <ecoreOperation href="RasPiRover.ecore#//Angle/print"/>
+      </genOperations>
     </genClasses>
     <genClasses image="false">
       <ecoreClass href="RasPiRover.ecore#//QuantityOperation"/>
@@ -647,8 +704,8 @@
       <genFeatures notify="false" createChild="false" propertySortChoices="true">
         <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//QuantityScalarOperation/lhs"/>
       </genFeatures>
-      <genFeatures notify="false" createChild="false" propertySortChoices="true">
-        <ecoreFeature xsi:type="ecore:EReference" href="RasPiRover.ecore#//QuantityScalarOperation/rhs"/>
+      <genFeatures createChild="false">
+        <ecoreFeature xsi:type="ecore:EAttribute" href="RasPiRover.ecore#//QuantityScalarOperation/rhs"/>
       </genFeatures>
     </genClasses>
   </genPackages>

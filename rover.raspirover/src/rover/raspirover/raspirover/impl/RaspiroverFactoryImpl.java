@@ -91,7 +91,6 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 			case RaspiroverPackage.LOG_ACTION: return createLogAction();
 			case RaspiroverPackage.SEND_ACTION: return createSendAction();
 			case RaspiroverPackage.VAR_REF: return createVarRef();
-			case RaspiroverPackage.UNIT: return createUnit();
 			case RaspiroverPackage.CENTIMETER: return createCentimeter();
 			case RaspiroverPackage.MILLIMETER: return createMillimeter();
 			case RaspiroverPackage.METER: return createMeter();
@@ -102,6 +101,7 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 			case RaspiroverPackage.DEGREE: return createDegree();
 			case RaspiroverPackage.TURN: return createTurn();
 			case RaspiroverPackage.GRADIAN: return createGradian();
+			case RaspiroverPackage.QUANTITY: return createQuantity();
 			case RaspiroverPackage.LENGTH: return createLength();
 			case RaspiroverPackage.ANGLE: return createAngle();
 			case RaspiroverPackage.LENGTH_ADD: return createLengthAdd();
@@ -508,16 +508,6 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit createUnit() {
-		UnitImpl unit = new UnitImpl();
-		return unit;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
 	public Centimeter createCentimeter() {
 		CentimeterImpl centimeter = new CentimeterImpl();
 		return centimeter;
@@ -611,6 +601,16 @@ public class RaspiroverFactoryImpl extends EFactoryImpl implements RaspiroverFac
 	public Gradian createGradian() {
 		GradianImpl gradian = new GradianImpl();
 		return gradian;
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public Quantity createQuantity() {
+		QuantityImpl quantity = new QuantityImpl();
+		return quantity;
 	}
 
 	/**

@@ -9,7 +9,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
-import rover.units.units.NumericValue;
 import rover.units.units.Quantity;
 import rover.units.units.QuantityScalarOperation;
 import rover.units.units.UnitsPackage;
@@ -40,14 +39,24 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 	protected Quantity lhs;
 
 	/**
-	 * The cached value of the '{@link #getRhs() <em>Rhs</em>}' reference.
+	 * The default value of the '{@link #getRhs() <em>Rhs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getRhs()
 	 * @generated
 	 * @ordered
 	 */
-	protected NumericValue rhs;
+	protected static final double RHS_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getRhs() <em>Rhs</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getRhs()
+	 * @generated
+	 * @ordered
+	 */
+	protected double rhs = RHS_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -111,15 +120,7 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue getRhs() {
-		if (rhs != null && rhs.eIsProxy()) {
-			InternalEObject oldRhs = (InternalEObject)rhs;
-			rhs = (NumericValue)eResolveProxy(oldRhs);
-			if (rhs != oldRhs) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS, oldRhs, rhs));
-			}
-		}
+	public double getRhs() {
 		return rhs;
 	}
 
@@ -128,17 +129,8 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue basicGetRhs() {
-		return rhs;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setRhs(NumericValue newRhs) {
-		NumericValue oldRhs = rhs;
+	public void setRhs(double newRhs) {
+		double oldRhs = rhs;
 		rhs = newRhs;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS, oldRhs, rhs));
@@ -156,8 +148,7 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 				if (resolve) return getLhs();
 				return basicGetLhs();
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS:
-				if (resolve) return getRhs();
-				return basicGetRhs();
+				return getRhs();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -174,7 +165,7 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 				setLhs((Quantity)newValue);
 				return;
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS:
-				setRhs((NumericValue)newValue);
+				setRhs((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -192,7 +183,7 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 				setLhs((Quantity)null);
 				return;
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS:
-				setRhs((NumericValue)null);
+				setRhs(RHS_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -209,9 +200,25 @@ public abstract class QuantityScalarOperationImpl extends QuantityOperationImpl 
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION__LHS:
 				return lhs != null;
 			case UnitsPackage.QUANTITY_SCALAR_OPERATION__RHS:
-				return rhs != null;
+				return rhs != RHS_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (rhs: ");
+		result.append(rhs);
+		result.append(')');
+		return result.toString();
 	}
 
 } //QuantityScalarOperationImpl

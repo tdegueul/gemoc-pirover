@@ -11,7 +11,6 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 import org.eclipse.emf.ecore.impl.EObjectImpl;
 
-import rover.units.units.NumericValue;
 import rover.units.units.Quantity;
 import rover.units.units.Unit;
 import rover.units.units.UnitsPackage;
@@ -42,14 +41,24 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 	protected Unit unit;
 
 	/**
-	 * The cached value of the '{@link #getValue() <em>Value</em>}' reference.
+	 * The default value of the '{@link #getValue() <em>Value</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @see #getValue()
 	 * @generated
 	 * @ordered
 	 */
-	protected NumericValue value;
+	protected static final double VALUE_EDEFAULT = 0.0;
+
+	/**
+	 * The cached value of the '{@link #getValue() <em>Value</em>}' attribute.
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @see #getValue()
+	 * @generated
+	 * @ordered
+	 */
+	protected double value = VALUE_EDEFAULT;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -118,15 +127,7 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue getValue() {
-		if (value != null && value.eIsProxy()) {
-			InternalEObject oldValue = (InternalEObject)value;
-			value = (NumericValue)eResolveProxy(oldValue);
-			if (value != oldValue) {
-				if (eNotificationRequired())
-					eNotify(new ENotificationImpl(this, Notification.RESOLVE, UnitsPackage.QUANTITY__VALUE, oldValue, value));
-			}
-		}
+	public double getValue() {
 		return value;
 	}
 
@@ -135,20 +136,33 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NumericValue basicGetValue() {
-		return value;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public void setValue(NumericValue newValue) {
-		NumericValue oldValue = value;
+	public void setValue(double newValue) {
+		double oldValue = value;
 		value = newValue;
 		if (eNotificationRequired())
 			eNotify(new ENotificationImpl(this, Notification.SET, UnitsPackage.QUANTITY__VALUE, oldValue, value));
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public String print() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double getNormalized() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
 	}
 
 	/**
@@ -176,8 +190,7 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 			case UnitsPackage.QUANTITY__UNIT:
 				return getUnit();
 			case UnitsPackage.QUANTITY__VALUE:
-				if (resolve) return getValue();
-				return basicGetValue();
+				return getValue();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -194,7 +207,7 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 				setUnit((Unit)newValue);
 				return;
 			case UnitsPackage.QUANTITY__VALUE:
-				setValue((NumericValue)newValue);
+				setValue((Double)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -212,7 +225,7 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 				setUnit((Unit)null);
 				return;
 			case UnitsPackage.QUANTITY__VALUE:
-				setValue((NumericValue)null);
+				setValue(VALUE_EDEFAULT);
 				return;
 		}
 		super.eUnset(featureID);
@@ -229,9 +242,25 @@ public abstract class QuantityImpl extends EObjectImpl implements Quantity {
 			case UnitsPackage.QUANTITY__UNIT:
 				return unit != null;
 			case UnitsPackage.QUANTITY__VALUE:
-				return value != null;
+				return value != VALUE_EDEFAULT;
 		}
 		return super.eIsSet(featureID);
+	}
+
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	@Override
+	public String toString() {
+		if (eIsProxy()) return super.toString();
+
+		StringBuffer result = new StringBuffer(super.toString());
+		result.append(" (value: ");
+		result.append(value);
+		result.append(')');
+		return result.toString();
 	}
 
 } //QuantityImpl

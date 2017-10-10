@@ -34,4 +34,15 @@ public abstract class LengthUnitImpl extends UnitImpl implements LengthUnit {
 		return RaspiroverPackage.Literals.LENGTH_UNIT;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double toCm(double value) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //LengthUnitImpl

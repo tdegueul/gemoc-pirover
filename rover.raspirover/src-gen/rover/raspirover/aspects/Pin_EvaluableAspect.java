@@ -12,20 +12,16 @@ public class Pin_EvaluableAspect {
   public final static Integer HIGH = Integer.valueOf(1023);
   
   public static int level(final Pin _self) {
-	final rover.raspirover.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = rover.raspirover.aspects.Pin_EvaluableAspectPinAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_level(_self_, _self);
-	;
-	return (int) result;
-}
+    final rover.raspirover.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = rover.raspirover.aspects.Pin_EvaluableAspectPinAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_level(_self_, _self);;
+    return (int)result;
+  }
   
   public static void level(final Pin _self, final int level) {
-	final rover.raspirover.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = rover.raspirover.aspects.Pin_EvaluableAspectPinAspectContext
-			.getSelf(_self);
-	_privk3_level(_self_, _self, level);
-	;
-}
+    final rover.raspirover.aspects.Pin_EvaluableAspectPinAspectProperties _self_ = rover.raspirover.aspects.Pin_EvaluableAspectPinAspectContext.getSelf(_self);
+    _privk3_level(_self_, _self,level);;
+  }
   
   protected static int _privk3_level(final Pin_EvaluableAspectPinAspectProperties _self_, final Pin _self) {
     try {

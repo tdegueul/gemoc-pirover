@@ -198,7 +198,7 @@
     <eStructuralFeatures xsi:type="ecore:EAttribute" name="nValue">
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EInt"/>
     </eStructuralFeatures>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="unit" eType="//Unit" containment="true">
+    <eStructuralFeatures xsi:type="ecore:EReference" name="quantity" eType="//Quantity" containment="true">
       <eAnnotations source="aspect"/>
     </eStructuralFeatures>
   </eClassifiers>
@@ -315,12 +315,14 @@
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eStructuralFeatures>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="Unit">
-    <eOperations name="print">
+  <eClassifiers xsi:type="ecore:EClass" name="Unit" abstract="true">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="LengthUnit" abstract="true" eSuperTypes="//Unit">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -328,13 +330,12 @@
       </eParameters>
     </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="LengthUnit" abstract="true" eSuperTypes="//Unit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Centimeter" eSuperTypes="//MetricSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -343,11 +344,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Millimeter" eSuperTypes="//MetricSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -356,11 +357,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Meter" eSuperTypes="//MetricSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -369,11 +370,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Foot" eSuperTypes="//ImperialSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -382,11 +383,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Inch" eSuperTypes="//ImperialSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -395,11 +396,11 @@
     </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Yard" eSuperTypes="//ImperialSystemUnit //LengthUnit">
-    <eOperations name="print">
+    <eOperations name="getSymbol">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
     </eOperations>
-    <eOperations name="toCentimeters">
+    <eOperations name="toCm">
       <eAnnotations source="aspect"/>
       <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
       <eParameters name="value">
@@ -409,14 +410,80 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="MetricSystemUnit" abstract="true" eSuperTypes="//Unit"/>
   <eClassifiers xsi:type="ecore:EClass" name="ImperialSystemUnit" abstract="true" eSuperTypes="//Unit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="AngleUnit" abstract="true" eSuperTypes="//Unit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Radian" eSuperTypes="//AngleUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Degree" eSuperTypes="//AngleUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Turn" eSuperTypes="//AngleUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Gradian" eSuperTypes="//AngleUnit"/>
-  <eClassifiers xsi:type="ecore:EClass" name="Quantity" abstract="true">
+  <eClassifiers xsi:type="ecore:EClass" name="AngleUnit" abstract="true" eSuperTypes="//Unit">
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eParameters name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Radian" eSuperTypes="//AngleUnit">
+    <eOperations name="getSymbol">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eParameters name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Degree" eSuperTypes="//AngleUnit">
+    <eOperations name="getSymbol">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eParameters name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Turn" eSuperTypes="//AngleUnit">
+    <eOperations name="getSymbol">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eParameters name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Gradian" eSuperTypes="//AngleUnit">
+    <eOperations name="getSymbol">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      <eParameters name="value">
+        <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+      </eParameters>
+    </eOperations>
+  </eClassifiers>
+  <eClassifiers xsi:type="ecore:EClass" name="Quantity">
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
+    <eOperations name="getNormalized">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" lowerBound="1" eType="//Unit" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="//NumericValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Length" eSuperTypes="//Quantity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -425,6 +492,14 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="LengthRequiresLengthUnit" value="self.unit.oclIsKindOf(LengthUnit)"/>
     </eAnnotations>
+    <eOperations name="toCm">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Angle" eSuperTypes="//Quantity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -433,8 +508,15 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="AngleRequiresAngleUnit" value="self.unit.oclIsKindOf(AngleUnit)"/>
     </eAnnotations>
+    <eOperations name="toRad">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eOperations>
+    <eOperations name="print">
+      <eAnnotations source="aspect"/>
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EString"/>
+    </eOperations>
   </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NumericValue" abstract="true" interface="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="QuantityOperation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LengthOperation" abstract="true" eSuperTypes="//QuantityOperation"/>
   <eClassifiers xsi:type="ecore:EClass" name="LengthAdd" eSuperTypes="//LengthOperation //QuantityHomogenousOperation">
@@ -469,6 +551,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuantityScalarOperation" abstract="true" eSuperTypes="//QuantityOperation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" lowerBound="1" eType="//Quantity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" lowerBound="1" eType="//NumericValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

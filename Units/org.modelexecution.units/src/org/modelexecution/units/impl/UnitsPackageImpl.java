@@ -48,7 +48,6 @@ import org.modelexecution.units.LengthUnit;
 import org.modelexecution.units.Meter;
 import org.modelexecution.units.MetricSystemUnit;
 import org.modelexecution.units.Millimeter;
-import org.modelexecution.units.NumericValue;
 import org.modelexecution.units.Quantity;
 import org.modelexecution.units.QuantityArithmeticOperation;
 import org.modelexecution.units.QuantityComparisonOperation;
@@ -203,13 +202,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * @generated
 	 */
 	private EClass angleEClass = null;
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	private EClass numericValueEClass = null;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -600,8 +592,8 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuantity_Value() {
-		return (EReference)quantityEClass.getEStructuralFeatures().get(1);
+	public EAttribute getQuantity_Value() {
+		return (EAttribute)quantityEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -620,24 +612,6 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 */
 	public EClass getAngle() {
 		return angleEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EClass getNumericValue() {
-		return numericValueEClass;
-	}
-
-	/**
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 */
-	public EAttribute getNumericValue_Value() {
-		return (EAttribute)numericValueEClass.getEStructuralFeatures().get(0);
 	}
 
 	/**
@@ -879,8 +853,8 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public EReference getQuantityScalarOperation_Rhs() {
-		return (EReference)quantityScalarOperationEClass.getEStructuralFeatures().get(1);
+	public EAttribute getQuantityScalarOperation_Rhs() {
+		return (EAttribute)quantityScalarOperationEClass.getEStructuralFeatures().get(1);
 	}
 
 	/**
@@ -943,14 +917,11 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		quantityEClass = createEClass(QUANTITY);
 		createEReference(quantityEClass, QUANTITY__UNIT);
-		createEReference(quantityEClass, QUANTITY__VALUE);
+		createEAttribute(quantityEClass, QUANTITY__VALUE);
 
 		lengthEClass = createEClass(LENGTH);
 
 		angleEClass = createEClass(ANGLE);
-
-		numericValueEClass = createEClass(NUMERIC_VALUE);
-		createEAttribute(numericValueEClass, NUMERIC_VALUE__VALUE);
 
 		quantityOperationEClass = createEClass(QUANTITY_OPERATION);
 
@@ -1000,7 +971,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		quantityScalarOperationEClass = createEClass(QUANTITY_SCALAR_OPERATION);
 		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__LHS);
-		createEReference(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__RHS);
+		createEAttribute(quantityScalarOperationEClass, QUANTITY_SCALAR_OPERATION__RHS);
 	}
 
 	/**
@@ -1125,14 +1096,11 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		initEClass(quantityEClass, Quantity.class, "Quantity", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuantity_Unit(), this.getUnit(), null, "unit", null, 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, IS_COMPOSITE, !IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuantity_Value(), this.getNumericValue(), null, "value", null, 1, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuantity_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, Quantity.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(lengthEClass, Length.class, "Length", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
 		initEClass(angleEClass, Angle.class, "Angle", !IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-
-		initEClass(numericValueEClass, NumericValue.class, "NumericValue", IS_ABSTRACT, IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
-		initEAttribute(getNumericValue_Value(), ecorePackage.getEDouble(), "value", null, 0, 1, NumericValue.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		initEClass(quantityOperationEClass, QuantityOperation.class, "QuantityOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 
@@ -1182,7 +1150,7 @@ public class UnitsPackageImpl extends EPackageImpl implements UnitsPackage {
 
 		initEClass(quantityScalarOperationEClass, QuantityScalarOperation.class, "QuantityScalarOperation", IS_ABSTRACT, !IS_INTERFACE, IS_GENERATED_INSTANCE_CLASS);
 		initEReference(getQuantityScalarOperation_Lhs(), this.getQuantity(), null, "lhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
-		initEReference(getQuantityScalarOperation_Rhs(), this.getNumericValue(), null, "rhs", null, 1, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_COMPOSITE, IS_RESOLVE_PROXIES, !IS_UNSETTABLE, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
+		initEAttribute(getQuantityScalarOperation_Rhs(), ecorePackage.getEDouble(), "rhs", null, 0, 1, QuantityScalarOperation.class, !IS_TRANSIENT, !IS_VOLATILE, IS_CHANGEABLE, !IS_UNSETTABLE, !IS_ID, IS_UNIQUE, !IS_DERIVED, IS_ORDERED);
 
 		// Create resource
 		createResource(eNS_URI);

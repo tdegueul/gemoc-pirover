@@ -34,4 +34,15 @@ public class AngleImpl extends QuantityImpl implements Angle {
 		return RaspiroverPackage.Literals.ANGLE;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double toRad() {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //AngleImpl

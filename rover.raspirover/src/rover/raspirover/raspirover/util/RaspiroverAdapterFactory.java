@@ -320,10 +320,6 @@ public class RaspiroverAdapterFactory extends AdapterFactoryImpl {
 				return createAngleAdapter();
 			}
 			@Override
-			public Adapter caseNumericValue(NumericValue object) {
-				return createNumericValueAdapter();
-			}
-			@Override
 			public Adapter caseQuantityOperation(QuantityOperation object) {
 				return createQuantityOperationAdapter();
 			}
@@ -1314,20 +1310,6 @@ public class RaspiroverAdapterFactory extends AdapterFactoryImpl {
 	 * @generated
 	 */
 	public Adapter createAngleAdapter() {
-		return null;
-	}
-
-	/**
-	 * Creates a new adapter for an object of class '{@link rover.raspirover.raspirover.NumericValue <em>Numeric Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * This default implementation returns null so that we can easily ignore cases;
-	 * it's useful to ignore a case when inheritance will catch all the cases anyway.
-	 * <!-- end-user-doc -->
-	 * @return the new adapter.
-	 * @see rover.raspirover.raspirover.NumericValue
-	 * @generated
-	 */
-	public Adapter createNumericValueAdapter() {
 		return null;
 	}
 

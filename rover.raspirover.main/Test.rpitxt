@@ -1,0 +1,25 @@
+raspi-project {
+	boards [
+		myBoard {
+			digital-pin d1
+			analog-pin  a1
+		}
+	]
+	program test [{
+		var a := 90.0cm
+		var b := 1.0yd
+		var c := 92.0cm
+		
+		if (a < b) {
+			log "a < b"
+		} else {
+			log "a >= b"
+		}
+		
+		if (b < c) {
+			log "b < c"
+		} else {
+			log "b >= c"
+		}
+	}]
+}

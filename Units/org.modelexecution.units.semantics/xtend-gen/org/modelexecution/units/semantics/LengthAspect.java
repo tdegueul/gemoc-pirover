@@ -7,7 +7,6 @@ import org.modelexecution.units.LengthUnit;
 import org.modelexecution.units.Unit;
 import org.modelexecution.units.semantics.LengthAspectLengthAspectProperties;
 import org.modelexecution.units.semantics.LengthUnitAspect;
-import org.modelexecution.units.semantics.NumericValueAspect;
 import org.modelexecution.units.semantics.QuantityAspect;
 import org.modelexecution.units.semantics.UnitAspect;
 
@@ -34,13 +33,13 @@ public class LengthAspect extends QuantityAspect {
   
   protected static double _privk3_toCm(final LengthAspectLengthAspectProperties _self_, final Length _self) {
     Unit _unit = _self.getUnit();
-    return LengthUnitAspect.toCm(((LengthUnit) _unit), _self.getValue().getValue());
+    return LengthUnitAspect.toCm(((LengthUnit) _unit), _self.getValue());
   }
   
   protected static String _privk3_print(final LengthAspectLengthAspectProperties _self_, final Length _self) {
     StringConcatenation _builder = new StringConcatenation();
-    String _print = NumericValueAspect.print(_self.getValue());
-    _builder.append(_print);
+    double _value = _self.getValue();
+    _builder.append(_value);
     String _symbol = UnitAspect.getSymbol(_self.getUnit());
     _builder.append(_symbol);
     _builder.append(" [");

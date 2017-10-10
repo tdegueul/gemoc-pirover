@@ -11,10 +11,10 @@ import org.eclipse.emf.ecore.InternalEObject;
 import org.eclipse.emf.ecore.impl.ENotificationImpl;
 
 import rover.raspirover.raspirover.NumberValue;
+import rover.raspirover.raspirover.Quantity;
 import rover.raspirover.raspirover.RaspiroverPackage;
 import rover.raspirover.raspirover.RoverValue;
 import rover.raspirover.raspirover.TemperatureQuery;
-import rover.raspirover.raspirover.Unit;
 
 /**
  * <!-- begin-user-doc -->
@@ -25,7 +25,7 @@ import rover.raspirover.raspirover.Unit;
  * </p>
  * <ul>
  *   <li>{@link rover.raspirover.raspirover.impl.TemperatureQueryImpl#getNValue <em>NValue</em>}</li>
- *   <li>{@link rover.raspirover.raspirover.impl.TemperatureQueryImpl#getUnit <em>Unit</em>}</li>
+ *   <li>{@link rover.raspirover.raspirover.impl.TemperatureQueryImpl#getQuantity <em>Quantity</em>}</li>
  * </ul>
  *
  * @generated
@@ -52,14 +52,14 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 	protected int nValue = NVALUE_EDEFAULT;
 
 	/**
-	 * The cached value of the '{@link #getUnit() <em>Unit</em>}' containment reference.
+	 * The cached value of the '{@link #getQuantity() <em>Quantity</em>}' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @see #getUnit()
+	 * @see #getQuantity()
 	 * @generated
 	 * @ordered
 	 */
-	protected Unit unit;
+	protected Quantity quantity;
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -106,8 +106,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public Unit getUnit() {
-		return unit;
+	public Quantity getQuantity() {
+		return quantity;
 	}
 
 	/**
@@ -115,11 +115,11 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public NotificationChain basicSetUnit(Unit newUnit, NotificationChain msgs) {
-		Unit oldUnit = unit;
-		unit = newUnit;
+	public NotificationChain basicSetQuantity(Quantity newQuantity, NotificationChain msgs) {
+		Quantity oldQuantity = quantity;
+		quantity = newQuantity;
 		if (eNotificationRequired()) {
-			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RaspiroverPackage.TEMPERATURE_QUERY__UNIT, oldUnit, newUnit);
+			ENotificationImpl notification = new ENotificationImpl(this, Notification.SET, RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY, oldQuantity, newQuantity);
 			if (msgs == null) msgs = notification; else msgs.add(notification);
 		}
 		return msgs;
@@ -130,18 +130,18 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 	 * <!-- end-user-doc -->
 	 * @generated
 	 */
-	public void setUnit(Unit newUnit) {
-		if (newUnit != unit) {
+	public void setQuantity(Quantity newQuantity) {
+		if (newQuantity != quantity) {
 			NotificationChain msgs = null;
-			if (unit != null)
-				msgs = ((InternalEObject)unit).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.TEMPERATURE_QUERY__UNIT, null, msgs);
-			if (newUnit != null)
-				msgs = ((InternalEObject)newUnit).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.TEMPERATURE_QUERY__UNIT, null, msgs);
-			msgs = basicSetUnit(newUnit, msgs);
+			if (quantity != null)
+				msgs = ((InternalEObject)quantity).eInverseRemove(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY, null, msgs);
+			if (newQuantity != null)
+				msgs = ((InternalEObject)newQuantity).eInverseAdd(this, EOPPOSITE_FEATURE_BASE - RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY, null, msgs);
+			msgs = basicSetQuantity(newQuantity, msgs);
 			if (msgs != null) msgs.dispatch();
 		}
 		else if (eNotificationRequired())
-			eNotify(new ENotificationImpl(this, Notification.SET, RaspiroverPackage.TEMPERATURE_QUERY__UNIT, newUnit, newUnit));
+			eNotify(new ENotificationImpl(this, Notification.SET, RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY, newQuantity, newQuantity));
 	}
 
 	/**
@@ -174,8 +174,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 	@Override
 	public NotificationChain eInverseRemove(InternalEObject otherEnd, int featureID, NotificationChain msgs) {
 		switch (featureID) {
-			case RaspiroverPackage.TEMPERATURE_QUERY__UNIT:
-				return basicSetUnit(null, msgs);
+			case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY:
+				return basicSetQuantity(null, msgs);
 		}
 		return super.eInverseRemove(otherEnd, featureID, msgs);
 	}
@@ -190,8 +190,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 		switch (featureID) {
 			case RaspiroverPackage.TEMPERATURE_QUERY__NVALUE:
 				return getNValue();
-			case RaspiroverPackage.TEMPERATURE_QUERY__UNIT:
-				return getUnit();
+			case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY:
+				return getQuantity();
 		}
 		return super.eGet(featureID, resolve, coreType);
 	}
@@ -207,8 +207,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 			case RaspiroverPackage.TEMPERATURE_QUERY__NVALUE:
 				setNValue((Integer)newValue);
 				return;
-			case RaspiroverPackage.TEMPERATURE_QUERY__UNIT:
-				setUnit((Unit)newValue);
+			case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY:
+				setQuantity((Quantity)newValue);
 				return;
 		}
 		super.eSet(featureID, newValue);
@@ -225,8 +225,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 			case RaspiroverPackage.TEMPERATURE_QUERY__NVALUE:
 				setNValue(NVALUE_EDEFAULT);
 				return;
-			case RaspiroverPackage.TEMPERATURE_QUERY__UNIT:
-				setUnit((Unit)null);
+			case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY:
+				setQuantity((Quantity)null);
 				return;
 		}
 		super.eUnset(featureID);
@@ -242,8 +242,8 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 		switch (featureID) {
 			case RaspiroverPackage.TEMPERATURE_QUERY__NVALUE:
 				return nValue != NVALUE_EDEFAULT;
-			case RaspiroverPackage.TEMPERATURE_QUERY__UNIT:
-				return unit != null;
+			case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY:
+				return quantity != null;
 		}
 		return super.eIsSet(featureID);
 	}
@@ -263,7 +263,7 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 		if (baseClass == NumberValue.class) {
 			switch (derivedFeatureID) {
 				case RaspiroverPackage.TEMPERATURE_QUERY__NVALUE: return RaspiroverPackage.NUMBER_VALUE__NVALUE;
-				case RaspiroverPackage.TEMPERATURE_QUERY__UNIT: return RaspiroverPackage.NUMBER_VALUE__UNIT;
+				case RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY: return RaspiroverPackage.NUMBER_VALUE__QUANTITY;
 				default: return -1;
 			}
 		}
@@ -285,7 +285,7 @@ public class TemperatureQueryImpl extends QueryImpl implements TemperatureQuery 
 		if (baseClass == NumberValue.class) {
 			switch (baseFeatureID) {
 				case RaspiroverPackage.NUMBER_VALUE__NVALUE: return RaspiroverPackage.TEMPERATURE_QUERY__NVALUE;
-				case RaspiroverPackage.NUMBER_VALUE__UNIT: return RaspiroverPackage.TEMPERATURE_QUERY__UNIT;
+				case RaspiroverPackage.NUMBER_VALUE__QUANTITY: return RaspiroverPackage.TEMPERATURE_QUERY__QUANTITY;
 				default: return -1;
 			}
 		}

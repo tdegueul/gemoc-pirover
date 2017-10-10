@@ -3,7 +3,6 @@ package rover.rcl.aspects;
 import com.google.common.collect.Iterators;
 import fr.inria.diverse.k3.al.annotationprocessor.Aspect;
 import fr.inria.diverse.k3.al.annotationprocessor.OverrideAspectMethod;
-import org.eclipse.xtext.xbase.lib.InputOutput;
 import org.eclipse.xtext.xbase.lib.IteratorExtensions;
 import rover.rcl.aspects.BooleanValueAspect;
 import rover.rcl.aspects.NumberValueAspect;
@@ -74,11 +73,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static int _privk3_getIntValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final NumberValue v = ((NumberValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    int _intValue = NumberValueAspect.getIntValue(v);
-    String _plus_1 = (_plus + Integer.valueOf(_intValue));
-    InputOutput.<String>println(_plus_1);
     return NumberValueAspect.getIntValue(v);
   }
   
@@ -90,11 +84,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static boolean _privk3_getBooleanValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final BooleanValue v = ((BooleanValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    boolean _booleanValue = BooleanValueAspect.getBooleanValue(v);
-    String _plus_1 = (_plus + Boolean.valueOf(_booleanValue));
-    InputOutput.<String>println(_plus_1);
     return BooleanValueAspect.getBooleanValue(v);
   }
   
@@ -106,11 +95,6 @@ public class VarRefAspect extends NumberValueAspect {
   protected static String _privk3_getStringValue(final VarRefAspectVarRefAspectProperties _self_, final VarRef _self) {
     RoverValue _var = RoverProgramAspect.getVar(VarRefAspect.getProgram(_self), _self.getName());
     final StringValue v = ((StringValue) _var);
-    String _name = _self.getName();
-    String _plus = (_name + " == ");
-    String _stringValue = StringValueAspect.getStringValue(v);
-    String _plus_1 = (_plus + _stringValue);
-    InputOutput.<String>println(_plus_1);
     return StringValueAspect.getStringValue(v);
   }
   

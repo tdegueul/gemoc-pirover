@@ -48,29 +48,29 @@ public interface QuantityScalarOperation extends QuantityOperation {
 	void setLhs(Quantity value);
 
 	/**
-	 * Returns the value of the '<em><b>Rhs</b></em>' reference.
+	 * Returns the value of the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <p>
-	 * If the meaning of the '<em>Rhs</em>' reference isn't clear,
+	 * If the meaning of the '<em>Rhs</em>' attribute isn't clear,
 	 * there really should be more of a description here...
 	 * </p>
 	 * <!-- end-user-doc -->
-	 * @return the value of the '<em>Rhs</em>' reference.
-	 * @see #setRhs(NumericValue)
+	 * @return the value of the '<em>Rhs</em>' attribute.
+	 * @see #setRhs(double)
 	 * @see rover.units.units.UnitsPackage#getQuantityScalarOperation_Rhs()
-	 * @model required="true"
+	 * @model
 	 * @generated
 	 */
-	NumericValue getRhs();
+	double getRhs();
 
 	/**
-	 * Sets the value of the '{@link rover.units.units.QuantityScalarOperation#getRhs <em>Rhs</em>}' reference.
+	 * Sets the value of the '{@link rover.units.units.QuantityScalarOperation#getRhs <em>Rhs</em>}' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @param value the new value of the '<em>Rhs</em>' reference.
+	 * @param value the new value of the '<em>Rhs</em>' attribute.
 	 * @see #getRhs()
 	 * @generated
 	 */
-	void setRhs(NumericValue value);
+	void setRhs(double value);
 
 } // QuantityScalarOperation

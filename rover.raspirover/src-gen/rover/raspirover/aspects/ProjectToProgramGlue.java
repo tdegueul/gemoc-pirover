@@ -12,21 +12,17 @@ import rover.raspirover.aspects.ProjectToProgramGlueProjectAspectProperties;
 public class ProjectToProgramGlue extends Project_ExecutableAspect {
   @Containment
   public static RoverProgram program(final Project _self) {
-	final rover.raspirover.aspects.ProjectToProgramGlueProjectAspectProperties _self_ = rover.raspirover.aspects.ProjectToProgramGlueProjectAspectContext
-			.getSelf(_self);
-	Object result = null;
-	result = _privk3_program(_self_, _self);
-	;
-	return (rover.raspirover.raspirover.RoverProgram) result;
-}
+    final rover.raspirover.aspects.ProjectToProgramGlueProjectAspectProperties _self_ = rover.raspirover.aspects.ProjectToProgramGlueProjectAspectContext.getSelf(_self);
+    Object result = null;
+    result = _privk3_program(_self_, _self);;
+    return (rover.raspirover.raspirover.RoverProgram)result;
+  }
   
   @Containment
   public static void program(final Project _self, final RoverProgram program) {
-	final rover.raspirover.aspects.ProjectToProgramGlueProjectAspectProperties _self_ = rover.raspirover.aspects.ProjectToProgramGlueProjectAspectContext
-			.getSelf(_self);
-	_privk3_program(_self_, _self, program);
-	;
-}
+    final rover.raspirover.aspects.ProjectToProgramGlueProjectAspectProperties _self_ = rover.raspirover.aspects.ProjectToProgramGlueProjectAspectContext.getSelf(_self);
+    _privk3_program(_self_, _self,program);;
+  }
   
   protected static RoverProgram _privk3_program(final ProjectToProgramGlueProjectAspectProperties _self_, final Project _self) {
     try {

@@ -34,4 +34,15 @@ public abstract class AngleUnitImpl extends UnitImpl implements AngleUnit {
 		return UnitsPackage.Literals.ANGLE_UNIT;
 	}
 
+	/**
+	 * <!-- begin-user-doc -->
+	 * <!-- end-user-doc -->
+	 * @generated
+	 */
+	public double toRad(double value) {
+		// TODO: implement this method
+		// Ensure that you remove @generated or mark it @generated NOT
+		throw new UnsupportedOperationException();
+	}
+
 } //AngleUnitImpl

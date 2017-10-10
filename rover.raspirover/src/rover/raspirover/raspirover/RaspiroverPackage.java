@@ -890,13 +890,13 @@ public interface RaspiroverPackage extends EPackage {
 	int TEMPERATURE_QUERY__NVALUE = QUERY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int TEMPERATURE_QUERY__UNIT = QUERY_FEATURE_COUNT + 1;
+	int TEMPERATURE_QUERY__QUANTITY = QUERY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Temperature Query</em>' class.
@@ -927,13 +927,13 @@ public interface RaspiroverPackage extends EPackage {
 	int HUMIDITY_QUERY__NVALUE = QUERY_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int HUMIDITY_QUERY__UNIT = QUERY_FEATURE_COUNT + 1;
+	int HUMIDITY_QUERY__QUANTITY = QUERY_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Humidity Query</em>' class.
@@ -1205,13 +1205,13 @@ public interface RaspiroverPackage extends EPackage {
 	int NUMBER_VALUE__NVALUE = ROVER_VALUE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int NUMBER_VALUE__UNIT = ROVER_VALUE_FEATURE_COUNT + 1;
+	int NUMBER_VALUE__QUANTITY = ROVER_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The number of structural features of the '<em>Number Value</em>' class.
@@ -1722,13 +1722,13 @@ public interface RaspiroverPackage extends EPackage {
 	int VAR_REF__NVALUE = BOOLEAN_VALUE_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Unit</b></em>' containment reference.
+	 * The feature id for the '<em><b>Quantity</b></em>' containment reference.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
 	 * @ordered
 	 */
-	int VAR_REF__UNIT = BOOLEAN_VALUE_FEATURE_COUNT + 1;
+	int VAR_REF__QUANTITY = BOOLEAN_VALUE_FEATURE_COUNT + 1;
 
 	/**
 	 * The feature id for the '<em><b>SValue</b></em>' attribute.
@@ -2071,7 +2071,7 @@ public interface RaspiroverPackage extends EPackage {
 	int QUANTITY__UNIT = 0;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2108,7 +2108,7 @@ public interface RaspiroverPackage extends EPackage {
 	int LENGTH__UNIT = QUANTITY__UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2145,7 +2145,7 @@ public interface RaspiroverPackage extends EPackage {
 	int ANGLE__UNIT = QUANTITY__UNIT;
 
 	/**
-	 * The feature id for the '<em><b>Value</b></em>' reference.
+	 * The feature id for the '<em><b>Value</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2163,25 +2163,6 @@ public interface RaspiroverPackage extends EPackage {
 	int ANGLE_FEATURE_COUNT = QUANTITY_FEATURE_COUNT + 0;
 
 	/**
-	 * The meta object id for the '{@link rover.raspirover.raspirover.NumericValue <em>Numeric Value</em>}' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @see rover.raspirover.raspirover.NumericValue
-	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getNumericValue()
-	 * @generated
-	 */
-	int NUMERIC_VALUE = 63;
-
-	/**
-	 * The number of structural features of the '<em>Numeric Value</em>' class.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @generated
-	 * @ordered
-	 */
-	int NUMERIC_VALUE_FEATURE_COUNT = 0;
-
-	/**
 	 * The meta object id for the '{@link rover.raspirover.raspirover.impl.QuantityOperationImpl <em>Quantity Operation</em>}' class.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
@@ -2189,7 +2170,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getQuantityOperation()
 	 * @generated
 	 */
-	int QUANTITY_OPERATION = 64;
+	int QUANTITY_OPERATION = 63;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Operation</em>' class.
@@ -2208,7 +2189,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthOperation()
 	 * @generated
 	 */
-	int LENGTH_OPERATION = 65;
+	int LENGTH_OPERATION = 64;
 
 	/**
 	 * The number of structural features of the '<em>Length Operation</em>' class.
@@ -2227,7 +2208,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthAdd()
 	 * @generated
 	 */
-	int LENGTH_ADD = 66;
+	int LENGTH_ADD = 65;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2264,7 +2245,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthSubtract()
 	 * @generated
 	 */
-	int LENGTH_SUBTRACT = 67;
+	int LENGTH_SUBTRACT = 66;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2301,7 +2282,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthScalarMultiply()
 	 * @generated
 	 */
-	int LENGTH_SCALAR_MULTIPLY = 68;
+	int LENGTH_SCALAR_MULTIPLY = 67;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2313,7 +2294,7 @@ public interface RaspiroverPackage extends EPackage {
 	int LENGTH_SCALAR_MULTIPLY__LHS = LENGTH_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2338,7 +2319,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthScalarDivide()
 	 * @generated
 	 */
-	int LENGTH_SCALAR_DIVIDE = 69;
+	int LENGTH_SCALAR_DIVIDE = 68;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2350,7 +2331,7 @@ public interface RaspiroverPackage extends EPackage {
 	int LENGTH_SCALAR_DIVIDE__LHS = LENGTH_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2375,7 +2356,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthEquals()
 	 * @generated
 	 */
-	int LENGTH_EQUALS = 70;
+	int LENGTH_EQUALS = 69;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2412,7 +2393,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthDistinct()
 	 * @generated
 	 */
-	int LENGTH_DISTINCT = 71;
+	int LENGTH_DISTINCT = 70;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2449,7 +2430,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthSmaller()
 	 * @generated
 	 */
-	int LENGTH_SMALLER = 72;
+	int LENGTH_SMALLER = 71;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2486,7 +2467,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getLengthGreater()
 	 * @generated
 	 */
-	int LENGTH_GREATER = 73;
+	int LENGTH_GREATER = 72;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2523,7 +2504,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleOperation()
 	 * @generated
 	 */
-	int ANGLE_OPERATION = 74;
+	int ANGLE_OPERATION = 73;
 
 	/**
 	 * The number of structural features of the '<em>Angle Operation</em>' class.
@@ -2542,7 +2523,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleAdd()
 	 * @generated
 	 */
-	int ANGLE_ADD = 75;
+	int ANGLE_ADD = 74;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2579,7 +2560,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleSubtract()
 	 * @generated
 	 */
-	int ANGLE_SUBTRACT = 76;
+	int ANGLE_SUBTRACT = 75;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2616,7 +2597,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleScalarMultiply()
 	 * @generated
 	 */
-	int ANGLE_SCALAR_MULTIPLY = 77;
+	int ANGLE_SCALAR_MULTIPLY = 76;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2628,7 +2609,7 @@ public interface RaspiroverPackage extends EPackage {
 	int ANGLE_SCALAR_MULTIPLY__LHS = ANGLE_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2653,7 +2634,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleScalarDivide()
 	 * @generated
 	 */
-	int ANGLE_SCALAR_DIVIDE = 78;
+	int ANGLE_SCALAR_DIVIDE = 77;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2665,7 +2646,7 @@ public interface RaspiroverPackage extends EPackage {
 	int ANGLE_SCALAR_DIVIDE__LHS = ANGLE_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2690,7 +2671,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleEquals()
 	 * @generated
 	 */
-	int ANGLE_EQUALS = 79;
+	int ANGLE_EQUALS = 78;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2727,7 +2708,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleDistinct()
 	 * @generated
 	 */
-	int ANGLE_DISTINCT = 80;
+	int ANGLE_DISTINCT = 79;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2764,7 +2745,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleSmaller()
 	 * @generated
 	 */
-	int ANGLE_SMALLER = 81;
+	int ANGLE_SMALLER = 80;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2801,7 +2782,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getAngleGreater()
 	 * @generated
 	 */
-	int ANGLE_GREATER = 82;
+	int ANGLE_GREATER = 81;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2838,7 +2819,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getQuantityArithmeticOperation()
 	 * @generated
 	 */
-	int QUANTITY_ARITHMETIC_OPERATION = 83;
+	int QUANTITY_ARITHMETIC_OPERATION = 82;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Arithmetic Operation</em>' class.
@@ -2857,7 +2838,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getQuantityComparisonOperation()
 	 * @generated
 	 */
-	int QUANTITY_COMPARISON_OPERATION = 84;
+	int QUANTITY_COMPARISON_OPERATION = 83;
 
 	/**
 	 * The number of structural features of the '<em>Quantity Comparison Operation</em>' class.
@@ -2876,7 +2857,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getQuantityHomogenousOperation()
 	 * @generated
 	 */
-	int QUANTITY_HOMOGENOUS_OPERATION = 85;
+	int QUANTITY_HOMOGENOUS_OPERATION = 84;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2913,7 +2894,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getQuantityScalarOperation()
 	 * @generated
 	 */
-	int QUANTITY_SCALAR_OPERATION = 86;
+	int QUANTITY_SCALAR_OPERATION = 85;
 
 	/**
 	 * The feature id for the '<em><b>Lhs</b></em>' reference.
@@ -2925,7 +2906,7 @@ public interface RaspiroverPackage extends EPackage {
 	int QUANTITY_SCALAR_OPERATION__LHS = QUANTITY_OPERATION_FEATURE_COUNT + 0;
 
 	/**
-	 * The feature id for the '<em><b>Rhs</b></em>' reference.
+	 * The feature id for the '<em><b>Rhs</b></em>' attribute.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
 	 * @generated
@@ -2950,7 +2931,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getNumericOperator()
 	 * @generated
 	 */
-	int NUMERIC_OPERATOR = 87;
+	int NUMERIC_OPERATOR = 86;
 
 	/**
 	 * The meta object id for the '{@link rover.raspirover.raspirover.StringOperator <em>String Operator</em>}' enum.
@@ -2960,7 +2941,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getStringOperator()
 	 * @generated
 	 */
-	int STRING_OPERATOR = 88;
+	int STRING_OPERATOR = 87;
 
 	/**
 	 * The meta object id for the '{@link rover.raspirover.raspirover.BooleanOperator <em>Boolean Operator</em>}' enum.
@@ -2970,7 +2951,7 @@ public interface RaspiroverPackage extends EPackage {
 	 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getBooleanOperator()
 	 * @generated
 	 */
-	int BOOLEAN_OPERATOR = 89;
+	int BOOLEAN_OPERATOR = 88;
 
 
 	/**
@@ -3712,15 +3693,15 @@ public interface RaspiroverPackage extends EPackage {
 	EAttribute getNumberValue_NValue();
 
 	/**
-	 * Returns the meta object for the containment reference '{@link rover.raspirover.raspirover.NumberValue#getUnit <em>Unit</em>}'.
+	 * Returns the meta object for the containment reference '{@link rover.raspirover.raspirover.NumberValue#getQuantity <em>Quantity</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the containment reference '<em>Unit</em>'.
-	 * @see rover.raspirover.raspirover.NumberValue#getUnit()
+	 * @return the meta object for the containment reference '<em>Quantity</em>'.
+	 * @see rover.raspirover.raspirover.NumberValue#getQuantity()
 	 * @see #getNumberValue()
 	 * @generated
 	 */
-	EReference getNumberValue_Unit();
+	EReference getNumberValue_Quantity();
 
 	/**
 	 * Returns the meta object for class '{@link rover.raspirover.raspirover.StringValue <em>String Value</em>}'.
@@ -4123,15 +4104,15 @@ public interface RaspiroverPackage extends EPackage {
 	EReference getQuantity_Unit();
 
 	/**
-	 * Returns the meta object for the reference '{@link rover.raspirover.raspirover.Quantity#getValue <em>Value</em>}'.
+	 * Returns the meta object for the attribute '{@link rover.raspirover.raspirover.Quantity#getValue <em>Value</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Value</em>'.
+	 * @return the meta object for the attribute '<em>Value</em>'.
 	 * @see rover.raspirover.raspirover.Quantity#getValue()
 	 * @see #getQuantity()
 	 * @generated
 	 */
-	EReference getQuantity_Value();
+	EAttribute getQuantity_Value();
 
 	/**
 	 * Returns the meta object for class '{@link rover.raspirover.raspirover.Length <em>Length</em>}'.
@@ -4152,16 +4133,6 @@ public interface RaspiroverPackage extends EPackage {
 	 * @generated
 	 */
 	EClass getAngle();
-
-	/**
-	 * Returns the meta object for class '{@link rover.raspirover.raspirover.NumericValue <em>Numeric Value</em>}'.
-	 * <!-- begin-user-doc -->
-	 * <!-- end-user-doc -->
-	 * @return the meta object for class '<em>Numeric Value</em>'.
-	 * @see rover.raspirover.raspirover.NumericValue
-	 * @generated
-	 */
-	EClass getNumericValue();
 
 	/**
 	 * Returns the meta object for class '{@link rover.raspirover.raspirover.QuantityOperation <em>Quantity Operation</em>}'.
@@ -4427,15 +4398,15 @@ public interface RaspiroverPackage extends EPackage {
 	EReference getQuantityScalarOperation_Lhs();
 
 	/**
-	 * Returns the meta object for the reference '{@link rover.raspirover.raspirover.QuantityScalarOperation#getRhs <em>Rhs</em>}'.
+	 * Returns the meta object for the attribute '{@link rover.raspirover.raspirover.QuantityScalarOperation#getRhs <em>Rhs</em>}'.
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @return the meta object for the reference '<em>Rhs</em>'.
+	 * @return the meta object for the attribute '<em>Rhs</em>'.
 	 * @see rover.raspirover.raspirover.QuantityScalarOperation#getRhs()
 	 * @see #getQuantityScalarOperation()
 	 * @generated
 	 */
-	EReference getQuantityScalarOperation_Rhs();
+	EAttribute getQuantityScalarOperation_Rhs();
 
 	/**
 	 * Returns the meta object for enum '{@link rover.raspirover.raspirover.NumericOperator <em>Numeric Operator</em>}'.
@@ -5114,12 +5085,12 @@ public interface RaspiroverPackage extends EPackage {
 		EAttribute NUMBER_VALUE__NVALUE = eINSTANCE.getNumberValue_NValue();
 
 		/**
-		 * The meta object literal for the '<em><b>Unit</b></em>' containment reference feature.
+		 * The meta object literal for the '<em><b>Quantity</b></em>' containment reference feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference NUMBER_VALUE__UNIT = eINSTANCE.getNumberValue_Unit();
+		EReference NUMBER_VALUE__QUANTITY = eINSTANCE.getNumberValue_Quantity();
 
 		/**
 		 * The meta object literal for the '{@link rover.raspirover.raspirover.impl.StringValueImpl <em>String Value</em>}' class.
@@ -5492,12 +5463,12 @@ public interface RaspiroverPackage extends EPackage {
 		EReference QUANTITY__UNIT = eINSTANCE.getQuantity_Unit();
 
 		/**
-		 * The meta object literal for the '<em><b>Value</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Value</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUANTITY__VALUE = eINSTANCE.getQuantity_Value();
+		EAttribute QUANTITY__VALUE = eINSTANCE.getQuantity_Value();
 
 		/**
 		 * The meta object literal for the '{@link rover.raspirover.raspirover.impl.LengthImpl <em>Length</em>}' class.
@@ -5518,16 +5489,6 @@ public interface RaspiroverPackage extends EPackage {
 		 * @generated
 		 */
 		EClass ANGLE = eINSTANCE.getAngle();
-
-		/**
-		 * The meta object literal for the '{@link rover.raspirover.raspirover.NumericValue <em>Numeric Value</em>}' class.
-		 * <!-- begin-user-doc -->
-		 * <!-- end-user-doc -->
-		 * @see rover.raspirover.raspirover.NumericValue
-		 * @see rover.raspirover.raspirover.impl.RaspiroverPackageImpl#getNumericValue()
-		 * @generated
-		 */
-		EClass NUMERIC_VALUE = eINSTANCE.getNumericValue();
 
 		/**
 		 * The meta object literal for the '{@link rover.raspirover.raspirover.impl.QuantityOperationImpl <em>Quantity Operation</em>}' class.
@@ -5784,12 +5745,12 @@ public interface RaspiroverPackage extends EPackage {
 		EReference QUANTITY_SCALAR_OPERATION__LHS = eINSTANCE.getQuantityScalarOperation_Lhs();
 
 		/**
-		 * The meta object literal for the '<em><b>Rhs</b></em>' reference feature.
+		 * The meta object literal for the '<em><b>Rhs</b></em>' attribute feature.
 		 * <!-- begin-user-doc -->
 		 * <!-- end-user-doc -->
 		 * @generated
 		 */
-		EReference QUANTITY_SCALAR_OPERATION__RHS = eINSTANCE.getQuantityScalarOperation_Rhs();
+		EAttribute QUANTITY_SCALAR_OPERATION__RHS = eINSTANCE.getQuantityScalarOperation_Rhs();
 
 		/**
 		 * The meta object literal for the '{@link rover.raspirover.raspirover.NumericOperator <em>Numeric Operator</em>}' enum.

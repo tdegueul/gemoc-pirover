@@ -22,7 +22,9 @@
   <eClassifiers xsi:type="ecore:EClass" name="Gradian" eSuperTypes="//AngleUnit"/>
   <eClassifiers xsi:type="ecore:EClass" name="Quantity" abstract="true">
     <eStructuralFeatures xsi:type="ecore:EReference" name="unit" lowerBound="1" eType="//Unit" containment="true"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="value" lowerBound="1" eType="//NumericValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="Length" eSuperTypes="//Quantity">
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore">
@@ -39,11 +41,6 @@
     <eAnnotations source="http://www.eclipse.org/emf/2002/Ecore/OCL/Pivot">
       <details key="AngleRequiresAngleUnit" value="self.unit.oclIsKindOf(AngleUnit)"/>
     </eAnnotations>
-  </eClassifiers>
-  <eClassifiers xsi:type="ecore:EClass" name="NumericValue" abstract="true" interface="true">
-    <eStructuralFeatures xsi:type="ecore:EAttribute" name="value">
-      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
-    </eStructuralFeatures>
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuantityOperation" abstract="true"/>
   <eClassifiers xsi:type="ecore:EClass" name="LengthOperation" abstract="true" eSuperTypes="//QuantityOperation"/>
@@ -79,6 +76,8 @@
   </eClassifiers>
   <eClassifiers xsi:type="ecore:EClass" name="QuantityScalarOperation" abstract="true" eSuperTypes="//QuantityOperation">
     <eStructuralFeatures xsi:type="ecore:EReference" name="lhs" lowerBound="1" eType="//Quantity"/>
-    <eStructuralFeatures xsi:type="ecore:EReference" name="rhs" lowerBound="1" eType="//NumericValue"/>
+    <eStructuralFeatures xsi:type="ecore:EAttribute" name="rhs">
+      <eType xsi:type="ecore:EDataType" href="http://www.eclipse.org/emf/2002/Ecore#//EDouble"/>
+    </eStructuralFeatures>
   </eClassifiers>
 </ecore:EPackage>

@@ -12,11 +12,13 @@ import rover.raspirover.raspirover.LogAction;
 public class LogActionAspect extends ActionAspect {
   @OverrideAspectMethod
   public static void eval(final LogAction _self) {
-	final rover.raspirover.aspects.LogActionAspectLogActionAspectProperties _self_ = rover.raspirover.aspects.LogActionAspectLogActionAspectContext
-			.getSelf(_self);
-	_privk3_eval(_self_, _self);
-	;
-}
+    final rover.raspirover.aspects.LogActionAspectLogActionAspectProperties _self_ = rover.raspirover.aspects.LogActionAspectLogActionAspectContext.getSelf(_self);
+     if (_self instanceof rover.raspirover.raspirover.LogAction){
+    					rover.raspirover.aspects.LogActionAspect._privk3_eval(_self_, (rover.raspirover.raspirover.LogAction)_self);
+    } else  if (_self instanceof rover.raspirover.raspirover.Statement){
+    					rover.raspirover.aspects.StatementAspect.eval((rover.raspirover.raspirover.Statement)_self);
+    } else  { throw new IllegalArgumentException("Unhandled parameter types: " + java.util.Arrays.<Object>asList(_self).toString()); };
+  }
   
   protected static void _privk3_eval(final LogActionAspectLogActionAspectProperties _self_, final LogAction _self) {
     String _message = _self.getMessage();

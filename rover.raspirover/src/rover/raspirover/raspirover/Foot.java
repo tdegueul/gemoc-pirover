@@ -17,10 +17,10 @@ public interface Foot extends ImperialSystemUnit, LengthUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model kind="operation"
 	 * @generated
 	 */
-	String print();
+	String getSymbol();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,6 +28,6 @@ public interface Foot extends ImperialSystemUnit, LengthUnit {
 	 * @model
 	 * @generated
 	 */
-	double toCentimeters(double value);
+	double toCm(double value);
 
 } // Foot

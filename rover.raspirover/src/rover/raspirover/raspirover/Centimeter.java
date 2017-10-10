@@ -17,10 +17,10 @@ public interface Centimeter extends MetricSystemUnit, LengthUnit {
 	/**
 	 * <!-- begin-user-doc -->
 	 * <!-- end-user-doc -->
-	 * @model
+	 * @model kind="operation"
 	 * @generated
 	 */
-	String print();
+	String getSymbol();
 
 	/**
 	 * <!-- begin-user-doc -->
@@ -28,6 +28,6 @@ public interface Centimeter extends MetricSystemUnit, LengthUnit {
 	 * @model
 	 * @generated
 	 */
-	double toCentimeters(double value);
+	double toCm(double value);
 
 } // Centimeter
